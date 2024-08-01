@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Java官方文档使用</title>
+    <url>/2024/08/01/Java%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<p>进入<a href="https://docs.oracle.com/en/java/javase/21/index.html">Oracal Help Center</a>选择对应 JDK 版本，然后分类选择。<br>如查询 <code>java</code> 命令选项，进入<a href="https://docs.oracle.com/en/java/javase/21/docs/specs/man/index.html">JDK Tool Specifications</a>，<br>再进入<a href="https://docs.oracle.com/en/java/javase/21/docs/specs/man/java.html">java</a>信息页面。</p>
+<p>目前只找到 Oracle 官网有此文档，其他发布版本，不一定有。</p>
+]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>nginx 403 排查及相关知识链接</title>
     <url>/2024/08/01/nginx-403-%E6%8E%92%E6%9F%A5%E5%8F%8A%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86%E9%93%BE%E6%8E%A5/</url>
     <content><![CDATA[<ol>
