@@ -67,7 +67,7 @@
 </li>
 <li><p>调整<code>gradle</code>命令执行的<code>JVM</code>环境</p>
 <ol>
-<li><p><code>IntelliJ IDEA</code>通过<code>spring boot io</code>创建的<code>Gradle</code>管理项目</p>
+<li><p><code>IntelliJ IDEA</code>通过<code>Spring Initializr</code>创建的<code>Gradle</code>管理项目</p>
 <ol>
 <li>设置<code>Gradle</code>配置文件<code>~/.gradle/gradle.properties</code></li>
 </ol>
@@ -78,7 +78,7 @@
 </ol>
  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">GRADLE_OPTS=-Dfile.encoding=GBK</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>通过<code>gradle init</code>创建的项目</p>
+<li><p>通过<code>gradle init</code>创建的项目和<code>IntelliJ IDEA</code>通过<code>Java</code>模版创建的项目</p>
 <ol>
 <li>设置<code>Gradle</code>配置文件<code>~/.gradle/gradle.properties</code></li>
 </ol>
