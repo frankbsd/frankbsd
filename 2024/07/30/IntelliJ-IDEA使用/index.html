@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <script>if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode)) window.location.href="https://support.dmeng.net/upgrade-your-browser.html?referrer="+encodeURIComponent(window.location.href); </script>
+    
+    
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Regular.woff2" as="font">
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Bold.woff2" as="font">
+    
+    
+    
+        <link rel="shortcut icon" href="/icons/favicon.ico">
+    
+
+    
+    
+        
+<link rel="stylesheet" href="/css/mdui.min.v1.0.0.css">
+
+    
+    
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/iconfont.css">
+
+
+    
+    
+
+    
+        <script data-ad-client="ca-" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+          
+
+
+    
+    
+    <title>
+        
+            IntelliJ IDEA使用 | Frank&#39;s Blog
+        
+    </title>
+    
+    
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-teal mdui-theme-accent-blue">
+  
+  <header class="mdui-appbar mdui-appbar-fixed">
+  <div id="toolbar" class="mdui-toolbar mdui-color-theme">
+    <button class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="iconfont icon-menu"></i></button>
+    <a href="/" class="mdui-typo-headline">Frank&#39;s Blog</a>
+    <a href="/" class="header-subtitle mdui-typo-headline">仅仅记录自己的学习笔记，见证自己的学习轨迹！</a>
+    <div class="mdui-toolbar-spacer"></div>
+    <button class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: 'search'}"><i class="iconfont icon-search"></i></button>
+  </div>
+</header>
+
+<div class="mdui-dialog" id="search">
+  
+    <div class="search-form">
+      <input type="search" class="search-form-input" placeholder="请输入关键字" onfocus="listenSearchFunc()">
+    </div>
+    <div class="search-result" data-resource="/search.xml"></div>
+  
+</div>
+
+  <aside id="sidebar" class="mdui-drawer">
+    <div class="mdui-tab" mdui-tab>
+        <a href="#sidebar-tab1" id="sidebartab" class="mdui-ripple mdui-tab-active">站点概览</a>
+        <a href="#sidebar-tab2" id="sidebartab" class="mdui-ripple">关于</a>
+    </div>
+
+    
+    <div id="sidebar-tab1" class="mdui-p-a-1">
+        <div class="mdui-list">
+            
+                
+                <a href="/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-home"></i>
+                    </div>
+                    <div class="mdui-list-item-content">主页</div>
+                </a>
+            
+                
+                <a href="/tags/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-bookmark"></i>
+                    </div>
+                    <div class="mdui-list-item-content">标签</div>
+                </a>
+            
+                
+                <a href="/categories/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-folder"></i>
+                    </div>
+                    <div class="mdui-list-item-content">分类</div>
+                </a>
+            
+                
+                <a href="/archives/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-archive"></i>
+                    </div>
+                    <div class="mdui-list-item-content">归档</div>
+                </a>
+            
+                
+                <a href="/tools/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-tools"></i>
+                    </div>
+                    <div class="mdui-list-item-content">工具箱</div>
+                </a>
+            
+                
+                <a href="/about/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-user"></i>
+                    </div>
+                    <div class="mdui-list-item-content">关于</div>
+                </a>
+            
+            <div class="mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-icon">
+                    <i class="iconfont icon-moon"></i>
+                </div>
+                <div class="mdui-list-item-content">夜间模式</div>
+                <label class="mdui-switch" id="darkmode">
+                  <input type="checkbox" id="nightmode_switch"/>
+                  <i class="mdui-switch-icon"></i>
+                </label>
+            </div>           
+        </div>
+    </div>
+
+    
+    <div id="sidebar-tab2" class="mdui-p-a-1">
+        <div class="sidebar-overview">
+            <div class="sidebar-avatar">
+                
+                    <img src="/icons/avatar.gif"/>
+                
+            </div>
+            <div class="sidebar-author-name">Frank</div>
+            <div class="sidebar-description"></div>
+        </div>
+        <div class="sidebar-links">
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-mail"></i></span>
+                    <a href="mailto:xxx@xxx.com" class="mdui-chip-title">E-Mail</a>
+                </div>
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-github"></i></span>
+                    <a target="_blank" rel="noopener" href="https://your.url" class="mdui-chip-title">GitHub</a>
+                </div>
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-steam"></i></span>
+                    <a target="_blank" rel="noopener" href="https://your.url" class="mdui-chip-title">Steam</a>
+                </div>
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-weibo"></i></span>
+                    <a target="_blank" rel="noopener" href="https://your.url" class="mdui-chip-title">Weibo</a>
+                </div>
+            
+        </div>
+        <ul class="mdui-list" mdui-collapse="{accordion: true}">
+            <li class="mdui-collapse-item">
+                <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-link"></i>
+                    </div>
+                    <div class="mdui-list-item-content">友情链接</div>
+                    <div class="mdui-collapse-item-arrow">
+                        <i class="mdui-list-item-icon iconfont icon-angle-down"></i>
+                    </div>
+                </div>
+                <ul id="linksList" class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                    
+                        <a target="_blank" rel="noopener" href="https://garybear.cn/hexo-theme-meadow/" class="mdui-list-item mdui-ripple">
+                            Meadow说明文档
+                        </a>
+                    
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="mdui-divider"></div>
+    
+    
+</aside>
+  
+  <main id="main-contain" class="mdui-container mdui-m-t-5">
+    <article id="article" class="mdui-card mdui-p-b-2 mdui-m-b-5">
+  <header class="mdui-card-media">
+    
+    
+      <div class="post-header"> 
+  <a class="post-header-title" href="/2024/07/30/IntelliJ-IDEA%E4%BD%BF%E7%94%A8/">IntelliJ IDEA使用</a>
+  <div class="post-header-meta">
+    <span>
+      <span class="iconfont icon-calendar"></span>
+      发布于:&nbsp;2024-07-30
+    </span>
+    <span>
+      <span class="iconfont icon-calendar-check"></span>
+      更新于:&nbsp;2024-07-30
+    </span>
+    <span>
+      <span class="iconfont icon-folder"></span>
+      分类于:&nbsp;<a class="category-link" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a>
+    </span>
+    
+      <span>
+        <span class="iconfont icon-eye"></span>
+        阅读次数:&nbsp;
+        <span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv"></span></span>
+      </span>
+    
+  </div>
+</div>   
+    
+
+
+
+    
+    
+    <div class="mdui-card-menu">
+    
+      <button class="mdui-btn mdui-btn-icon mdui-text-color-teal" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="iconfont icon-share"></i></button>
+      <ul class="mdui-menu" id="share_menu">
+        <li class="mdui-menu-item">
+          <a href="http://service.weibo.com/share/share.php?appkey=&title=IntelliJ IDEA使用&url=http://test.org/2024/07/30/IntelliJ-IDEA%E4%BD%BF%E7%94%A8/&pic=http://test.org/null&searchPic=false&style=simple" target="_blank" class="mdui-ripple">分享到 Weibo</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://twitter.com/intent/tweet?text=IntelliJ IDEA使用&url=http://test.org/2024/07/30/IntelliJ-IDEA%E4%BD%BF%E7%94%A8/&via=Frank" target="_blank" class="mdui-ripple">分享到 Twitter</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=http://test.org/2024/07/30/IntelliJ-IDEA%E4%BD%BF%E7%94%A8/" target="_blank" class="mdui-ripple">分享到 Facebook</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://plus.google.com/share?url=http://test.org/2024/07/30/IntelliJ-IDEA%E4%BD%BF%E7%94%A8/" target="_blank" class="mdui-ripple">分享到 Google+</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://test.org/2024/07/30/IntelliJ-IDEA%E4%BD%BF%E7%94%A8/&title=IntelliJ IDEA使用" target="_blank" class="mdui-ripple">分享到 LinkedIn</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="http://connect.qq.com/widget/shareqq/index.html?site=Frank&#39;s Blog&title=IntelliJ IDEA使用&summary=&pics=http://test.org/null&url=http://test.org/2024/07/30/IntelliJ-IDEA%E4%BD%BF%E7%94%A8/" target="_blank" class="mdui-ripple">分享到 QQ</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://telegram.me/share/url?url=http://test.org/2024/07/30/IntelliJ-IDEA%E4%BD%BF%E7%94%A8/&text=IntelliJ IDEA使用" target="_blank" class="mdui-ripple">分享到 Telegram</a>
+        </li>
+      </ul>
+    
+  </div>
+  </header>
+  
+  
+  
+  
+  <div class="post-tags">
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/Java/ >Java</a>
+      </i>
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/IntelliJ-IDEA/ >IntelliJ IDEA</a>
+      </i>
+    
+  </div>
+
+  
+  <div class="mdui-card-content mdui-typo mdui-p-x-4">
+    <h3 id="0-设置IDEA的配置文件"><a href="#0-设置IDEA的配置文件" class="headerlink" title="0. 设置IDEA的配置文件"></a>0. 设置IDEA的配置文件</h3><p>a. <code>C:\Users\FRANK\AppData\Roaming\JetBrains\IntelliJIdea2021.3\idea.properties</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">idea.config.path=D:/ProgramFiles/Java/IdeaConfig/Config</span><br><span class="line">idea.system.path=D:/ProgramFiles/Java/IdeaConfig/System</span><br><span class="line"></span><br><span class="line">idea.plugins.path=$&#123;idea.config.path&#125;/plugins</span><br><span class="line">idea.log.path=$&#123;idea.system.path&#125;/log</span><br><span class="line"># 避免编译日志过长，前面的被覆盖掉</span><br><span class="line">idea.cycle.buffer.size=disabled</span><br></pre></td></tr></table></figure>
+<p>【注意】ideaConfig和IDEA主程序目录并列存放在IDEA下，如果ideaConfig存放在主程序目录下，会导致报错“临时文件目录在安装文件夹下”，无法更新</p>
+<p>b. <code>C:\Users\FRANK\AppData\Roaming\JetBrains\IntelliJIdea2021.3\idea64.exe.vmoptions</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-Dfile.encoding=UTF-8   # 解决`IDEA`各种乱码</span><br><span class="line">-Xms512m //最小启动内存参数 </span><br><span class="line">-Xmx2048m //最大运行内存参数</span><br><span class="line">-XX:ReservedCodeCacheSize=512m  //保留代码占用的内存容量参数</span><br></pre></td></tr></table></figure>
+
+<p>配置项目编码和IDE编码<br>【File】→【Settings】→【Editor】→【File Encodings】<br>设置【IDE Encoding】、【Project Encoding】、【Default encoding for properties files】为<code>UTF-8</code><br>【Tomcat实例】里的【VM options】添加</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-Dfile.encoding=UTF-8</span><br></pre></td></tr></table></figure>
+
+<p>设置<code>Shared Indexes</code></p>
+<ol>
+<li>idea设置<br><code>Settings</code>-&gt;<code>Tools</code>-&gt;<code>Shared Indexes</code>-&gt;<code>Wait for shared indexes</code><br><code>Settings</code>-&gt;<code>Tools</code>-&gt;<code>Shared Indexes</code>-&gt;<code>JDKs</code>-&gt;<code>Download automatically</code><br><code>Settings</code>-&gt;<code>Tools</code>-&gt;<code>Shared Indexes</code>-&gt;<code>Maven libraries</code>-&gt;<code>Download automatically</code><br><code>Settings</code>-&gt;<code>Appearance &amp; Behavior</code>-&gt;<code>System Settings</code>-&gt;<code>Http Porxy</code>-&gt;<code>Auto-detect proxy settings</code></li>
+<li>把<code>index-cdn.jetbrains.com</code>加入代理</li>
+</ol>
+<h3 id="使用ja-netfilter"><a href="#使用ja-netfilter" class="headerlink" title="使用ja-netfilter"></a>使用<code>ja-netfilter</code></h3><p>在用户目录<code>C:\Users\FRANK\AppData\Roaming\JetBrains\IntelliJIdea2021.3\idea64.exe.vmoptions</code>中添加</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">--add-opens=java.base/jdk.internal.org.objectweb.asm=ALL-UNNAMED</span><br><span class="line">--add-opens=java.base/jdk.internal.org.objectweb.asm.tree=ALL-UNNAMED</span><br><span class="line">-javaagent:D:\ProgramFiles\Java\jetbra\ja-netfilter.jar=jetbrains</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://github.com/ja-netfilter/ja-netfilter">ja-netfilter</a><br><a target="_blank" rel="noopener" href="https://jetbra.in/s">jetbra</a></p>
+<h3 id="添加右键快捷键"><a href="#添加右键快捷键" class="headerlink" title="添加右键快捷键"></a>添加右键快捷键</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Windows Registry Editor Version 5.00</span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\Directory\shell\ideaIU]</span><br><span class="line">@=&quot;Open with IntelliJ IDEA Ultimate&quot;</span><br><span class="line">&quot;Icon&quot;=&quot;D:\\ProgramFiles\\Java\\ideaIU\\bin\\idea64.exe&quot;</span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\Directory\shell\ideaIU\command]</span><br><span class="line">@=&quot;\&quot;D:\\ProgramFiles\\Java\\ideaIU\\bin\\idea64.exe\&quot; \&quot;%1\&quot;&quot;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="使用代理"><a href="#使用代理" class="headerlink" title="使用代理"></a>使用代理</h3><p>设置IDEA的代理，以提高打从开网络下载的项目时，下载 <code>Maven Wrapper</code>指定的 <code>Maven</code>的速度，同时，确认代理服务器代理域名含有<code>apache.org</code>的地址</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-DsocksProxyHost=127.0.0.1 -DsocksProxyPort=1080</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-下载配置-Maven"><a href="#1-下载配置-Maven" class="headerlink" title="1. 下载配置 Maven"></a>1. 下载配置 <code>Maven</code></h3><p><a target="_blank" rel="noopener" href="https://maven.apache.org/">下载<code>Maven</code></a><br>或者使用IDEA自带Maven(<code>$&#123;IntelliJ IDEA&#125;\plugins\maven\lib\maven3</code>)<br>配置环境变量<code>MAVEN_HOME</code>为<code>D:\ProgramFiles\Java\apache-maven-3.6.0</code>或<code>D:\ProgramFiles\Java\ideaIU-2019.3.1.win\plugins\maven\lib\maven3</code><br>并将<code>%MAVEN_HOME%\bin</code>添加到<code>PATH</code>中<br>命令行测试</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn -v</span><br></pre></td></tr></table></figure>
+<p>约定配置<br><code>Maven</code>提倡使用一个共同的标准目录结构，<code>Maven</code>使用约定优于配置的原则，大家尽可能的遵守这样的目录结构。如下所示：</p>
+<table>
+<thead>
+<tr>
+<th>目录</th>
+<th>目的</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>$&#123;basedir&#125;</code></td>
+<td>存放<code>pom.xml</code>和所有的子目录</td>
+</tr>
+<tr>
+<td><code>$&#123;basedir&#125;/src/main/java</code></td>
+<td>项目的<code>java</code>源代码</td>
+</tr>
+<tr>
+<td><code>$&#123;basedir&#125;/src/main/resources</code></td>
+<td>项目的资源，比如说<code>property</code>文件，<code>springmvc.xml</code></td>
+</tr>
+<tr>
+<td><code>$&#123;basedir&#125;/src/test/java</code></td>
+<td>项目的测试类，比如说<code>Junit</code>代码</td>
+</tr>
+<tr>
+<td><code>$&#123;basedir&#125;/src/test/resources</code></td>
+<td>测试用的资源</td>
+</tr>
+<tr>
+<td><code>$&#123;basedir&#125;/src/main/webapp/WEB-INF</code></td>
+<td><code>web</code>应用文件目录，<code>web</code>项目的信息，比如存放<code>web.xml</code>、本地图片、<code>jsp</code>视图页面</td>
+</tr>
+<tr>
+<td><code>$&#123;basedir&#125;/target</code></td>
+<td>打包输出目录</td>
+</tr>
+<tr>
+<td><code>$&#123;basedir&#125;/target/classes</code></td>
+<td>编译输出目录</td>
+</tr>
+<tr>
+<td><code>$&#123;basedir&#125;/target/test-classes</code></td>
+<td>测试编译输出目录</td>
+</tr>
+<tr>
+<td><code>Test.java</code></td>
+<td><code>Maven</code>只会自动运行符合该命名规则的测试类</td>
+</tr>
+<tr>
+<td><code>~/.m2/repository</code></td>
+<td><code>Maven</code>默认的本地仓库目录位置（可更改）</td>
+</tr>
+</tbody></table>
+<p>编辑<code>%MAVEN_HOME%\conf\settings.xml</code>，<br>设置本地仓库</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;localRepository&gt;D:/PackagesRepository/Java/Maven&lt;/localRepository&gt;</span><br></pre></td></tr></table></figure>
+<p>设置阿里云镜像,在<mirrors></mirrors>标签中添加 mirror 子节点【不建议】:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- mirrorOf设置</span><br><span class="line">    *           匹配所有仓库ID。</span><br><span class="line">    external:*  匹配除本地主机或基于文件的存储库外的所有仓库。</span><br><span class="line">    从 Maven 3.8.0 开始，external:http:* 匹配所有使用 HTTP 的存储库，除了那些使用 localhost 的存储库。</span><br><span class="line">    可以使用逗号作为分隔符指定多个存储库</span><br><span class="line">    感叹号可以与上述通配符之一结合使用以排除存储库 ID</span><br><span class="line">  </span><br><span class="line">    注意不要在逗号分隔列表中的标识符或通配符周围包含额外的空格。</span><br><span class="line"></span><br><span class="line">    当您使用高级语法并配置多个镜像时，声明顺序很重要。&lt;mirrorOf&gt;当 Maven</span><br><span class="line">查找某个存储库的镜像时，它首先检查与存储库标识符完全匹配的镜像。如果没有找到直接匹配，Maven会根据上面的规则（如果有的话）选择第一个匹配的镜像声明。因此，您可以通过更改定义中的顺序来影响匹配顺序settings.xml</span><br><span class="line"></span><br><span class="line">    例子：</span><br><span class="line">    </span><br><span class="line">    * = 一切</span><br><span class="line">    external:* = 不在本地主机上且不基于文件的所有内容。</span><br><span class="line">    repo,repo1 = repo 或 repo1</span><br><span class="line">    *,!repo1 = 除 repo1 之外的所有内容</span><br><span class="line">  --&gt;</span><br><span class="line">&lt;mirror&gt;</span><br><span class="line">  &lt;id&gt;aliyun-center-and-jcenter&lt;/id&gt;</span><br><span class="line">  &lt;mirrorOf&gt;central,jcenter&lt;/mirrorOf&gt;</span><br><span class="line">  &lt;name&gt;阿里云的central仓和jcenter仓聚合仓&lt;/name&gt;</span><br><span class="line">  &lt;url&gt;https://maven.aliyun.com/repository/public&lt;/url&gt;</span><br><span class="line">&lt;/mirror&gt;</span><br><span class="line"></span><br><span class="line">&lt;mirror&gt;</span><br><span class="line">  &lt;id&gt;aliyun-spring&lt;/id&gt;</span><br><span class="line">  &lt;mirrorOf&gt;spring&lt;/mirrorOf&gt;</span><br><span class="line">  &lt;name&gt;阿里云的spring镜像&lt;/name&gt;</span><br><span class="line">  &lt;url&gt;https://maven.aliyun.com/repository/spring&lt;/url&gt;</span><br><span class="line">&lt;/mirror&gt;</span><br><span class="line"></span><br><span class="line">&lt;mirror&gt;</span><br><span class="line">  &lt;id&gt;aliyun-spring-plugin&lt;/id&gt;</span><br><span class="line">  &lt;mirrorOf&gt;spring-plugin&lt;/mirrorOf&gt;</span><br><span class="line">  &lt;name&gt;阿里云的spring-plugin镜像&lt;/name&gt;</span><br><span class="line">  &lt;url&gt;https://maven.aliyun.com/repository/spring-plugin&lt;/url&gt;</span><br><span class="line">&lt;/mirror&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;mirror&gt;</span><br><span class="line">  &lt;id&gt;aliyun-google&lt;/id&gt;</span><br><span class="line">  &lt;mirrorOf&gt;google&lt;/mirrorOf&gt;</span><br><span class="line">  &lt;name&gt;阿里云的谷歌镜像&lt;/name&gt;</span><br><span class="line">  &lt;url&gt;https://maven.aliyun.com/repository/google&lt;/url&gt;</span><br><span class="line">&lt;/mirror&gt;</span><br><span class="line"></span><br><span class="line">&lt;mirror&gt;</span><br><span class="line">  &lt;id&gt;aliyun-gradle-plugin&lt;/id&gt;</span><br><span class="line">  &lt;mirrorOf&gt;gradle-plugin&lt;/mirrorOf&gt;</span><br><span class="line">  &lt;name&gt;阿里云的gradle-plugin镜像&lt;/name&gt;</span><br><span class="line">  &lt;url&gt;https://maven.aliyun.com/repository/gradle-plugin&lt;/url&gt;</span><br><span class="line">&lt;/mirror&gt;</span><br><span class="line"></span><br><span class="line">&lt;mirror&gt;</span><br><span class="line">  &lt;id&gt;aliyun-grails-core&lt;/id&gt;</span><br><span class="line">  &lt;mirrorOf&gt;grails-core&lt;/mirrorOf&gt;</span><br><span class="line">  &lt;name&gt;阿里云的grails-core镜像&lt;/name&gt;</span><br><span class="line">  &lt;url&gt;https://maven.aliyun.com/repository/grails-core&lt;/url&gt;</span><br><span class="line">&lt;/mirror&gt;</span><br></pre></td></tr></table></figure>
+<p>设置私有仓库【建议把阿里云镜像当做私有仓库设置】</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line">&lt;profile&gt;</span><br><span class="line">  &lt;id&gt;aliyun-central&lt;/id&gt;</span><br><span class="line">  &lt;activation&gt;</span><br><span class="line">    &lt;activeByDefault&gt;true&lt;/activeByDefault&gt;</span><br><span class="line">    &lt;jdk&gt;1.8&lt;/jdk&gt;</span><br><span class="line">  &lt;/activation&gt;</span><br><span class="line">  &lt;properties&gt;</span><br><span class="line">    &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;</span><br><span class="line">    &lt;maven.compiler.encoding&gt;UTF-8&lt;/maven.compiler.encoding&gt;</span><br><span class="line">    &lt;java.version&gt;1.8&lt;/java.version&gt;</span><br><span class="line">    &lt;maven.compiler.source&gt;1.8&lt;/maven.compiler.source&gt;</span><br><span class="line">    &lt;maven.compiler.target&gt;1.8&lt;/maven.compiler.target&gt;</span><br><span class="line">    &lt;maven.compiler.version&gt;1.8&lt;/maven.compiler.version&gt;</span><br><span class="line">  &lt;/properties&gt;</span><br><span class="line">  &lt;repositories&gt;</span><br><span class="line">    &lt;repository&gt;</span><br><span class="line">      &lt;id&gt;aliyun&lt;/id&gt;</span><br><span class="line">      &lt;name&gt;Public Repositories&lt;/name&gt;</span><br><span class="line">      &lt;url&gt;https://maven.aliyun.com/repository/public&lt;/url&gt;</span><br><span class="line">      &lt;releases&gt;</span><br><span class="line">        &lt;enabled&gt;true&lt;/enabled&gt;</span><br><span class="line">        &lt;!-- always, daily (default), interval:X (where X is an integer in minutes) or never --&gt;</span><br><span class="line">        &lt;!-- &lt;updatePolicy&gt;always&lt;/updatePolicy&gt; --&gt;</span><br><span class="line">        &lt;!-- ignore, fail, or warn on missing or incorrect checksums --&gt;</span><br><span class="line">        &lt;checksumPolicy&gt;fail&lt;/checksumPolicy&gt;</span><br><span class="line">      &lt;/releases&gt;</span><br><span class="line">      &lt;snapshots&gt;</span><br><span class="line">        &lt;enabled&gt;true&lt;/enabled&gt;</span><br><span class="line">        &lt;!-- &lt;updatePolicy&gt;always&lt;/updatePolicy&gt; --&gt;</span><br><span class="line">        &lt;checksumPolicy&gt;fail&lt;/checksumPolicy&gt;</span><br><span class="line">      &lt;/snapshots&gt;</span><br><span class="line">    &lt;/repository&gt;</span><br><span class="line">    &lt;repository&gt;</span><br><span class="line">      &lt;id&gt;central&lt;/id&gt;</span><br><span class="line">      &lt;name&gt;central&lt;/name&gt;</span><br><span class="line">      &lt;url&gt;https://repo.maven.apache.org/maven2&lt;/url&gt;</span><br><span class="line">      &lt;releases&gt;</span><br><span class="line">        &lt;enabled&gt;true&lt;/enabled&gt;</span><br><span class="line">        &lt;!-- &lt;updatePolicy&gt;always&lt;/updatePolicy&gt; --&gt;</span><br><span class="line">        &lt;checksumPolicy&gt;fail&lt;/checksumPolicy&gt;</span><br><span class="line">      &lt;/releases&gt;</span><br><span class="line">      &lt;snapshots&gt;</span><br><span class="line">        &lt;enabled&gt;true&lt;/enabled&gt;</span><br><span class="line">        &lt;!-- &lt;updatePolicy&gt;always&lt;/updatePolicy&gt; --&gt;</span><br><span class="line">        &lt;checksumPolicy&gt;fail&lt;/checksumPolicy&gt;</span><br><span class="line">      &lt;/snapshots&gt;</span><br><span class="line">    &lt;/repository&gt;</span><br><span class="line">  &lt;/repositories&gt;</span><br><span class="line">  &lt;pluginRepositories&gt;</span><br><span class="line">    &lt;pluginRepository&gt;</span><br><span class="line">      &lt;id&gt;aliyun&lt;/id&gt;</span><br><span class="line">      &lt;name&gt;Public Repositories&lt;/name&gt;</span><br><span class="line">      &lt;url&gt;https://maven.aliyun.com/repository/public&lt;/url&gt;</span><br><span class="line">      &lt;releases&gt;</span><br><span class="line">        &lt;enabled&gt;true&lt;/enabled&gt;</span><br><span class="line">        &lt;!-- &lt;updatePolicy&gt;always&lt;/updatePolicy&gt; --&gt;</span><br><span class="line">        &lt;checksumPolicy&gt;fail&lt;/checksumPolicy&gt;</span><br><span class="line">      &lt;/releases&gt;</span><br><span class="line">      &lt;snapshots&gt;</span><br><span class="line">        &lt;enabled&gt;true&lt;/enabled&gt;</span><br><span class="line">        &lt;!-- &lt;updatePolicy&gt;always&lt;/updatePolicy&gt; --&gt;</span><br><span class="line">        &lt;checksumPolicy&gt;fail&lt;/checksumPolicy&gt;</span><br><span class="line">      &lt;/snapshots&gt;</span><br><span class="line">    &lt;/pluginRepository&gt;</span><br><span class="line">    &lt;pluginRepository&gt;</span><br><span class="line">      &lt;id&gt;central&lt;/id&gt;</span><br><span class="line">      &lt;name&gt;central&lt;/name&gt;</span><br><span class="line">      &lt;url&gt;https://repo.maven.apache.org/maven2&lt;/url&gt;</span><br><span class="line">      &lt;releases&gt;</span><br><span class="line">        &lt;enabled&gt;true&lt;/enabled&gt;</span><br><span class="line">        &lt;!-- &lt;updatePolicy&gt;always&lt;/updatePolicy&gt; --&gt;</span><br><span class="line">        &lt;checksumPolicy&gt;fail&lt;/checksumPolicy&gt;</span><br><span class="line">      &lt;/releases&gt;</span><br><span class="line">      &lt;snapshots&gt;</span><br><span class="line">        &lt;enabled&gt;true&lt;/enabled&gt;</span><br><span class="line">        &lt;!-- &lt;updatePolicy&gt;never&lt;/updatePolicy&gt; --&gt;</span><br><span class="line">        &lt;checksumPolicy&gt;fail&lt;/checksumPolicy&gt;</span><br><span class="line">      &lt;/snapshots&gt;</span><br><span class="line">    &lt;/pluginRepository&gt;</span><br><span class="line">  &lt;/pluginRepositories&gt;</span><br><span class="line">&lt;/profile&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>同时，激活该设置</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;activeProfiles&gt;</span><br><span class="line">  &lt;activeProfile&gt;aliyun-central&lt;/activeProfile&gt;</span><br><span class="line">&lt;/activeProfiles&gt;</span><br></pre></td></tr></table></figure>
+<p>参考</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://maven.apache.org/settings.html">Maven Settings Reference</a></li>
+<li><a target="_blank" rel="noopener" href="https://maven.apache.org/settings.html#Mirrors">Maven Settings Reference Mirrors</a></li>
+<li><a target="_blank" rel="noopener" href="https://maven.apache.org/guides/mini/guide-mirror-settings.html">Using Mirrors for Repositories</a></li>
+<li><a target="_blank" rel="noopener" href="https://swenfang.github.io/2018/06/03/Maven-Priority/">Maven仓库理解和优先级</a></li>
+<li><a target="_blank" rel="noopener" href="https://maven.aliyun.com/mvn/guide">阿里云云效 Maven</a></li>
+</ol>
+<p>archetype配置(<code>maven-archetype-plugin 3.x</code>已经不支持此配置,<code>maven-archetype-plugin 2.x</code>可以)</p>
+<p><code>archetype</code>插件有一个<code>archetypeCatalog</code>参数，这个参数指定从哪里获取<code>archetype-catalog.xml</code>文件，可选的取值有：</p>
+<ul>
+<li><code>internal</code> 只使用内置的目录文件（只包含<code>org.apache.maven.archetypes</code>底下的模板工程）</li>
+<li><code>local</code> 使用本地的目录文件（<code>~/.m2/archetype-catalog.xml</code>）</li>
+<li><code>remote</code> 使用<code>maven</code>网站上的目录文件</li>
+<li><code>file://path/to/archetype-catalog.xml</code> 指定本地的一个目录文件，如果文件叫<code>archetype-catalog.xml</code>指定目录就可以了</li>
+<li><code>http://url/to/archetype-catalog.xml</code> 指定远程的一个目录文件，如果文件叫<code>archetype-catalog.xml</code>指定目录就可以了<br>默认的值是<code>remote,local</code>，也就是先显示官方网站上的，再显示本地的。</li>
+</ul>
+<p>所以我们可以有两种做法：</p>
+<ul>
+<li>如果你觉得<code>org.apache.maven.archetypes</code>里的模板工程够用了，直接指定<code>-DarchetypeCatalog=internal</code>即可</li>
+<li>如果你想要完整的模板工程，可以先下载<a target="_blank" rel="noopener" href="https://repo.maven.apache.org/maven2/archetype-catalog.xml">archetype-catalog.xml</a><code>https://repo.maven.apache.org/maven2/archetype-catalog.xml</code>，然后把它放到<code>~/.m2</code>下，然后指定<code>-DarchetypeCatalog=local</code>即可</li>
+</ul>
+<p><code>IDEA</code> 的<code>Maven</code>配置<br>【File】→【Settings】→【Build，Execution，Deployment】→【Build Tools】→【Maven】</p>
+<ul>
+<li>【Maven home directory】设为<code>%MAVEN_HOME%</code>，即<code>Marven</code>的目录</li>
+<li>【User Settings file】设为<code>%MAVEN_HOME%\conf\settings.xml</code>,即配置文件</li>
+<li>【Local repository】设为<code>E:\PackagesRepository\Java</code>,即本地存放<code>maven</code>仓库的目录，默认会随着【User Settings file】的更改而更改</li>
+<li>下一级【Runner】里【<code>VM Options</code>】设为<code>-DarchetypeCatalog=internal</code></li>
+</ul>
+<p><em><strong>注意：</strong></em><br>这种配置方式，都是针对项目的具体配置，若新建项目，可能还需要配置。</p>
+<p>全局配置，都是从启动页面的【Configure】→【Settings】开始。具体路径如下：<br>【Configure】→【Settings】→【Build，Execution，Deployment】→【Build Tools】→【Maven】</p>
+<p>另外，可以在<code>maven</code>全局设置里，可以设置项目默认的JDK</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;profile&gt;</span><br><span class="line">  &lt;id&gt;jdk8&lt;/id&gt;</span><br><span class="line">  &lt;activation&gt;</span><br><span class="line">    &lt;activeByDefault&gt;true&lt;/activeByDefault&gt;</span><br><span class="line">    &lt;jdk&gt;1.8&lt;/jdk&gt;</span><br><span class="line">  &lt;/activation&gt;</span><br><span class="line">  &lt;properties&gt;</span><br><span class="line">    &lt;maven.compiler.source&gt;1.8&lt;/maven.compiler.source&gt;</span><br><span class="line">    &lt;maven.compiler.target&gt;1.8&lt;/maven.compiler.target&gt;</span><br><span class="line">    &lt;maven.compiler.compilerVersion&gt;1.8&lt;/maven.compiler.compilerVersion&gt;</span><br><span class="line">  &lt;/properties&gt;</span><br><span class="line">&lt;/profile&gt; </span><br></pre></td></tr></table></figure>
+
+<h3 id="2-配置Gradle"><a href="#2-配置Gradle" class="headerlink" title="2. 配置Gradle"></a>2. 配置Gradle</h3><p><a target="_blank" rel="noopener" href="https://gradle.org/releases/">下载Gradle</a><br>解压到<code>D:\ProgramFiles\Java\gradle-version</code><br>配置环境变量<br><code>GRADLE_HOME</code>，值为<code>D:\ProgramFiles\Java\gradle-version</code><br><code>GRADLE_USER_HOME</code>,值为<code>D:\PackagesRepository\Java\Gradle</code>  &#x2F;&#x2F; 不能与maven公用本地仓库，只能通过mavenLocal()使用maven的本地仓库<br>添加<code>PATH</code><br><code>%GRADLE_HOME%\bin</code><br>命令行测试</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gradle -v</span><br></pre></td></tr></table></figure>
+<p>另外，为了加快gradle构建，在家目录下的.gradle&#x2F;gradle.properties文件（如没有，可需要新建文件），加上如下的代码即可</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">org.gradle.daemon=true</span><br><span class="line">org.gradle.jvmargs=-Xmx16384m -XX:MaxPermSize=2048m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8</span><br><span class="line">org.gradle.parallel=true</span><br></pre></td></tr></table></figure>
+<p>参考</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://droidyue.com/blog/2017/04/16/speedup-gradle-building/">一些关于加速Gradle构建的个人经验</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/IOT_AI/article/details/106617626">IDEA如何正确配置Gradle? GRADLE_USER_HOME 和 Gradle user home的区别</a></li>
+</ol>
+<p>使用<code>gradle</code>构建的项目，在项目的根目录下都会有一个<code>build.gradle</code>文件，存储着构建的配置，其配置语法使用<code>groovy DSL</code></p>
+<p><code>gradle</code>的构建依赖通常包含两部分:</p>
+<ul>
+<li><p>构建前依赖: 指的是如果使用了<code>gradle</code>默认不包含的插件或依赖进行构建，那么<code>gradle</code>本身应该从哪里获取这些依赖工具</p>
+</li>
+<li><p>构建中依赖: 这里和<code>maven</code>一致，就是项目依赖的包</p>
+</li>
+<li><p>maven { url: ‘&#x2F;path&#x2F;to&#x2F;custom&#x2F;url’ }: 自定义的maven仓库路径</p>
+</li>
+</ul>
+<p>配置的时候大体需要注意以下两点:</p>
+<ul>
+<li><code>gradle</code>允许存在多个<code>maven</code>仓库，可以从不同的仓库中拿到依赖</li>
+<li>如果存在多个<code>maven</code>仓库，那么将按照书写顺序依次尝试查找依赖</li>
+</ul>
+<p>明白以上两点，大体就知道怎么配置了，应该按照速度从快到慢的顺序填写，所以通常<code>mavenLocal()</code>放第一位，<code>mavenCentral()</code>&#x2F;<code>jcenter()</code>通常放最后作为冗余配置，在本地镜像不可用时作为备用仓库。</p>
+<p><code>Gradle</code>仓库建议配置如下,并放在目录 <code>GRADLE_USER_HOME</code>下,即<code>D:\PackagesRepository\Java\Gradle</code> </p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> repoConfig = &#123;</span><br><span class="line"></span><br><span class="line">    mavenLocal()</span><br><span class="line">        </span><br><span class="line">    <span class="comment">// def ALIYUN_CENTRAL_URL = &#x27;https://maven.aliyun.com/repository/central&#x27;</span></span><br><span class="line">    <span class="comment">// def ALIYUN_JCENTER_URL = &#x27;https://maven.aliyun.com/repository/public&#x27;</span></span><br><span class="line">    <span class="keyword">def</span> ALIYUN_PUBLIC_URL = <span class="string">&#x27;https://maven.aliyun.com/repository/public/&#x27;</span>  <span class="comment">// 此仓库为 central 和 jcentral 的聚合</span></span><br><span class="line">    <span class="keyword">def</span> ALIYUN_GOOGLE_URL = <span class="string">&#x27;https://maven.aliyun.com/repository/google/&#x27;</span></span><br><span class="line">    <span class="keyword">def</span> ALIYUN_GRADLE_PLUGIN_URL = <span class="string">&#x27;https://maven.aliyun.com/repository/gradle-plugin/&#x27;</span></span><br><span class="line">    <span class="keyword">def</span> ALIYUN_SPRING_URL = <span class="string">&#x27;https://maven.aliyun.com/repository/spring/&#x27;</span></span><br><span class="line">    <span class="keyword">def</span> ALIYUN_SPRING_PLUGIN_URL = <span class="string">&#x27;https://maven.aliyun.com/repository/spring-plugin/&#x27;</span></span><br><span class="line">    <span class="keyword">def</span> ALIYUN_GRAILS_CORE_URL = <span class="string">&#x27;https://maven.aliyun.com/repository/grails-core/&#x27;</span></span><br><span class="line">    <span class="keyword">def</span> ALIYUN_APACHE_SNAPSHOTS_URL = <span class="string">&#x27;https://maven.aliyun.com/repository/apache-snapshots/&#x27;</span></span><br><span class="line">    <span class="keyword">def</span> TENCENT_CLOUD_URL = <span class="string">&#x27;https://mirrors.cloud.tencent.com/gradle&#x27;</span></span><br><span class="line"></span><br><span class="line">    all &#123; ArtifactRepository repo -&gt;</span><br><span class="line">        <span class="keyword">if</span>(repo <span class="keyword">instanceof</span> MavenArtifactRepository)&#123;</span><br><span class="line">            <span class="keyword">def</span> url = repo.url.toString()</span><br><span class="line">            println(<span class="string">&#x27;orginal:&#x27;</span>+url)</span><br><span class="line">            <span class="keyword">if</span> (url.startsWith(<span class="string">&#x27;https://repo1.maven.org/maven2/&#x27;</span>)) &#123;</span><br><span class="line">                println(<span class="string">&#x27;replaed:&#x27;</span>+ <span class="string">&#x27;ALIYUN_PUBLIC_URL&#x27;</span>)</span><br><span class="line">                project.logger.lifecycle <span class="string">&quot;Repository $&#123;repo.url&#125; replaced by $ALIYUN_PUBLIC_URL.&quot;</span></span><br><span class="line">                remove repo</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (url.startsWith(<span class="string">&#x27;https://jcenter.bintray.com/&#x27;</span>)) &#123;</span><br><span class="line">                project.logger.lifecycle <span class="string">&quot;Repository $&#123;repo.url&#125; replaced by $ALIYUN_PUBLIC_URL.&quot;</span></span><br><span class="line">                println(<span class="string">&#x27;replaed:&#x27;</span>+ <span class="string">&#x27;ALIYUN_PUBLIC_URL&#x27;</span>)</span><br><span class="line">                remove repo</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (url.startsWith(<span class="string">&#x27;https://maven.google.com/&#x27;</span>)) &#123;</span><br><span class="line">                println(<span class="string">&#x27;replaed:&#x27;</span>+ <span class="string">&#x27;ALIYUN_GOOGLE_URL&#x27;</span>)</span><br><span class="line">                project.logger.lifecycle <span class="string">&quot;Repository $&#123;repo.url&#125; replaced by $ALIYUN_GOOGLE_URL.&quot;</span></span><br><span class="line">                remove repo</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (url.startsWith(<span class="string">&#x27;https://plugins.gradle.org/m2/&#x27;</span>)) &#123;</span><br><span class="line">                println(<span class="string">&#x27;replaed:&#x27;</span>+ <span class="string">&#x27;ALIYUN_GRADLE_PLUGIN_URL&#x27;</span>)</span><br><span class="line">                project.logger.lifecycle <span class="string">&quot;Repository $&#123;repo.url&#125; replaced by $ALIYUN_GRADLE_PLUGIN_URL.&quot;</span></span><br><span class="line">                remove repo</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (url.startsWith(<span class="string">&#x27;http://repo.spring.io/libs-milestone/&#x27;</span>)) &#123;</span><br><span class="line">                project.logger.lifecycle <span class="string">&quot;Repository $&#123;repo.url&#125; replaced by $ALIYUN_SPRING_URL.&quot;</span></span><br><span class="line">                println(<span class="string">&#x27;replaed:&#x27;</span>+ <span class="string">&#x27;ALIYUN_SPRING_URL&#x27;</span>)</span><br><span class="line">                remove repo</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (url.startsWith(<span class="string">&#x27;http://repo.spring.io/plugins-release/&#x27;</span>)) &#123;</span><br><span class="line">                project.logger.lifecycle <span class="string">&quot;Repository $&#123;repo.url&#125; replaced by $ALIYUN_SPRING_PLUGIN_URL.&quot;</span></span><br><span class="line">                println(<span class="string">&#x27;replaed:&#x27;</span>+ <span class="string">&#x27;ALIYUN_SPRING_PLUGIN_URL&#x27;</span>)</span><br><span class="line">                remove repo</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (url.startsWith(<span class="string">&#x27;https://repo.grails.org/grails/core/&#x27;</span>)) &#123;</span><br><span class="line">                project.logger.lifecycle <span class="string">&quot;Repository $&#123;repo.url&#125; replaced by $ALIYUN_GRAILS_CORE_URL.&quot;</span></span><br><span class="line">                println(<span class="string">&#x27;replaed:&#x27;</span>+ <span class="string">&#x27;ALIYUN_GRAILS_CORE_URL&#x27;</span>)</span><br><span class="line">                remove repo</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (url.startsWith(<span class="string">&#x27;https://repository.apache.org/snapshots/&#x27;</span>)) &#123;</span><br><span class="line">                project.logger.lifecycle <span class="string">&quot;Repository $&#123;repo.url&#125; replaced by $ALIYUN_APACHE_SNAPSHOTS_URL.&quot;</span></span><br><span class="line">                println(<span class="string">&#x27;replaed:&#x27;</span>+ <span class="string">&#x27;ALIYUN_APACHE_SNAPSHOTS_URL&#x27;</span>)</span><br><span class="line">                remove repo</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    maven &#123; url ALIYUN_PUBLIC_URL &#125;</span><br><span class="line">    maven &#123; url ALIYUN_GOOGLE_URL &#125;</span><br><span class="line">    maven &#123; url ALIYUN_GRADLE_PLUGIN_URL &#125;</span><br><span class="line">    maven &#123; url ALIYUN_SPRING_URL &#125;</span><br><span class="line">    maven &#123; url ALIYUN_SPRING_PLUGIN_URL &#125;</span><br><span class="line">    maven &#123; url ALIYUN_GRAILS_CORE_URL &#125;</span><br><span class="line">    maven &#123; url ALIYUN_APACHE_SNAPSHOTS_URL &#125;  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">allprojects &#123;</span><br><span class="line">    buildscript &#123;</span><br><span class="line">        repositories repoConfig</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    repositories repoConfig</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>存储库只是文件的集合，按分组，名称和版本来组织构造。 </p>
+<p>默认情况下，Gradle不定义任何存储库。 这里使用repositories 指定存储库。 </p>
+<ul>
+<li><code>mavenLocal()</code>：指定使用maven本地仓库，而本地仓库在配置maven时setting文件指定的仓库位置。如<code>&lt;localRepository&gt;D:/PackagesRepository/Java&lt;/localRepository&gt;</code>，同时将setting文件拷贝到<code>USER_HOME\.m2</code>目录下，一般该目录下是没有<code>setting</code>文件的，<br> <code>gradle</code>查找<code>jar</code>包顺序如下：<code>gradle</code>默认会按以下顺序去查找本地的仓库：【<code>USER_HOME/.m2/settings.xml</code>】→【 <code>M2_HOME/conf/settings.xml</code>】→【<code>USER_HOME/.m2/repository</code>】</li>
+<li><code>maven &#123; url &quot;http://maven.aliyun.com/nexus/content/groups/public/&quot;&#125;</code>:指定阿里云镜像加速地址 </li>
+<li><code>mavenCentral()</code>:这是Maven的中央仓库，无需配置，直接声明就可以使用 </li>
+<li><code>jcenter()</code>:JCenter中央仓库，实际也是是用的maven搭建的，但相比Maven仓库更友好，通过CDN分发，并且支持https访问</li>
+</ul>
+<p>后面的<code>maven &#123; url 地址&#125;</code>，指定<code>maven</code>仓库，一般用私有仓库地址或其它的第三方库 </p>
+<p><code>gradle</code>按配置顺序寻找<code>jar</code>文件。如果本地存在就不会再去下载。不存在的再去<code>maven</code>仓库下载，这里注意下载下来的<code>jar</code>文件不在<code>maven</code>仓库里，而是在<code>gradle</code>的主工作目录下，如上面的<code>E:\Git\Gradle</code>目录 </p>
+<p>构建中依赖<br>定义构建时依赖的仓库就在<code>repositories &#123;&#125;</code>这个闭包中，规则和配置和<code>buildscript.repositories &#123;&#125;</code>完全一致，这里就不再赘述了，直接贴样例:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">repositories &#123;</span><br><span class="line">    mavenLocal()</span><br><span class="line">    maven &#123; url &quot;https://maven.aliyun.com/repository/public&quot; &#125;</span><br><span class="line">    jcenter()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">dependencies &#123;</span><br><span class="line">    compile &quot;org.apache.hbase:hbase-client:1.2.2&quot;</span><br><span class="line">    compile &quot;org.mongodb:mongodb-driver:3.3.0&quot;</span><br><span class="line">    compile &quot;org.yaml:snakeyaml:1.17&quot;</span><br><span class="line">    compile &#x27;org.apache.logging.log4j:log4j-core:2.6.2&#x27;</span><br><span class="line">    compile &#x27;org.apache.logging.log4j:log4j-api:2.6.2&#x27;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>下面的<code>dependencies &#123;&#125;</code>就是定义的到底依赖哪些<code>jar</code>包，如果本地的<code>gradle</code>缓存中没找到，就会从<code>repositories &#123;&#125;</code>仓库中寻找</p>
+<p>修改<code>init-script</code>方式修改默认仓库<br>以上的方案适合自己的项目，方便直接修改<code>build.gradle</code>的情况，某些情况下无法直接修改<code>build.gradle</code>，比如参与开源项目，并不方便修改别人写好的配置，再比如在CI流水线中，并不方便对源代码进行任何形式的修改等等场景。</p>
+<p>对于这一类的需求，<code>gradle</code>提供了<code>init-script</code>的形式修改仓库。也就是说，这种形式非常类似于<code>Linux</code>的初始化脚本<code>init.d</code>，会加载一遍之后才完成系统启动。每个<code>gradle</code>命令执行之前会先执行一遍<code>init-script</code>，然后才真正执行构建的<code>task</code>。</p>
+<p>因此，我们只要把仓库的配置写入<code>init-script</code>配置即可，由于<code>build.gradle</code>配置通常都会定义多个<code>maven</code>仓库，因此<code>init-script</code>脚本可以不用考虑仓库冗余的问题。</p>
+<p>关于<code>init-script</code>详情可以去看<a target="_blank" rel="noopener" href="https://docs.gradle.org/current/userguide/init_scripts.html">官方文档</a>介绍，我这里简单总结一下。</p>
+<p><code>init</code>脚本的查找路径:</p>
+<ul>
+<li>使用-I&#x2F;–init-script直接在命令行指定初始化脚本</li>
+<li>~&#x2F;.gradle&#x2F;init.gradle</li>
+<li>~&#x2F;.gradle&#x2F;init.d&#x2F;*.gradle</li>
+<li>${GRADLE_HOME}&#x2F;init.d&#x2F;*.gradle<br>如果有多个<code>init-script</code>可以执行，那么将按照以上的顺序依次执行，对于<code>*.gradle</code>这样的文件将按照文件名排序顺序执行。</li>
+</ul>
+<p>撇开别的高级玩法和高级定制不谈，只说说定义镜像仓库怎么搞。我的做法是直接新建<code>~/.gradle/init.d/repo.gradle</code>:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">allprojects &#123;</span><br><span class="line">    buildscript &#123;</span><br><span class="line">        repositories &#123;</span><br><span class="line">            maven &#123; url &quot;https://maven.aliyun.com/repository/public&quot; &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    repositories &#123;</span><br><span class="line">        maven &#123; url &quot;https://maven.aliyun.com/repository/public&quot; &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这样就等于设置了默认的仓库配置，那么每次执行<code>gradle</code>的时候都会从我希望的镜像站中去寻找依赖并下载了</p>
+<p>但需要注意的是由于<code>plugins &#123;&#125; DSL</code>目前不使用<code>buildscript &#123;&#125;</code>配置，也无法通过<code>init script</code>定制的方式传入<code>settings.gradle</code>中，所以这种方式是不起作用的。不过好在这个<code>DSL</code>官方还在完善中，也许未来会支持也说不定。<br>参考<a target="_blank" rel="noopener" href="https://my.oschina.net/abcfy2/blog/783743">gradle使用maven镜像仓库的方法</a><br>参考<a target="_blank" rel="noopener" href="http://www.souvc.com/?p=2573">《Gradle实战》如何配置利用Maven本地仓库</a></p>
+<h5 id="构建命令"><a href="#构建命令" class="headerlink" title="构建命令"></a>构建命令</h5><p>清理命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gradle clean</span><br></pre></td></tr></table></figure>
+
+<p>构建打包命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gradle clean build</span><br></pre></td></tr></table></figure>
+<p>编译时跳过测试，使用<code>-x</code>,<code>-x</code>参数用来排除不需要执行的任务</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gradle clean build -x test</span><br></pre></td></tr></table></figure>
+
+<p>创建缓存依赖</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gradle clean build --refresh-dependencies</span><br></pre></td></tr></table></figure>
+<p>或者删除.gradle&#x2F;caches目录，构建的时候它会下载所有依赖并加入到缓存中</p>
+<p>阿里云镜像</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">buildscript &#123;</span><br><span class="line">    repositories &#123;</span><br><span class="line">        maven &#123; url &#x27;http://maven.aliyun.com/nexus/content/groups/public/&#x27; &#125;</span><br><span class="line">        maven &#123; url &#x27;http://maven.aliyun.com/nexus/content/repositories/jcenter&#x27; &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>构建脚本</p>
+<p><code>build.gradle</code>是<code>Gradle</code>默认的构建脚本文件，执行<code>Gradle</code>命令的时候，会默认加载当前目录下的<code>build.gradle</code>脚本文件<br>构建脚本如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">buildScript &#123;</span><br><span class="line">    repositories &#123;</span><br><span class="line">         mavenCentral()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">repositories &#123;</span><br><span class="line">     mavenCentral()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>buildScript</code>里的<code>repositories</code>是这个脚本需要的依赖库，与项目无关，在执行脚本时，会从这个库里下载对应的<code>jar</code>和插件。</li>
+<li><code>repositories</code>是项目里需要依赖的<code>jar</code>的库。</li>
+</ul>
+<p>查看项目已定义的所有task以及含义<br>命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gradle tasks</span><br></pre></td></tr></table></figure>
+<p>比如结果如下</p>
+<ul>
+<li>assemble: 编译</li>
+<li>build：编译并执行测试</li>
+<li>clean：删除build目录</li>
+<li>jar： 生成jar包</li>
+<li>test：执行单元测试</li>
+</ul>
+<p><code>maven</code>项目转换为<code>gradle</code>项目<br>在项目的根目录执行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gradle init --type pom</span><br></pre></td></tr></table></figure>
+<p>上面的命令会根据<code>pom</code>文件自动生成<code>gradle</code>项目所需的文件和配置，然后以<code>gradle</code>项目重新导入即可</p>
+<p><code>settings.gradle</code>配置</p>
+<p><code>settings.gradle</code>是模块<code>Module</code>配置文件。大多数<code>setting.gradle</code>的作用是为了配置子工程，根目录下的<code>settings.gradle</code>脚本文件是针对<code>module</code>的全局配置。</p>
+<p><code>settings.gradle</code>用于创建多<code>Project</code>的<code>Gradle</code>项目。<code>Project</code>在<code>IDEA</code>里对应<code>Module</code>模块。 例如配置<code>module</code>名<code>rootProject.name = &#39;DyoonPLM&#39;</code></p>
+<h5 id="IDEA配置"><a href="#IDEA配置" class="headerlink" title="IDEA配置"></a>IDEA配置</h5><p>设置<code>Gradle</code>下载的<code>jar</code>包仓库主目录<code>E:\Git\Gradle</code><br>【File】→【Settings】→【Build，Execution，Deployment】→【Build Tools】→【Gradle】→【Service directory path】</p>
+<h3 id="3-配置Groovy"><a href="#3-配置Groovy" class="headerlink" title="3. 配置Groovy"></a>3. 配置Groovy</h3><p><a target="_blank" rel="noopener" href="http://groovy-lang.org/download.html">下载Groovy</a><br>解压到<code>D:\ProgramFiles\Java\groovy-2.5.7</code><br>配置环境变量<br><code>GROOVY_HOME</code>，值为<code>D:\ProgramFiles\Java\groovy-2.5.7</code><br>添加<code>PATH</code>环境变量<br><code>%GROOVY_HOME%\bin</code><br>命令行测试</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">groovy -v</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-Android-SDK配置"><a href="#4-Android-SDK配置" class="headerlink" title="4. Android SDK配置"></a>4. Android SDK配置</h3><p>下载<a target="_blank" rel="noopener" href="https://developer.android.com/studio">Android SDK</a>,找到<code>Command line tools only</code>里的<code>Windows</code>版本</p>
+<p>解压到<code>D:\ProgramFiles\Java\sdk-tools-windows-4333796</code></p>
+<p>双击<code>SDK Manager.exe</code>，启动<code>SDK Manager</code><br><code>Tools</code>文件夹里面几个必须要安装的(只需要下载最新的版本就行了):</p>
+<ul>
+<li><code>Android SDK Tools</code>（这个我们在之前的一步已经下载好了的，一般不会让你再安装了，不过有可能会让你更新)</li>
+<li><code>Android SDK Platform-tools</code></li>
+<li><code>Android SDKBuild-tools</code></li>
+</ul>
+<p>API选择</p>
+<p>我们可以看到这里提供了很多很多从Android 2.1到Android 8.x的很多版本的API。建议：新手的话，选择一个最新的版本就好了，因为Android是向下兼容的。其他的以后你要用到了在下载就行了。<br>这里需要说明的是，如果以后不打算用模拟器调试，而是一直用真机来调试的话，那么就可以不用装<code>system images</code>。</p>
+<h3 id="5-Tomcat服务"><a href="#5-Tomcat服务" class="headerlink" title="5. Tomcat服务"></a>5. Tomcat服务</h3><p><a target="_blank" rel="noopener" href="https://www-us.apache.org/dist/tomcat/tomcat-9/v9.0.17/bin/apache-tomcat-9.0.17-windows-x64.zip">下载<code>Tomcat</code></a><br>解压到<code>D:\ProgramFiles\Java\apache-tomcat-9.0.17</code><br>配置环境变量:<br><code>CATALINA_BASE</code>,值为<code>D:\ProgramFiles\Java\apache-tomcat-9.0.17</code><br><code>CATALINA_HOME</code>,值为<code>D:\ProgramFiles\Java\apache-tomcat-9.0.17</code><br>添加<code>PATH</code> 变量<br><code>%CATALINA_HOME%\lib</code>和<code>%CATALINA_HOME%\bin</code><br>可安装为服务：<br><code>service.bat install</code><br>卸载为<code>service.bat remove</code><br>启动：<br>A、双击<code>tomcat9w.exe</code>操作<br>B、Window服务配置里<br>C、运行脚本<code>startup.bat</code>，关闭脚本<code>shutdown.bat</code></p>
+<h5 id="IDEA的Tomcat配置"><a href="#IDEA的Tomcat配置" class="headerlink" title="IDEA的Tomcat配置"></a><code>IDEA</code>的<code>Tomcat</code>配置</h5><p>【Run】→【Edit Configurations】→【Templates】→【Tomcat Server】&#x2F;【TomEE Server】→【+】<br>另对具体项目还需设置【Depoyment】，否则，运行不正常<br>或者<br>【Configure】→【Settings】→【Build，Execution，Deployment】→【Application Servers】→【+】→【Tomcat Server】</p>
+<ul>
+<li><code>CATALINA_HOME</code>与<code>CATALINA_BASE</code>的区别?</li>
+</ul>
+<ol>
+<li><code>CATALINA_HOME</code>即<code>Tomcat</code>的安装目录，<code>CATALINA_BASE</code>是<code>Tomcat</code>的工作目录。如果同时运行多个<code>Tomcat</code>实例，通常会配置多个工作目录。每个<code>Tomcat</code>实例独占一个工作目录，但是共享一个安装目录。</li>
+<li><code>Tomcat</code>每个运行实例需要使用自己的<code>conf</code>、<code>logs</code>、<code>temp</code>、<code>webapps</code>、<code>work</code>和<code>shared</code>目录，因此<code>CATALINA_BASE</code>就指向这些目录。 而其他目录主要包括了<code>Tomcat</code>的二进制文件和脚本，<code>CATALINA_HOME</code>就指向这些目录。<code>IntelliJ Idea</code>在每次重新启动<code>Tomcat</code>的时候都会重新建立或者说更新<code>Tomcat</code>工作目录的内容。</li>
+</ol>
+<ul>
+<li><p><code>IntelliJ Idea</code>中的<code>Tomcat</code>项目为何在<code>.IntelliJIdea2019.1\system\tomcat</code>中？<br> <code>intelliJ Idea</code>在每次启动<code>Tomcat</code>服务器的时候都会修改<code>CATALINA_BASE</code> </p>
+</li>
+<li><p><code>Tomcat</code>服务器是如何找到<code>localhost:8080</code>页面与<code>localhost:8080/demotwo</code>页面的？</p>
+</li>
+</ul>
+<ol>
+<li><code>IntelliJ Idea</code>根据<code>CATALINA_HOME</code>的启动<code>Tomcat</code>服务器</li>
+<li><code>IntelliJ Idea</code>在<code>CATALINA_BASE</code>指定的目录下生成项目独有的<code>conf</code>、<code>logs</code>、<code>work</code>等文件夹。</li>
+<li>在<code>CATALINA_BASE</code>中的<code>conf</code>文件夹下，文件<code>server.xml</code>的<code>Host</code>标签指定了<code>Tomcat</code>的根目录（通常为<code>CATALINA_HOME\webapps\ROOT</code>），即在浏览器中显示的<code>localhost:8080</code>定位的就是此处。<code>name</code>属性和<code>appBase</code>属性起到了一个映射的作用 </li>
+<li><code>conf</code>的子目录<code>Catalina\localhost\</code>下的<code>xml</code>文件（以虚拟路径命名）<code>Context</code>标签中的<code>path</code>属性和<code>docBase</code>属性也起到了同样的映射作用。即<code>name + path</code> （<code>localhost:8080/demotwo</code>）对应的是项目的发布路径。 </li>
+<li>如果在发布项目的时候将虚拟路径设置成“<code>\</code>”，<code>IntelliJ Idea</code>则不会生成<code>Catalina</code>子目录，而会在<code>server.xml</code>中将<code>name</code>属性映射到项目的发布路径</li>
+</ol>
+
+  </div>
+  <!--文末结束语-->
+  
+    <div style="text-align:center;color: #ccc;font-size:24px;"> --- The End --- </div>
+  
+  <!--页脚广告-->
+  
+  <div class="mdui-divider"></div>
+  
+  <nav>
+    
+      <a rel="prev" class="post-nav-item mdui-float-left" href="/2024/07/30/IntelliJ-IDEA%E4%B9%8BHttpClient%E7%BB%84%E4%BB%B6%E4%BD%BF%E7%94%A8/">
+        <i class="iconfont icon-angle-left"></i>
+        <span>IntelliJ-IDEA之HttpClient组件使用</span>
+      </a>
+    
+    
+      <a rel="next" class="post-nav-item mdui-float-right" href="/2024/07/30/grep%E4%BD%BF%E7%94%A8/">
+        <span>grep使用</span>
+        <i class="iconfont icon-angle-right"></i>
+      </a>
+    
+  </nav>
+</article>
+
+
+
+
+  <div class="toc-button"  style="z-index: 100;">
+    <button class="mdui-fab mdui-ripple mdui-color-teal" mdui-menu="{target: '#toc'}"><i class="iconfont icon-list"></i></button>
+    <ul class="mdui-menu" id="toc">
+      <li class="mdui-menu-item">
+        <a href="/2024/07/30/IntelliJ-IDEA%E4%BD%BF%E7%94%A8/" id="toc-header" class="mdui-ripple">文章目录</a>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#0-%E8%AE%BE%E7%BD%AEIDEA%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">1.</span> <span class="toc-text">0. 设置IDEA的配置文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8ja-netfilter"><span class="toc-number">2.</span> <span class="toc-text">使用ja-netfilter</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E5%8F%B3%E9%94%AE%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-number">3.</span> <span class="toc-text">添加右键快捷键</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E4%BB%A3%E7%90%86"><span class="toc-number">4.</span> <span class="toc-text">使用代理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%B8%8B%E8%BD%BD%E9%85%8D%E7%BD%AE-Maven"><span class="toc-number">5.</span> <span class="toc-text">1. 下载配置 Maven</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%85%8D%E7%BD%AEGradle"><span class="toc-number">6.</span> <span class="toc-text">2. 配置Gradle</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9E%84%E5%BB%BA%E5%91%BD%E4%BB%A4"><span class="toc-number">6.0.1.</span> <span class="toc-text">构建命令</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#IDEA%E9%85%8D%E7%BD%AE"><span class="toc-number">6.0.2.</span> <span class="toc-text">IDEA配置</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E9%85%8D%E7%BD%AEGroovy"><span class="toc-number">7.</span> <span class="toc-text">3. 配置Groovy</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Android-SDK%E9%85%8D%E7%BD%AE"><span class="toc-number">8.</span> <span class="toc-text">4. Android SDK配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-Tomcat%E6%9C%8D%E5%8A%A1"><span class="toc-number">9.</span> <span class="toc-text">5. Tomcat服务</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#IDEA%E7%9A%84Tomcat%E9%85%8D%E7%BD%AE"><span class="toc-number">9.0.1.</span> <span class="toc-text">IDEA的Tomcat配置</span></a></li></ol></li></ol></li></ol>
+      </li>
+    </ul>
+  </div>
+
+
+
+  </main>
+  <footer id="footer" class="mdui-text-center mdui-m-t-5 mdui-p-b-2 mdui-p-t-4 mdui-color-theme">
+  <div class="mdui-container">
+    <div class="mdui-row">
+      
+      <span>
+        &copy; 2024 - 2024 
+        
+        Frank
+      </span>
+    </div>
+    <div class="mdui-row">
+      
+    </div>
+    <div class="mdui-row">
+      
+        <div class="mdui-col-xs-6 mdui-text-right">
+          <span id="busuanzi_container_site_uv" style="display: none;"> <span class="iconfont icon-user"></span>总访客量 <span id="busuanzi_value_site_uv"></span></span>
+        </div>
+        <div class="mdui-col-xs-6 mdui-text-left">
+          <span id="busuanzi_container_site_pv" style="display: none;"> <span class="iconfont icon-eye"></span>总访问量 <span id="busuanzi_value_site_pv"></span></span>
+        </div>
+      
+    </div>
+ </div>
+</footer>
+  
+  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-ripple mdui-color-teal" style="z-index:100;"><i class="iconfont icon-arrowup"></i></button>
+  
+  
+
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@8.4.8/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({
+        startOnLoad: true,
+        theme: "default"
+    });</script>
+
+
+
+
+    
+<script src="/js/mdui.min.v1.0.0.js"></script>
+
+
+
+
+<script src="/js/meadow.js"></script>
+
+</body>
+</html >
