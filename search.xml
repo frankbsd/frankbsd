@@ -15,22 +15,17 @@
       </tags>
   </entry>
   <entry>
-    <title>MySql在Docker里时间晚8小时</title>
-    <url>/2024/08/03/MySql%E5%9C%A8Docker%E9%87%8C%E6%97%B6%E9%97%B4%E6%99%9A8%E5%B0%8F%E6%97%B6/</url>
-    <content><![CDATA[<p><code>/etc/localtime</code>是用来描述本机时间<br><code>/etc/timezone</code>是用来描述本机所属的时区</p>
-<p>在Linux中，有一些程序会自己计算时间，不会直接采用带有时区的本机时间格式，会根据UTC时间和本机所属的时区等计算出当前的时间。</p>
-<p>比如JDK应用，时区为“Etc&#x2F;UTC”，本机时间改为北京时间，通过Java代码中<code>new</code> 出来的时间还是 <code>UTC</code> 时间，所以必须得修正本机的时区。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it containerID /bin/bash</span><br></pre></td></tr></table></figure>
-
-<p>以下命令在容器中运行</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ln</span> -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</span><br><span class="line"><span class="built_in">touch</span> clock</span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">&#x27;ZONE=&quot;Asia/Shanghai&quot; \nUTC=fasle\nARC=false&#x27;</span> &gt; clock</span><br></pre></td></tr></table></figure>
+    <title>IntelliJ IDEA 编辑 pom.xml 卡顿</title>
+    <url>/2024/08/03/IntelliJ-IDEA-%E7%BC%96%E8%BE%91-pom-xml-%E5%8D%A1%E9%A1%BF/</url>
+    <content><![CDATA[<p>删除<code>%localappdata%\JetBrains\IntelliJIdea&#123;version&#125;\Maven\Indices</code>目录下的内容</p>
 ]]></content>
       <categories>
         <category>后端</category>
       </categories>
       <tags>
         <tag>Java</tag>
-        <tag>Docker</tag>
+        <tag>IntelliJ IDEA</tag>
+        <tag>POM</tag>
       </tags>
   </entry>
   <entry>
@@ -47,6 +42,25 @@
       </categories>
       <tags>
         <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MySql在Docker里时间晚8小时</title>
+    <url>/2024/08/03/MySql%E5%9C%A8Docker%E9%87%8C%E6%97%B6%E9%97%B4%E6%99%9A8%E5%B0%8F%E6%97%B6/</url>
+    <content><![CDATA[<p><code>/etc/localtime</code>是用来描述本机时间<br><code>/etc/timezone</code>是用来描述本机所属的时区</p>
+<p>在Linux中，有一些程序会自己计算时间，不会直接采用带有时区的本机时间格式，会根据UTC时间和本机所属的时区等计算出当前的时间。</p>
+<p>比如JDK应用，时区为“Etc&#x2F;UTC”，本机时间改为北京时间，通过Java代码中<code>new</code> 出来的时间还是 <code>UTC</code> 时间，所以必须得修正本机的时区。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it containerID /bin/bash</span><br></pre></td></tr></table></figure>
+
+<p>以下命令在容器中运行</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ln</span> -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</span><br><span class="line"><span class="built_in">touch</span> clock</span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">&#x27;ZONE=&quot;Asia/Shanghai&quot; \nUTC=fasle\nARC=false&#x27;</span> &gt; clock</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>Docker</tag>
       </tags>
   </entry>
   <entry>
