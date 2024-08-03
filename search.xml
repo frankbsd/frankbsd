@@ -600,6 +600,20 @@ table th:first-of-type {
       </tags>
   </entry>
   <entry>
+    <title>ELement打包到生产环境部分样式丢失</title>
+    <url>/2024/07/30/ELement%E6%89%93%E5%8C%85%E5%88%B0%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E9%83%A8%E5%88%86%E6%A0%B7%E5%BC%8F%E4%B8%A2%E5%A4%B1/</url>
+    <content><![CDATA[<p>编辑<code>项目/build/utils.js</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// Extract CSS when that option is specified</span><br><span class="line">// (which is the case during production build)</span><br><span class="line">if (options.extract) &#123;</span><br><span class="line">  return ExtractTextPlugin.extract(&#123;</span><br><span class="line">    use: loaders,</span><br><span class="line">    fallback: &#x27;vue-style-loader&#x27;,</span><br><span class="line">    publicPath: &#x27;../../&#x27;  // 添加此句</span><br><span class="line">  &#125;)</span><br><span class="line">&#125; else &#123;</span><br><span class="line">  return [&#x27;vue-style-loader&#x27;].concat(loaders)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>Element</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Git使用</title>
     <url>/2024/07/30/Git%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<h3 id="一、下载Git-的Windows客户端"><a href="#一、下载Git-的Windows客户端" class="headerlink" title="一、下载Git 的Windows客户端"></a>一、下载Git 的Windows客户端</h3><p>从<a href="https://gitforwindows.org/">Git下载地址</a>下载，并安装。</p>
@@ -686,7 +700,6 @@ table th:first-of-type {
       </categories>
       <tags>
         <tag>Docker</tag>
-        <tag>SQL</tag>
       </tags>
   </entry>
   <entry>
@@ -701,20 +714,6 @@ table th:first-of-type {
       <tags>
         <tag>Java</tag>
         <tag>IntelliJ IDEA</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ELement打包到生产环境部分样式丢失</title>
-    <url>/2024/07/30/ELement%E6%89%93%E5%8C%85%E5%88%B0%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E9%83%A8%E5%88%86%E6%A0%B7%E5%BC%8F%E4%B8%A2%E5%A4%B1/</url>
-    <content><![CDATA[<p>编辑<code>项目/build/utils.js</code></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// Extract CSS when that option is specified</span><br><span class="line">// (which is the case during production build)</span><br><span class="line">if (options.extract) &#123;</span><br><span class="line">  return ExtractTextPlugin.extract(&#123;</span><br><span class="line">    use: loaders,</span><br><span class="line">    fallback: &#x27;vue-style-loader&#x27;,</span><br><span class="line">    publicPath: &#x27;../../&#x27;  // 添加此句</span><br><span class="line">  &#125;)</span><br><span class="line">&#125; else &#123;</span><br><span class="line">  return [&#x27;vue-style-loader&#x27;].concat(loaders)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
-        <tag>Element</tag>
       </tags>
   </entry>
   <entry>
@@ -734,269 +733,6 @@ table th:first-of-type {
       </categories>
       <tags>
         <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>IntelliJ IDEA使用</title>
-    <url>/2024/07/30/IntelliJ-IDEA%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<h3 id="0-设置IDEA的配置文件"><a href="#0-设置IDEA的配置文件" class="headerlink" title="0. 设置IDEA的配置文件"></a>0. 设置IDEA的配置文件</h3><p>a. <code>C:\Users\FRANK\AppData\Roaming\JetBrains\IntelliJIdea2021.3\idea.properties</code></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">idea.config.path=D:/ProgramFiles/Java/IdeaConfig/Config</span><br><span class="line">idea.system.path=D:/ProgramFiles/Java/IdeaConfig/System</span><br><span class="line"></span><br><span class="line">idea.plugins.path=$&#123;idea.config.path&#125;/plugins</span><br><span class="line">idea.log.path=$&#123;idea.system.path&#125;/log</span><br><span class="line"># 避免编译日志过长，前面的被覆盖掉</span><br><span class="line">idea.cycle.buffer.size=disabled</span><br></pre></td></tr></table></figure>
-<p>【注意】ideaConfig和IDEA主程序目录并列存放在IDEA下，如果ideaConfig存放在主程序目录下，会导致报错“临时文件目录在安装文件夹下”，无法更新</p>
-<p>b. <code>C:\Users\FRANK\AppData\Roaming\JetBrains\IntelliJIdea2021.3\idea64.exe.vmoptions</code></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-Dfile.encoding=UTF-8   # 解决`IDEA`各种乱码</span><br><span class="line">-Xms512m //最小启动内存参数 </span><br><span class="line">-Xmx2048m //最大运行内存参数</span><br><span class="line">-XX:ReservedCodeCacheSize=512m  //保留代码占用的内存容量参数</span><br></pre></td></tr></table></figure>
-
-<p>配置项目编码和IDE编码<br>【File】→【Settings】→【Editor】→【File Encodings】<br>设置【IDE Encoding】、【Project Encoding】、【Default encoding for properties files】为<code>UTF-8</code><br>【Tomcat实例】里的【VM options】添加</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-Dfile.encoding=UTF-8</span><br></pre></td></tr></table></figure>
-
-<p>设置<code>Shared Indexes</code></p>
-<ol>
-<li>idea设置<br><code>Settings</code>-&gt;<code>Tools</code>-&gt;<code>Shared Indexes</code>-&gt;<code>Wait for shared indexes</code><br><code>Settings</code>-&gt;<code>Tools</code>-&gt;<code>Shared Indexes</code>-&gt;<code>JDKs</code>-&gt;<code>Download automatically</code><br><code>Settings</code>-&gt;<code>Tools</code>-&gt;<code>Shared Indexes</code>-&gt;<code>Maven libraries</code>-&gt;<code>Download automatically</code><br><code>Settings</code>-&gt;<code>Appearance &amp; Behavior</code>-&gt;<code>System Settings</code>-&gt;<code>Http Porxy</code>-&gt;<code>Auto-detect proxy settings</code></li>
-<li>把<code>index-cdn.jetbrains.com</code>加入代理</li>
-</ol>
-<h3 id="使用ja-netfilter"><a href="#使用ja-netfilter" class="headerlink" title="使用ja-netfilter"></a>使用<code>ja-netfilter</code></h3><p>在用户目录<code>C:\Users\FRANK\AppData\Roaming\JetBrains\IntelliJIdea2021.3\idea64.exe.vmoptions</code>中添加</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">--add-opens=java.base/jdk.internal.org.objectweb.asm=ALL-UNNAMED</span><br><span class="line">--add-opens=java.base/jdk.internal.org.objectweb.asm.tree=ALL-UNNAMED</span><br><span class="line">-javaagent:D:\ProgramFiles\Java\jetbra\ja-netfilter.jar=jetbrains</span><br></pre></td></tr></table></figure>
-
-<p><a href="https://github.com/ja-netfilter/ja-netfilter">ja-netfilter</a><br><a href="https://jetbra.in/s">jetbra</a></p>
-<h3 id="添加右键快捷键"><a href="#添加右键快捷键" class="headerlink" title="添加右键快捷键"></a>添加右键快捷键</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Windows Registry Editor Version 5.00</span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\Directory\shell\ideaIU]</span><br><span class="line">@=&quot;Open with IntelliJ IDEA Ultimate&quot;</span><br><span class="line">&quot;Icon&quot;=&quot;D:\\ProgramFiles\\Java\\ideaIU\\bin\\idea64.exe&quot;</span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\Directory\shell\ideaIU\command]</span><br><span class="line">@=&quot;\&quot;D:\\ProgramFiles\\Java\\ideaIU\\bin\\idea64.exe\&quot; \&quot;%1\&quot;&quot;</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="使用代理"><a href="#使用代理" class="headerlink" title="使用代理"></a>使用代理</h3><p>设置IDEA的代理，以提高打从开网络下载的项目时，下载 <code>Maven Wrapper</code>指定的 <code>Maven</code>的速度，同时，确认代理服务器代理域名含有<code>apache.org</code>的地址</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-DsocksProxyHost=127.0.0.1 -DsocksProxyPort=1080</span><br></pre></td></tr></table></figure>
-
-<h3 id="1-下载配置-Maven"><a href="#1-下载配置-Maven" class="headerlink" title="1. 下载配置 Maven"></a>1. 下载配置 <code>Maven</code></h3><p><a href="https://maven.apache.org/">下载<code>Maven</code></a><br>或者使用IDEA自带Maven(<code>$&#123;IntelliJ IDEA&#125;\plugins\maven\lib\maven3</code>)<br>配置环境变量<code>MAVEN_HOME</code>为<code>D:\ProgramFiles\Java\apache-maven-3.6.0</code>或<code>D:\ProgramFiles\Java\ideaIU-2019.3.1.win\plugins\maven\lib\maven3</code><br>并将<code>%MAVEN_HOME%\bin</code>添加到<code>PATH</code>中<br>命令行测试</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mvn -v</span><br></pre></td></tr></table></figure>
-<p>约定配置<br><code>Maven</code>提倡使用一个共同的标准目录结构，<code>Maven</code>使用约定优于配置的原则，大家尽可能的遵守这样的目录结构。如下所示：</p>
-<table>
-<thead>
-<tr>
-<th>目录</th>
-<th>目的</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>$&#123;basedir&#125;</code></td>
-<td>存放<code>pom.xml</code>和所有的子目录</td>
-</tr>
-<tr>
-<td><code>$&#123;basedir&#125;/src/main/java</code></td>
-<td>项目的<code>java</code>源代码</td>
-</tr>
-<tr>
-<td><code>$&#123;basedir&#125;/src/main/resources</code></td>
-<td>项目的资源，比如说<code>property</code>文件，<code>springmvc.xml</code></td>
-</tr>
-<tr>
-<td><code>$&#123;basedir&#125;/src/test/java</code></td>
-<td>项目的测试类，比如说<code>Junit</code>代码</td>
-</tr>
-<tr>
-<td><code>$&#123;basedir&#125;/src/test/resources</code></td>
-<td>测试用的资源</td>
-</tr>
-<tr>
-<td><code>$&#123;basedir&#125;/src/main/webapp/WEB-INF</code></td>
-<td><code>web</code>应用文件目录，<code>web</code>项目的信息，比如存放<code>web.xml</code>、本地图片、<code>jsp</code>视图页面</td>
-</tr>
-<tr>
-<td><code>$&#123;basedir&#125;/target</code></td>
-<td>打包输出目录</td>
-</tr>
-<tr>
-<td><code>$&#123;basedir&#125;/target/classes</code></td>
-<td>编译输出目录</td>
-</tr>
-<tr>
-<td><code>$&#123;basedir&#125;/target/test-classes</code></td>
-<td>测试编译输出目录</td>
-</tr>
-<tr>
-<td><code>Test.java</code></td>
-<td><code>Maven</code>只会自动运行符合该命名规则的测试类</td>
-</tr>
-<tr>
-<td><code>~/.m2/repository</code></td>
-<td><code>Maven</code>默认的本地仓库目录位置（可更改）</td>
-</tr>
-</tbody></table>
-<p>编辑<code>%MAVEN_HOME%\conf\settings.xml</code>，<br>设置本地仓库</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;localRepository&gt;D:/PackagesRepository/Java/Maven&lt;/localRepository&gt;</span><br></pre></td></tr></table></figure>
-<p>设置阿里云镜像,在<mirrors></mirrors>标签中添加 mirror 子节点【不建议】:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- mirrorOf设置</span><br><span class="line">    *           匹配所有仓库ID。</span><br><span class="line">    external:*  匹配除本地主机或基于文件的存储库外的所有仓库。</span><br><span class="line">    从 Maven 3.8.0 开始，external:http:* 匹配所有使用 HTTP 的存储库，除了那些使用 localhost 的存储库。</span><br><span class="line">    可以使用逗号作为分隔符指定多个存储库</span><br><span class="line">    感叹号可以与上述通配符之一结合使用以排除存储库 ID</span><br><span class="line">  </span><br><span class="line">    注意不要在逗号分隔列表中的标识符或通配符周围包含额外的空格。</span><br><span class="line"></span><br><span class="line">    当您使用高级语法并配置多个镜像时，声明顺序很重要。&lt;mirrorOf&gt;当 Maven</span><br><span class="line">查找某个存储库的镜像时，它首先检查与存储库标识符完全匹配的镜像。如果没有找到直接匹配，Maven会根据上面的规则（如果有的话）选择第一个匹配的镜像声明。因此，您可以通过更改定义中的顺序来影响匹配顺序settings.xml</span><br><span class="line"></span><br><span class="line">    例子：</span><br><span class="line">    </span><br><span class="line">    * = 一切</span><br><span class="line">    external:* = 不在本地主机上且不基于文件的所有内容。</span><br><span class="line">    repo,repo1 = repo 或 repo1</span><br><span class="line">    *,!repo1 = 除 repo1 之外的所有内容</span><br><span class="line">  --&gt;</span><br><span class="line">&lt;mirror&gt;</span><br><span class="line">  &lt;id&gt;aliyun-center-and-jcenter&lt;/id&gt;</span><br><span class="line">  &lt;mirrorOf&gt;central,jcenter&lt;/mirrorOf&gt;</span><br><span class="line">  &lt;name&gt;阿里云的central仓和jcenter仓聚合仓&lt;/name&gt;</span><br><span class="line">  &lt;url&gt;https://maven.aliyun.com/repository/public&lt;/url&gt;</span><br><span class="line">&lt;/mirror&gt;</span><br><span class="line"></span><br><span class="line">&lt;mirror&gt;</span><br><span class="line">  &lt;id&gt;aliyun-spring&lt;/id&gt;</span><br><span class="line">  &lt;mirrorOf&gt;spring&lt;/mirrorOf&gt;</span><br><span class="line">  &lt;name&gt;阿里云的spring镜像&lt;/name&gt;</span><br><span class="line">  &lt;url&gt;https://maven.aliyun.com/repository/spring&lt;/url&gt;</span><br><span class="line">&lt;/mirror&gt;</span><br><span class="line"></span><br><span class="line">&lt;mirror&gt;</span><br><span class="line">  &lt;id&gt;aliyun-spring-plugin&lt;/id&gt;</span><br><span class="line">  &lt;mirrorOf&gt;spring-plugin&lt;/mirrorOf&gt;</span><br><span class="line">  &lt;name&gt;阿里云的spring-plugin镜像&lt;/name&gt;</span><br><span class="line">  &lt;url&gt;https://maven.aliyun.com/repository/spring-plugin&lt;/url&gt;</span><br><span class="line">&lt;/mirror&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;mirror&gt;</span><br><span class="line">  &lt;id&gt;aliyun-google&lt;/id&gt;</span><br><span class="line">  &lt;mirrorOf&gt;google&lt;/mirrorOf&gt;</span><br><span class="line">  &lt;name&gt;阿里云的谷歌镜像&lt;/name&gt;</span><br><span class="line">  &lt;url&gt;https://maven.aliyun.com/repository/google&lt;/url&gt;</span><br><span class="line">&lt;/mirror&gt;</span><br><span class="line"></span><br><span class="line">&lt;mirror&gt;</span><br><span class="line">  &lt;id&gt;aliyun-gradle-plugin&lt;/id&gt;</span><br><span class="line">  &lt;mirrorOf&gt;gradle-plugin&lt;/mirrorOf&gt;</span><br><span class="line">  &lt;name&gt;阿里云的gradle-plugin镜像&lt;/name&gt;</span><br><span class="line">  &lt;url&gt;https://maven.aliyun.com/repository/gradle-plugin&lt;/url&gt;</span><br><span class="line">&lt;/mirror&gt;</span><br><span class="line"></span><br><span class="line">&lt;mirror&gt;</span><br><span class="line">  &lt;id&gt;aliyun-grails-core&lt;/id&gt;</span><br><span class="line">  &lt;mirrorOf&gt;grails-core&lt;/mirrorOf&gt;</span><br><span class="line">  &lt;name&gt;阿里云的grails-core镜像&lt;/name&gt;</span><br><span class="line">  &lt;url&gt;https://maven.aliyun.com/repository/grails-core&lt;/url&gt;</span><br><span class="line">&lt;/mirror&gt;</span><br></pre></td></tr></table></figure>
-<p>设置私有仓库【建议把阿里云镜像当做私有仓库设置】</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;profile&gt;</span><br><span class="line">  &lt;id&gt;aliyun-central&lt;/id&gt;</span><br><span class="line">  &lt;activation&gt;</span><br><span class="line">    &lt;activeByDefault&gt;true&lt;/activeByDefault&gt;</span><br><span class="line">    &lt;jdk&gt;1.8&lt;/jdk&gt;</span><br><span class="line">  &lt;/activation&gt;</span><br><span class="line">  &lt;properties&gt;</span><br><span class="line">    &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;</span><br><span class="line">    &lt;maven.compiler.encoding&gt;UTF-8&lt;/maven.compiler.encoding&gt;</span><br><span class="line">    &lt;java.version&gt;1.8&lt;/java.version&gt;</span><br><span class="line">    &lt;maven.compiler.source&gt;1.8&lt;/maven.compiler.source&gt;</span><br><span class="line">    &lt;maven.compiler.target&gt;1.8&lt;/maven.compiler.target&gt;</span><br><span class="line">    &lt;maven.compiler.version&gt;1.8&lt;/maven.compiler.version&gt;</span><br><span class="line">  &lt;/properties&gt;</span><br><span class="line">  &lt;repositories&gt;</span><br><span class="line">    &lt;repository&gt;</span><br><span class="line">      &lt;id&gt;aliyun&lt;/id&gt;</span><br><span class="line">      &lt;name&gt;Public Repositories&lt;/name&gt;</span><br><span class="line">      &lt;url&gt;https://maven.aliyun.com/repository/public&lt;/url&gt;</span><br><span class="line">      &lt;releases&gt;</span><br><span class="line">        &lt;enabled&gt;true&lt;/enabled&gt;</span><br><span class="line">        &lt;!-- always, daily (default), interval:X (where X is an integer in minutes) or never --&gt;</span><br><span class="line">        &lt;!-- &lt;updatePolicy&gt;always&lt;/updatePolicy&gt; --&gt;</span><br><span class="line">        &lt;!-- ignore, fail, or warn on missing or incorrect checksums --&gt;</span><br><span class="line">        &lt;checksumPolicy&gt;fail&lt;/checksumPolicy&gt;</span><br><span class="line">      &lt;/releases&gt;</span><br><span class="line">      &lt;snapshots&gt;</span><br><span class="line">        &lt;enabled&gt;true&lt;/enabled&gt;</span><br><span class="line">        &lt;!-- &lt;updatePolicy&gt;always&lt;/updatePolicy&gt; --&gt;</span><br><span class="line">        &lt;checksumPolicy&gt;fail&lt;/checksumPolicy&gt;</span><br><span class="line">      &lt;/snapshots&gt;</span><br><span class="line">    &lt;/repository&gt;</span><br><span class="line">    &lt;repository&gt;</span><br><span class="line">      &lt;id&gt;central&lt;/id&gt;</span><br><span class="line">      &lt;name&gt;central&lt;/name&gt;</span><br><span class="line">      &lt;url&gt;https://repo.maven.apache.org/maven2&lt;/url&gt;</span><br><span class="line">      &lt;releases&gt;</span><br><span class="line">        &lt;enabled&gt;true&lt;/enabled&gt;</span><br><span class="line">        &lt;!-- &lt;updatePolicy&gt;always&lt;/updatePolicy&gt; --&gt;</span><br><span class="line">        &lt;checksumPolicy&gt;fail&lt;/checksumPolicy&gt;</span><br><span class="line">      &lt;/releases&gt;</span><br><span class="line">      &lt;snapshots&gt;</span><br><span class="line">        &lt;enabled&gt;true&lt;/enabled&gt;</span><br><span class="line">        &lt;!-- &lt;updatePolicy&gt;always&lt;/updatePolicy&gt; --&gt;</span><br><span class="line">        &lt;checksumPolicy&gt;fail&lt;/checksumPolicy&gt;</span><br><span class="line">      &lt;/snapshots&gt;</span><br><span class="line">    &lt;/repository&gt;</span><br><span class="line">  &lt;/repositories&gt;</span><br><span class="line">  &lt;pluginRepositories&gt;</span><br><span class="line">    &lt;pluginRepository&gt;</span><br><span class="line">      &lt;id&gt;aliyun&lt;/id&gt;</span><br><span class="line">      &lt;name&gt;Public Repositories&lt;/name&gt;</span><br><span class="line">      &lt;url&gt;https://maven.aliyun.com/repository/public&lt;/url&gt;</span><br><span class="line">      &lt;releases&gt;</span><br><span class="line">        &lt;enabled&gt;true&lt;/enabled&gt;</span><br><span class="line">        &lt;!-- &lt;updatePolicy&gt;always&lt;/updatePolicy&gt; --&gt;</span><br><span class="line">        &lt;checksumPolicy&gt;fail&lt;/checksumPolicy&gt;</span><br><span class="line">      &lt;/releases&gt;</span><br><span class="line">      &lt;snapshots&gt;</span><br><span class="line">        &lt;enabled&gt;true&lt;/enabled&gt;</span><br><span class="line">        &lt;!-- &lt;updatePolicy&gt;always&lt;/updatePolicy&gt; --&gt;</span><br><span class="line">        &lt;checksumPolicy&gt;fail&lt;/checksumPolicy&gt;</span><br><span class="line">      &lt;/snapshots&gt;</span><br><span class="line">    &lt;/pluginRepository&gt;</span><br><span class="line">    &lt;pluginRepository&gt;</span><br><span class="line">      &lt;id&gt;central&lt;/id&gt;</span><br><span class="line">      &lt;name&gt;central&lt;/name&gt;</span><br><span class="line">      &lt;url&gt;https://repo.maven.apache.org/maven2&lt;/url&gt;</span><br><span class="line">      &lt;releases&gt;</span><br><span class="line">        &lt;enabled&gt;true&lt;/enabled&gt;</span><br><span class="line">        &lt;!-- &lt;updatePolicy&gt;always&lt;/updatePolicy&gt; --&gt;</span><br><span class="line">        &lt;checksumPolicy&gt;fail&lt;/checksumPolicy&gt;</span><br><span class="line">      &lt;/releases&gt;</span><br><span class="line">      &lt;snapshots&gt;</span><br><span class="line">        &lt;enabled&gt;true&lt;/enabled&gt;</span><br><span class="line">        &lt;!-- &lt;updatePolicy&gt;never&lt;/updatePolicy&gt; --&gt;</span><br><span class="line">        &lt;checksumPolicy&gt;fail&lt;/checksumPolicy&gt;</span><br><span class="line">      &lt;/snapshots&gt;</span><br><span class="line">    &lt;/pluginRepository&gt;</span><br><span class="line">  &lt;/pluginRepositories&gt;</span><br><span class="line">&lt;/profile&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>同时，激活该设置</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;activeProfiles&gt;</span><br><span class="line">  &lt;activeProfile&gt;aliyun-central&lt;/activeProfile&gt;</span><br><span class="line">&lt;/activeProfiles&gt;</span><br></pre></td></tr></table></figure>
-<p>参考</p>
-<ol>
-<li><a href="https://maven.apache.org/settings.html">Maven Settings Reference</a></li>
-<li><a href="https://maven.apache.org/settings.html#Mirrors">Maven Settings Reference Mirrors</a></li>
-<li><a href="https://maven.apache.org/guides/mini/guide-mirror-settings.html">Using Mirrors for Repositories</a></li>
-<li><a href="https://swenfang.github.io/2018/06/03/Maven-Priority/">Maven仓库理解和优先级</a></li>
-<li><a href="https://maven.aliyun.com/mvn/guide">阿里云云效 Maven</a></li>
-</ol>
-<p>archetype配置(<code>maven-archetype-plugin 3.x</code>已经不支持此配置,<code>maven-archetype-plugin 2.x</code>可以)</p>
-<p><code>archetype</code>插件有一个<code>archetypeCatalog</code>参数，这个参数指定从哪里获取<code>archetype-catalog.xml</code>文件，可选的取值有：</p>
-<ul>
-<li><code>internal</code> 只使用内置的目录文件（只包含<code>org.apache.maven.archetypes</code>底下的模板工程）</li>
-<li><code>local</code> 使用本地的目录文件（<code>~/.m2/archetype-catalog.xml</code>）</li>
-<li><code>remote</code> 使用<code>maven</code>网站上的目录文件</li>
-<li><code>file://path/to/archetype-catalog.xml</code> 指定本地的一个目录文件，如果文件叫<code>archetype-catalog.xml</code>指定目录就可以了</li>
-<li><code>http://url/to/archetype-catalog.xml</code> 指定远程的一个目录文件，如果文件叫<code>archetype-catalog.xml</code>指定目录就可以了<br>默认的值是<code>remote,local</code>，也就是先显示官方网站上的，再显示本地的。</li>
-</ul>
-<p>所以我们可以有两种做法：</p>
-<ul>
-<li>如果你觉得<code>org.apache.maven.archetypes</code>里的模板工程够用了，直接指定<code>-DarchetypeCatalog=internal</code>即可</li>
-<li>如果你想要完整的模板工程，可以先下载<a href="https://repo.maven.apache.org/maven2/archetype-catalog.xml">archetype-catalog.xml</a><code>https://repo.maven.apache.org/maven2/archetype-catalog.xml</code>，然后把它放到<code>~/.m2</code>下，然后指定<code>-DarchetypeCatalog=local</code>即可</li>
-</ul>
-<p><code>IDEA</code> 的<code>Maven</code>配置<br>【File】→【Settings】→【Build，Execution，Deployment】→【Build Tools】→【Maven】</p>
-<ul>
-<li>【Maven home directory】设为<code>%MAVEN_HOME%</code>，即<code>Marven</code>的目录</li>
-<li>【User Settings file】设为<code>%MAVEN_HOME%\conf\settings.xml</code>,即配置文件</li>
-<li>【Local repository】设为<code>E:\PackagesRepository\Java</code>,即本地存放<code>maven</code>仓库的目录，默认会随着【User Settings file】的更改而更改</li>
-<li>下一级【Runner】里【<code>VM Options</code>】设为<code>-DarchetypeCatalog=internal</code></li>
-</ul>
-<p><em><strong>注意：</strong></em><br>这种配置方式，都是针对项目的具体配置，若新建项目，可能还需要配置。</p>
-<p>全局配置，都是从启动页面的【Configure】→【Settings】开始。具体路径如下：<br>【Configure】→【Settings】→【Build，Execution，Deployment】→【Build Tools】→【Maven】</p>
-<p>另外，可以在<code>maven</code>全局设置里，可以设置项目默认的JDK</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;profile&gt;</span><br><span class="line">  &lt;id&gt;jdk8&lt;/id&gt;</span><br><span class="line">  &lt;activation&gt;</span><br><span class="line">    &lt;activeByDefault&gt;true&lt;/activeByDefault&gt;</span><br><span class="line">    &lt;jdk&gt;1.8&lt;/jdk&gt;</span><br><span class="line">  &lt;/activation&gt;</span><br><span class="line">  &lt;properties&gt;</span><br><span class="line">    &lt;maven.compiler.source&gt;1.8&lt;/maven.compiler.source&gt;</span><br><span class="line">    &lt;maven.compiler.target&gt;1.8&lt;/maven.compiler.target&gt;</span><br><span class="line">    &lt;maven.compiler.compilerVersion&gt;1.8&lt;/maven.compiler.compilerVersion&gt;</span><br><span class="line">  &lt;/properties&gt;</span><br><span class="line">&lt;/profile&gt; </span><br></pre></td></tr></table></figure>
-
-<h3 id="2-配置Gradle"><a href="#2-配置Gradle" class="headerlink" title="2. 配置Gradle"></a>2. 配置Gradle</h3><p><a href="https://gradle.org/releases/">下载Gradle</a><br>解压到<code>D:\ProgramFiles\Java\gradle-version</code><br>配置环境变量<br><code>GRADLE_HOME</code>，值为<code>D:\ProgramFiles\Java\gradle-version</code><br><code>GRADLE_USER_HOME</code>,值为<code>D:\PackagesRepository\Java\Gradle</code>  &#x2F;&#x2F; 不能与maven公用本地仓库，只能通过mavenLocal()使用maven的本地仓库<br>添加<code>PATH</code><br><code>%GRADLE_HOME%\bin</code><br>命令行测试</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">gradle -v</span><br></pre></td></tr></table></figure>
-<p>另外，为了加快gradle构建，在家目录下的.gradle&#x2F;gradle.properties文件（如没有，可需要新建文件），加上如下的代码即可</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">org.gradle.daemon=true</span><br><span class="line">org.gradle.jvmargs=-Xmx16384m -XX:MaxPermSize=2048m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8</span><br><span class="line">org.gradle.parallel=true</span><br></pre></td></tr></table></figure>
-<p>参考</p>
-<ol>
-<li><a href="https://droidyue.com/blog/2017/04/16/speedup-gradle-building/">一些关于加速Gradle构建的个人经验</a></li>
-<li><a href="https://blog.csdn.net/IOT_AI/article/details/106617626">IDEA如何正确配置Gradle? GRADLE_USER_HOME 和 Gradle user home的区别</a></li>
-</ol>
-<p>使用<code>gradle</code>构建的项目，在项目的根目录下都会有一个<code>build.gradle</code>文件，存储着构建的配置，其配置语法使用<code>groovy DSL</code></p>
-<p><code>gradle</code>的构建依赖通常包含两部分:</p>
-<ul>
-<li><p>构建前依赖: 指的是如果使用了<code>gradle</code>默认不包含的插件或依赖进行构建，那么<code>gradle</code>本身应该从哪里获取这些依赖工具</p>
-</li>
-<li><p>构建中依赖: 这里和<code>maven</code>一致，就是项目依赖的包</p>
-</li>
-<li><p>maven { url: ‘&#x2F;path&#x2F;to&#x2F;custom&#x2F;url’ }: 自定义的maven仓库路径</p>
-</li>
-</ul>
-<p>配置的时候大体需要注意以下两点:</p>
-<ul>
-<li><code>gradle</code>允许存在多个<code>maven</code>仓库，可以从不同的仓库中拿到依赖</li>
-<li>如果存在多个<code>maven</code>仓库，那么将按照书写顺序依次尝试查找依赖</li>
-</ul>
-<p>明白以上两点，大体就知道怎么配置了，应该按照速度从快到慢的顺序填写，所以通常<code>mavenLocal()</code>放第一位，<code>mavenCentral()</code>&#x2F;<code>jcenter()</code>通常放最后作为冗余配置，在本地镜像不可用时作为备用仓库。</p>
-<p><code>Gradle</code>仓库建议配置如下,并放在目录 <code>GRADLE_USER_HOME</code>下,即<code>D:\PackagesRepository\Java\Gradle</code> </p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> repoConfig = &#123;</span><br><span class="line"></span><br><span class="line">    mavenLocal()</span><br><span class="line">        </span><br><span class="line">    <span class="comment">// def ALIYUN_CENTRAL_URL = &#x27;https://maven.aliyun.com/repository/central&#x27;</span></span><br><span class="line">    <span class="comment">// def ALIYUN_JCENTER_URL = &#x27;https://maven.aliyun.com/repository/public&#x27;</span></span><br><span class="line">    <span class="keyword">def</span> ALIYUN_PUBLIC_URL = <span class="string">&#x27;https://maven.aliyun.com/repository/public/&#x27;</span>  <span class="comment">// 此仓库为 central 和 jcentral 的聚合</span></span><br><span class="line">    <span class="keyword">def</span> ALIYUN_GOOGLE_URL = <span class="string">&#x27;https://maven.aliyun.com/repository/google/&#x27;</span></span><br><span class="line">    <span class="keyword">def</span> ALIYUN_GRADLE_PLUGIN_URL = <span class="string">&#x27;https://maven.aliyun.com/repository/gradle-plugin/&#x27;</span></span><br><span class="line">    <span class="keyword">def</span> ALIYUN_SPRING_URL = <span class="string">&#x27;https://maven.aliyun.com/repository/spring/&#x27;</span></span><br><span class="line">    <span class="keyword">def</span> ALIYUN_SPRING_PLUGIN_URL = <span class="string">&#x27;https://maven.aliyun.com/repository/spring-plugin/&#x27;</span></span><br><span class="line">    <span class="keyword">def</span> ALIYUN_GRAILS_CORE_URL = <span class="string">&#x27;https://maven.aliyun.com/repository/grails-core/&#x27;</span></span><br><span class="line">    <span class="keyword">def</span> ALIYUN_APACHE_SNAPSHOTS_URL = <span class="string">&#x27;https://maven.aliyun.com/repository/apache-snapshots/&#x27;</span></span><br><span class="line">    <span class="keyword">def</span> TENCENT_CLOUD_URL = <span class="string">&#x27;https://mirrors.cloud.tencent.com/gradle&#x27;</span></span><br><span class="line"></span><br><span class="line">    all &#123; ArtifactRepository repo -&gt;</span><br><span class="line">        <span class="keyword">if</span>(repo <span class="keyword">instanceof</span> MavenArtifactRepository)&#123;</span><br><span class="line">            <span class="keyword">def</span> url = repo.url.toString()</span><br><span class="line">            println(<span class="string">&#x27;orginal:&#x27;</span>+url)</span><br><span class="line">            <span class="keyword">if</span> (url.startsWith(<span class="string">&#x27;https://repo1.maven.org/maven2/&#x27;</span>)) &#123;</span><br><span class="line">                println(<span class="string">&#x27;replaed:&#x27;</span>+ <span class="string">&#x27;ALIYUN_PUBLIC_URL&#x27;</span>)</span><br><span class="line">                project.logger.lifecycle <span class="string">&quot;Repository $&#123;repo.url&#125; replaced by $ALIYUN_PUBLIC_URL.&quot;</span></span><br><span class="line">                remove repo</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (url.startsWith(<span class="string">&#x27;https://jcenter.bintray.com/&#x27;</span>)) &#123;</span><br><span class="line">                project.logger.lifecycle <span class="string">&quot;Repository $&#123;repo.url&#125; replaced by $ALIYUN_PUBLIC_URL.&quot;</span></span><br><span class="line">                println(<span class="string">&#x27;replaed:&#x27;</span>+ <span class="string">&#x27;ALIYUN_PUBLIC_URL&#x27;</span>)</span><br><span class="line">                remove repo</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (url.startsWith(<span class="string">&#x27;https://maven.google.com/&#x27;</span>)) &#123;</span><br><span class="line">                println(<span class="string">&#x27;replaed:&#x27;</span>+ <span class="string">&#x27;ALIYUN_GOOGLE_URL&#x27;</span>)</span><br><span class="line">                project.logger.lifecycle <span class="string">&quot;Repository $&#123;repo.url&#125; replaced by $ALIYUN_GOOGLE_URL.&quot;</span></span><br><span class="line">                remove repo</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (url.startsWith(<span class="string">&#x27;https://plugins.gradle.org/m2/&#x27;</span>)) &#123;</span><br><span class="line">                println(<span class="string">&#x27;replaed:&#x27;</span>+ <span class="string">&#x27;ALIYUN_GRADLE_PLUGIN_URL&#x27;</span>)</span><br><span class="line">                project.logger.lifecycle <span class="string">&quot;Repository $&#123;repo.url&#125; replaced by $ALIYUN_GRADLE_PLUGIN_URL.&quot;</span></span><br><span class="line">                remove repo</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (url.startsWith(<span class="string">&#x27;http://repo.spring.io/libs-milestone/&#x27;</span>)) &#123;</span><br><span class="line">                project.logger.lifecycle <span class="string">&quot;Repository $&#123;repo.url&#125; replaced by $ALIYUN_SPRING_URL.&quot;</span></span><br><span class="line">                println(<span class="string">&#x27;replaed:&#x27;</span>+ <span class="string">&#x27;ALIYUN_SPRING_URL&#x27;</span>)</span><br><span class="line">                remove repo</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (url.startsWith(<span class="string">&#x27;http://repo.spring.io/plugins-release/&#x27;</span>)) &#123;</span><br><span class="line">                project.logger.lifecycle <span class="string">&quot;Repository $&#123;repo.url&#125; replaced by $ALIYUN_SPRING_PLUGIN_URL.&quot;</span></span><br><span class="line">                println(<span class="string">&#x27;replaed:&#x27;</span>+ <span class="string">&#x27;ALIYUN_SPRING_PLUGIN_URL&#x27;</span>)</span><br><span class="line">                remove repo</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (url.startsWith(<span class="string">&#x27;https://repo.grails.org/grails/core/&#x27;</span>)) &#123;</span><br><span class="line">                project.logger.lifecycle <span class="string">&quot;Repository $&#123;repo.url&#125; replaced by $ALIYUN_GRAILS_CORE_URL.&quot;</span></span><br><span class="line">                println(<span class="string">&#x27;replaed:&#x27;</span>+ <span class="string">&#x27;ALIYUN_GRAILS_CORE_URL&#x27;</span>)</span><br><span class="line">                remove repo</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (url.startsWith(<span class="string">&#x27;https://repository.apache.org/snapshots/&#x27;</span>)) &#123;</span><br><span class="line">                project.logger.lifecycle <span class="string">&quot;Repository $&#123;repo.url&#125; replaced by $ALIYUN_APACHE_SNAPSHOTS_URL.&quot;</span></span><br><span class="line">                println(<span class="string">&#x27;replaed:&#x27;</span>+ <span class="string">&#x27;ALIYUN_APACHE_SNAPSHOTS_URL&#x27;</span>)</span><br><span class="line">                remove repo</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    maven &#123; url ALIYUN_PUBLIC_URL &#125;</span><br><span class="line">    maven &#123; url ALIYUN_GOOGLE_URL &#125;</span><br><span class="line">    maven &#123; url ALIYUN_GRADLE_PLUGIN_URL &#125;</span><br><span class="line">    maven &#123; url ALIYUN_SPRING_URL &#125;</span><br><span class="line">    maven &#123; url ALIYUN_SPRING_PLUGIN_URL &#125;</span><br><span class="line">    maven &#123; url ALIYUN_GRAILS_CORE_URL &#125;</span><br><span class="line">    maven &#123; url ALIYUN_APACHE_SNAPSHOTS_URL &#125;  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">allprojects &#123;</span><br><span class="line">    buildscript &#123;</span><br><span class="line">        repositories repoConfig</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    repositories repoConfig</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>存储库只是文件的集合，按分组，名称和版本来组织构造。 </p>
-<p>默认情况下，Gradle不定义任何存储库。 这里使用repositories 指定存储库。 </p>
-<ul>
-<li><code>mavenLocal()</code>：指定使用maven本地仓库，而本地仓库在配置maven时setting文件指定的仓库位置。如<code>&lt;localRepository&gt;D:/PackagesRepository/Java&lt;/localRepository&gt;</code>，同时将setting文件拷贝到<code>USER_HOME\.m2</code>目录下，一般该目录下是没有<code>setting</code>文件的，<br> <code>gradle</code>查找<code>jar</code>包顺序如下：<code>gradle</code>默认会按以下顺序去查找本地的仓库：【<code>USER_HOME/.m2/settings.xml</code>】→【 <code>M2_HOME/conf/settings.xml</code>】→【<code>USER_HOME/.m2/repository</code>】</li>
-<li><code>maven &#123; url &quot;http://maven.aliyun.com/nexus/content/groups/public/&quot;&#125;</code>:指定阿里云镜像加速地址 </li>
-<li><code>mavenCentral()</code>:这是Maven的中央仓库，无需配置，直接声明就可以使用 </li>
-<li><code>jcenter()</code>:JCenter中央仓库，实际也是是用的maven搭建的，但相比Maven仓库更友好，通过CDN分发，并且支持https访问</li>
-</ul>
-<p>后面的<code>maven &#123; url 地址&#125;</code>，指定<code>maven</code>仓库，一般用私有仓库地址或其它的第三方库 </p>
-<p><code>gradle</code>按配置顺序寻找<code>jar</code>文件。如果本地存在就不会再去下载。不存在的再去<code>maven</code>仓库下载，这里注意下载下来的<code>jar</code>文件不在<code>maven</code>仓库里，而是在<code>gradle</code>的主工作目录下，如上面的<code>E:\Git\Gradle</code>目录 </p>
-<p>构建中依赖<br>定义构建时依赖的仓库就在<code>repositories &#123;&#125;</code>这个闭包中，规则和配置和<code>buildscript.repositories &#123;&#125;</code>完全一致，这里就不再赘述了，直接贴样例:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">repositories &#123;</span><br><span class="line">    mavenLocal()</span><br><span class="line">    maven &#123; url &quot;https://maven.aliyun.com/repository/public&quot; &#125;</span><br><span class="line">    jcenter()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">dependencies &#123;</span><br><span class="line">    compile &quot;org.apache.hbase:hbase-client:1.2.2&quot;</span><br><span class="line">    compile &quot;org.mongodb:mongodb-driver:3.3.0&quot;</span><br><span class="line">    compile &quot;org.yaml:snakeyaml:1.17&quot;</span><br><span class="line">    compile &#x27;org.apache.logging.log4j:log4j-core:2.6.2&#x27;</span><br><span class="line">    compile &#x27;org.apache.logging.log4j:log4j-api:2.6.2&#x27;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>下面的<code>dependencies &#123;&#125;</code>就是定义的到底依赖哪些<code>jar</code>包，如果本地的<code>gradle</code>缓存中没找到，就会从<code>repositories &#123;&#125;</code>仓库中寻找</p>
-<p>修改<code>init-script</code>方式修改默认仓库<br>以上的方案适合自己的项目，方便直接修改<code>build.gradle</code>的情况，某些情况下无法直接修改<code>build.gradle</code>，比如参与开源项目，并不方便修改别人写好的配置，再比如在CI流水线中，并不方便对源代码进行任何形式的修改等等场景。</p>
-<p>对于这一类的需求，<code>gradle</code>提供了<code>init-script</code>的形式修改仓库。也就是说，这种形式非常类似于<code>Linux</code>的初始化脚本<code>init.d</code>，会加载一遍之后才完成系统启动。每个<code>gradle</code>命令执行之前会先执行一遍<code>init-script</code>，然后才真正执行构建的<code>task</code>。</p>
-<p>因此，我们只要把仓库的配置写入<code>init-script</code>配置即可，由于<code>build.gradle</code>配置通常都会定义多个<code>maven</code>仓库，因此<code>init-script</code>脚本可以不用考虑仓库冗余的问题。</p>
-<p>关于<code>init-script</code>详情可以去看<a href="https://docs.gradle.org/current/userguide/init_scripts.html">官方文档</a>介绍，我这里简单总结一下。</p>
-<p><code>init</code>脚本的查找路径:</p>
-<ul>
-<li>使用-I&#x2F;–init-script直接在命令行指定初始化脚本</li>
-<li>~&#x2F;.gradle&#x2F;init.gradle</li>
-<li>~&#x2F;.gradle&#x2F;init.d&#x2F;*.gradle</li>
-<li>${GRADLE_HOME}&#x2F;init.d&#x2F;*.gradle<br>如果有多个<code>init-script</code>可以执行，那么将按照以上的顺序依次执行，对于<code>*.gradle</code>这样的文件将按照文件名排序顺序执行。</li>
-</ul>
-<p>撇开别的高级玩法和高级定制不谈，只说说定义镜像仓库怎么搞。我的做法是直接新建<code>~/.gradle/init.d/repo.gradle</code>:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">allprojects &#123;</span><br><span class="line">    buildscript &#123;</span><br><span class="line">        repositories &#123;</span><br><span class="line">            maven &#123; url &quot;https://maven.aliyun.com/repository/public&quot; &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    repositories &#123;</span><br><span class="line">        maven &#123; url &quot;https://maven.aliyun.com/repository/public&quot; &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这样就等于设置了默认的仓库配置，那么每次执行<code>gradle</code>的时候都会从我希望的镜像站中去寻找依赖并下载了</p>
-<p>但需要注意的是由于<code>plugins &#123;&#125; DSL</code>目前不使用<code>buildscript &#123;&#125;</code>配置，也无法通过<code>init script</code>定制的方式传入<code>settings.gradle</code>中，所以这种方式是不起作用的。不过好在这个<code>DSL</code>官方还在完善中，也许未来会支持也说不定。<br>参考<a href="https://my.oschina.net/abcfy2/blog/783743">gradle使用maven镜像仓库的方法</a><br>参考<a href="http://www.souvc.com/?p=2573">《Gradle实战》如何配置利用Maven本地仓库</a></p>
-<h5 id="构建命令"><a href="#构建命令" class="headerlink" title="构建命令"></a>构建命令</h5><p>清理命令</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">gradle clean</span><br></pre></td></tr></table></figure>
-
-<p>构建打包命令</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">gradle clean build</span><br></pre></td></tr></table></figure>
-<p>编译时跳过测试，使用<code>-x</code>,<code>-x</code>参数用来排除不需要执行的任务</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">gradle clean build -x test</span><br></pre></td></tr></table></figure>
-
-<p>创建缓存依赖</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">gradle clean build --refresh-dependencies</span><br></pre></td></tr></table></figure>
-<p>或者删除.gradle&#x2F;caches目录，构建的时候它会下载所有依赖并加入到缓存中</p>
-<p>阿里云镜像</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">buildscript &#123;</span><br><span class="line">    repositories &#123;</span><br><span class="line">        maven &#123; url &#x27;http://maven.aliyun.com/nexus/content/groups/public/&#x27; &#125;</span><br><span class="line">        maven &#123; url &#x27;http://maven.aliyun.com/nexus/content/repositories/jcenter&#x27; &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<p>构建脚本</p>
-<p><code>build.gradle</code>是<code>Gradle</code>默认的构建脚本文件，执行<code>Gradle</code>命令的时候，会默认加载当前目录下的<code>build.gradle</code>脚本文件<br>构建脚本如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">buildScript &#123;</span><br><span class="line">    repositories &#123;</span><br><span class="line">         mavenCentral()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">repositories &#123;</span><br><span class="line">     mavenCentral()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><code>buildScript</code>里的<code>repositories</code>是这个脚本需要的依赖库，与项目无关，在执行脚本时，会从这个库里下载对应的<code>jar</code>和插件。</li>
-<li><code>repositories</code>是项目里需要依赖的<code>jar</code>的库。</li>
-</ul>
-<p>查看项目已定义的所有task以及含义<br>命令</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">gradle tasks</span><br></pre></td></tr></table></figure>
-<p>比如结果如下</p>
-<ul>
-<li>assemble: 编译</li>
-<li>build：编译并执行测试</li>
-<li>clean：删除build目录</li>
-<li>jar： 生成jar包</li>
-<li>test：执行单元测试</li>
-</ul>
-<p><code>maven</code>项目转换为<code>gradle</code>项目<br>在项目的根目录执行</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">gradle init --type pom</span><br></pre></td></tr></table></figure>
-<p>上面的命令会根据<code>pom</code>文件自动生成<code>gradle</code>项目所需的文件和配置，然后以<code>gradle</code>项目重新导入即可</p>
-<p><code>settings.gradle</code>配置</p>
-<p><code>settings.gradle</code>是模块<code>Module</code>配置文件。大多数<code>setting.gradle</code>的作用是为了配置子工程，根目录下的<code>settings.gradle</code>脚本文件是针对<code>module</code>的全局配置。</p>
-<p><code>settings.gradle</code>用于创建多<code>Project</code>的<code>Gradle</code>项目。<code>Project</code>在<code>IDEA</code>里对应<code>Module</code>模块。 例如配置<code>module</code>名<code>rootProject.name = &#39;DyoonPLM&#39;</code></p>
-<h5 id="IDEA配置"><a href="#IDEA配置" class="headerlink" title="IDEA配置"></a>IDEA配置</h5><p>设置<code>Gradle</code>下载的<code>jar</code>包仓库主目录<code>E:\Git\Gradle</code><br>【File】→【Settings】→【Build，Execution，Deployment】→【Build Tools】→【Gradle】→【Service directory path】</p>
-<h3 id="3-配置Groovy"><a href="#3-配置Groovy" class="headerlink" title="3. 配置Groovy"></a>3. 配置Groovy</h3><p><a href="http://groovy-lang.org/download.html">下载Groovy</a><br>解压到<code>D:\ProgramFiles\Java\groovy-2.5.7</code><br>配置环境变量<br><code>GROOVY_HOME</code>，值为<code>D:\ProgramFiles\Java\groovy-2.5.7</code><br>添加<code>PATH</code>环境变量<br><code>%GROOVY_HOME%\bin</code><br>命令行测试</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">groovy -v</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-Android-SDK配置"><a href="#4-Android-SDK配置" class="headerlink" title="4. Android SDK配置"></a>4. Android SDK配置</h3><p>下载<a href="https://developer.android.com/studio">Android SDK</a>,找到<code>Command line tools only</code>里的<code>Windows</code>版本</p>
-<p>解压到<code>D:\ProgramFiles\Java\sdk-tools-windows-4333796</code></p>
-<p>双击<code>SDK Manager.exe</code>，启动<code>SDK Manager</code><br><code>Tools</code>文件夹里面几个必须要安装的(只需要下载最新的版本就行了):</p>
-<ul>
-<li><code>Android SDK Tools</code>（这个我们在之前的一步已经下载好了的，一般不会让你再安装了，不过有可能会让你更新)</li>
-<li><code>Android SDK Platform-tools</code></li>
-<li><code>Android SDKBuild-tools</code></li>
-</ul>
-<p>API选择</p>
-<p>我们可以看到这里提供了很多很多从Android 2.1到Android 8.x的很多版本的API。建议：新手的话，选择一个最新的版本就好了，因为Android是向下兼容的。其他的以后你要用到了在下载就行了。<br>这里需要说明的是，如果以后不打算用模拟器调试，而是一直用真机来调试的话，那么就可以不用装<code>system images</code>。</p>
-<h3 id="5-Tomcat服务"><a href="#5-Tomcat服务" class="headerlink" title="5. Tomcat服务"></a>5. Tomcat服务</h3><p><a href="https://www-us.apache.org/dist/tomcat/tomcat-9/v9.0.17/bin/apache-tomcat-9.0.17-windows-x64.zip">下载<code>Tomcat</code></a><br>解压到<code>D:\ProgramFiles\Java\apache-tomcat-9.0.17</code><br>配置环境变量:<br><code>CATALINA_BASE</code>,值为<code>D:\ProgramFiles\Java\apache-tomcat-9.0.17</code><br><code>CATALINA_HOME</code>,值为<code>D:\ProgramFiles\Java\apache-tomcat-9.0.17</code><br>添加<code>PATH</code> 变量<br><code>%CATALINA_HOME%\lib</code>和<code>%CATALINA_HOME%\bin</code><br>可安装为服务：<br><code>service.bat install</code><br>卸载为<code>service.bat remove</code><br>启动：<br>A、双击<code>tomcat9w.exe</code>操作<br>B、Window服务配置里<br>C、运行脚本<code>startup.bat</code>，关闭脚本<code>shutdown.bat</code></p>
-<h5 id="IDEA的Tomcat配置"><a href="#IDEA的Tomcat配置" class="headerlink" title="IDEA的Tomcat配置"></a><code>IDEA</code>的<code>Tomcat</code>配置</h5><p>【Run】→【Edit Configurations】→【Templates】→【Tomcat Server】&#x2F;【TomEE Server】→【+】<br>另对具体项目还需设置【Depoyment】，否则，运行不正常<br>或者<br>【Configure】→【Settings】→【Build，Execution，Deployment】→【Application Servers】→【+】→【Tomcat Server】</p>
-<ul>
-<li><code>CATALINA_HOME</code>与<code>CATALINA_BASE</code>的区别?</li>
-</ul>
-<ol>
-<li><code>CATALINA_HOME</code>即<code>Tomcat</code>的安装目录，<code>CATALINA_BASE</code>是<code>Tomcat</code>的工作目录。如果同时运行多个<code>Tomcat</code>实例，通常会配置多个工作目录。每个<code>Tomcat</code>实例独占一个工作目录，但是共享一个安装目录。</li>
-<li><code>Tomcat</code>每个运行实例需要使用自己的<code>conf</code>、<code>logs</code>、<code>temp</code>、<code>webapps</code>、<code>work</code>和<code>shared</code>目录，因此<code>CATALINA_BASE</code>就指向这些目录。 而其他目录主要包括了<code>Tomcat</code>的二进制文件和脚本，<code>CATALINA_HOME</code>就指向这些目录。<code>IntelliJ Idea</code>在每次重新启动<code>Tomcat</code>的时候都会重新建立或者说更新<code>Tomcat</code>工作目录的内容。</li>
-</ol>
-<ul>
-<li><p><code>IntelliJ Idea</code>中的<code>Tomcat</code>项目为何在<code>.IntelliJIdea2019.1\system\tomcat</code>中？<br> <code>intelliJ Idea</code>在每次启动<code>Tomcat</code>服务器的时候都会修改<code>CATALINA_BASE</code> </p>
-</li>
-<li><p><code>Tomcat</code>服务器是如何找到<code>localhost:8080</code>页面与<code>localhost:8080/demotwo</code>页面的？</p>
-</li>
-</ul>
-<ol>
-<li><code>IntelliJ Idea</code>根据<code>CATALINA_HOME</code>的启动<code>Tomcat</code>服务器</li>
-<li><code>IntelliJ Idea</code>在<code>CATALINA_BASE</code>指定的目录下生成项目独有的<code>conf</code>、<code>logs</code>、<code>work</code>等文件夹。</li>
-<li>在<code>CATALINA_BASE</code>中的<code>conf</code>文件夹下，文件<code>server.xml</code>的<code>Host</code>标签指定了<code>Tomcat</code>的根目录（通常为<code>CATALINA_HOME\webapps\ROOT</code>），即在浏览器中显示的<code>localhost:8080</code>定位的就是此处。<code>name</code>属性和<code>appBase</code>属性起到了一个映射的作用 </li>
-<li><code>conf</code>的子目录<code>Catalina\localhost\</code>下的<code>xml</code>文件（以虚拟路径命名）<code>Context</code>标签中的<code>path</code>属性和<code>docBase</code>属性也起到了同样的映射作用。即<code>name + path</code> （<code>localhost:8080/demotwo</code>）对应的是项目的发布路径。 </li>
-<li>如果在发布项目的时候将虚拟路径设置成“<code>\</code>”，<code>IntelliJ Idea</code>则不会生成<code>Catalina</code>子目录，而会在<code>server.xml</code>中将<code>name</code>属性映射到项目的发布路径</li>
-</ol>
-]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>IntelliJ IDEA</tag>
       </tags>
   </entry>
   <entry>
@@ -1332,6 +1068,281 @@ table th:first-of-type {
       </tags>
   </entry>
   <entry>
+    <title>IntelliJ IDEA使用</title>
+    <url>/2024/07/30/IntelliJ-IDEA%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h3 id="0-设置IDEA的配置文件"><a href="#0-设置IDEA的配置文件" class="headerlink" title="0. 设置IDEA的配置文件"></a>0. 设置IDEA的配置文件</h3><p>a. <code>C:\Users\FRANK\AppData\Roaming\JetBrains\IntelliJIdea2021.3\idea.properties</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">idea.config.path=D:/ProgramFiles/Java/IdeaConfig/Config</span><br><span class="line">idea.system.path=D:/ProgramFiles/Java/IdeaConfig/System</span><br><span class="line"></span><br><span class="line">idea.plugins.path=$&#123;idea.config.path&#125;/plugins</span><br><span class="line">idea.log.path=$&#123;idea.system.path&#125;/log</span><br><span class="line"># 避免编译日志过长，前面的被覆盖掉</span><br><span class="line">idea.cycle.buffer.size=disabled</span><br></pre></td></tr></table></figure>
+<p>【注意】ideaConfig和IDEA主程序目录并列存放在IDEA下，如果ideaConfig存放在主程序目录下，会导致报错“临时文件目录在安装文件夹下”，无法更新</p>
+<p>b. <code>C:\Users\FRANK\AppData\Roaming\JetBrains\IntelliJIdea2021.3\idea64.exe.vmoptions</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-Dfile.encoding=UTF-8   # 解决`IDEA`各种乱码</span><br><span class="line">-Xms512m //最小启动内存参数 </span><br><span class="line">-Xmx2048m //最大运行内存参数</span><br><span class="line">-XX:ReservedCodeCacheSize=512m  //保留代码占用的内存容量参数</span><br></pre></td></tr></table></figure>
+
+<p>配置项目编码和IDE编码<br>【File】→【Settings】→【Editor】→【File Encodings】<br>设置【IDE Encoding】、【Project Encoding】、【Default encoding for properties files】为<code>UTF-8</code><br>【Tomcat实例】里的【VM options】添加</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-Dfile.encoding=UTF-8</span><br></pre></td></tr></table></figure>
+
+<p>设置<code>Shared Indexes</code></p>
+<ol>
+<li>idea设置<br><code>Settings</code>-&gt;<code>Tools</code>-&gt;<code>Shared Indexes</code>-&gt;<code>Wait for shared indexes</code><br><code>Settings</code>-&gt;<code>Tools</code>-&gt;<code>Shared Indexes</code>-&gt;<code>JDKs</code>-&gt;<code>Download automatically</code><br><code>Settings</code>-&gt;<code>Tools</code>-&gt;<code>Shared Indexes</code>-&gt;<code>Maven libraries</code>-&gt;<code>Download automatically</code><br><code>Settings</code>-&gt;<code>Appearance &amp; Behavior</code>-&gt;<code>System Settings</code>-&gt;<code>Http Porxy</code>-&gt;<code>Auto-detect proxy settings</code></li>
+<li>把<code>index-cdn.jetbrains.com</code>加入代理</li>
+</ol>
+<h3 id="使用ja-netfilter"><a href="#使用ja-netfilter" class="headerlink" title="使用ja-netfilter"></a>使用<code>ja-netfilter</code></h3><p>在用户目录<code>C:\Users\FRANK\AppData\Roaming\JetBrains\IntelliJIdea2021.3\idea64.exe.vmoptions</code>中添加</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">--add-opens=java.base/jdk.internal.org.objectweb.asm=ALL-UNNAMED</span><br><span class="line">--add-opens=java.base/jdk.internal.org.objectweb.asm.tree=ALL-UNNAMED</span><br><span class="line">-javaagent:D:\ProgramFiles\Java\jetbra\ja-netfilter.jar=jetbrains</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://github.com/ja-netfilter/ja-netfilter">ja-netfilter</a><br><a href="https://jetbra.in/s">jetbra</a></p>
+<h3 id="添加右键快捷键"><a href="#添加右键快捷键" class="headerlink" title="添加右键快捷键"></a>添加右键快捷键</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Windows Registry Editor Version 5.00</span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\Directory\shell\ideaIU]</span><br><span class="line">@=&quot;Open with IntelliJ IDEA Ultimate&quot;</span><br><span class="line">&quot;Icon&quot;=&quot;D:\\ProgramFiles\\Java\\ideaIU\\bin\\idea64.exe&quot;</span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\Directory\shell\ideaIU\command]</span><br><span class="line">@=&quot;\&quot;D:\\ProgramFiles\\Java\\ideaIU\\bin\\idea64.exe\&quot; \&quot;%1\&quot;&quot;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="使用代理"><a href="#使用代理" class="headerlink" title="使用代理"></a>使用代理</h3><p>设置IDEA的代理，以提高打从开网络下载的项目时，下载 <code>Maven Wrapper</code>指定的 <code>Maven</code>的速度，同时，确认代理服务器代理域名含有<code>apache.org</code>的地址</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-DsocksProxyHost=127.0.0.1 -DsocksProxyPort=1080</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-下载配置-Maven"><a href="#1-下载配置-Maven" class="headerlink" title="1. 下载配置 Maven"></a>1. 下载配置 <code>Maven</code></h3><p><a href="https://maven.apache.org/">下载<code>Maven</code></a><br>或者使用IDEA自带Maven(<code>$&#123;IntelliJ IDEA&#125;\plugins\maven\lib\maven3</code>)<br>配置环境变量<code>MAVEN_HOME</code>为<code>D:\ProgramFiles\Java\apache-maven-3.6.0</code>或<code>D:\ProgramFiles\Java\ideaIU-2019.3.1.win\plugins\maven\lib\maven3</code><br>并将<code>%MAVEN_HOME%\bin</code>添加到<code>PATH</code>中<br>命令行测试</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mvn -v</span><br></pre></td></tr></table></figure>
+<p>约定配置<br><code>Maven</code>提倡使用一个共同的标准目录结构，<code>Maven</code>使用约定优于配置的原则，大家尽可能的遵守这样的目录结构。如下所示：</p>
+<table>
+<thead>
+<tr>
+<th>目录</th>
+<th>目的</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>$&#123;basedir&#125;</code></td>
+<td>存放<code>pom.xml</code>和所有的子目录</td>
+</tr>
+<tr>
+<td><code>$&#123;basedir&#125;/src/main/java</code></td>
+<td>项目的<code>java</code>源代码</td>
+</tr>
+<tr>
+<td><code>$&#123;basedir&#125;/src/main/resources</code></td>
+<td>项目的资源，比如说<code>property</code>文件，<code>springmvc.xml</code></td>
+</tr>
+<tr>
+<td><code>$&#123;basedir&#125;/src/test/java</code></td>
+<td>项目的测试类，比如说<code>Junit</code>代码</td>
+</tr>
+<tr>
+<td><code>$&#123;basedir&#125;/src/test/resources</code></td>
+<td>测试用的资源</td>
+</tr>
+<tr>
+<td><code>$&#123;basedir&#125;/src/main/webapp/WEB-INF</code></td>
+<td><code>web</code>应用文件目录，<code>web</code>项目的信息，比如存放<code>web.xml</code>、本地图片、<code>jsp</code>视图页面</td>
+</tr>
+<tr>
+<td><code>$&#123;basedir&#125;/target</code></td>
+<td>打包输出目录</td>
+</tr>
+<tr>
+<td><code>$&#123;basedir&#125;/target/classes</code></td>
+<td>编译输出目录</td>
+</tr>
+<tr>
+<td><code>$&#123;basedir&#125;/target/test-classes</code></td>
+<td>测试编译输出目录</td>
+</tr>
+<tr>
+<td><code>Test.java</code></td>
+<td><code>Maven</code>只会自动运行符合该命名规则的测试类</td>
+</tr>
+<tr>
+<td><code>~/.m2/repository</code></td>
+<td><code>Maven</code>默认的本地仓库目录位置（可更改）</td>
+</tr>
+</tbody></table>
+<p>编辑<code>%MAVEN_HOME%\conf\settings.xml</code>，<br>设置本地仓库</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;localRepository&gt;D:/PackagesRepository/Java/Maven&lt;/localRepository&gt;</span><br></pre></td></tr></table></figure>
+<p>设置阿里云镜像,在<mirrors></mirrors>标签中添加 mirror 子节点【不建议】:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- mirrorOf设置</span><br><span class="line">    *           匹配所有仓库ID。</span><br><span class="line">    external:*  匹配除本地主机或基于文件的存储库外的所有仓库。</span><br><span class="line">    从 Maven 3.8.0 开始，external:http:* 匹配所有使用 HTTP 的存储库，除了那些使用 localhost 的存储库。</span><br><span class="line">    可以使用逗号作为分隔符指定多个存储库</span><br><span class="line">    感叹号可以与上述通配符之一结合使用以排除存储库 ID</span><br><span class="line">  </span><br><span class="line">    注意不要在逗号分隔列表中的标识符或通配符周围包含额外的空格。</span><br><span class="line"></span><br><span class="line">    当您使用高级语法并配置多个镜像时，声明顺序很重要。&lt;mirrorOf&gt;当 Maven</span><br><span class="line">查找某个存储库的镜像时，它首先检查与存储库标识符完全匹配的镜像。如果没有找到直接匹配，Maven会根据上面的规则（如果有的话）选择第一个匹配的镜像声明。因此，您可以通过更改定义中的顺序来影响匹配顺序settings.xml</span><br><span class="line"></span><br><span class="line">    例子：</span><br><span class="line">    </span><br><span class="line">    * = 一切</span><br><span class="line">    external:* = 不在本地主机上且不基于文件的所有内容。</span><br><span class="line">    repo,repo1 = repo 或 repo1</span><br><span class="line">    *,!repo1 = 除 repo1 之外的所有内容</span><br><span class="line">  --&gt;</span><br><span class="line">&lt;mirror&gt;</span><br><span class="line">  &lt;id&gt;aliyun-center-and-jcenter&lt;/id&gt;</span><br><span class="line">  &lt;mirrorOf&gt;central,jcenter&lt;/mirrorOf&gt;</span><br><span class="line">  &lt;name&gt;阿里云的central仓和jcenter仓聚合仓&lt;/name&gt;</span><br><span class="line">  &lt;url&gt;https://maven.aliyun.com/repository/public&lt;/url&gt;</span><br><span class="line">&lt;/mirror&gt;</span><br><span class="line"></span><br><span class="line">&lt;mirror&gt;</span><br><span class="line">  &lt;id&gt;aliyun-spring&lt;/id&gt;</span><br><span class="line">  &lt;mirrorOf&gt;spring&lt;/mirrorOf&gt;</span><br><span class="line">  &lt;name&gt;阿里云的spring镜像&lt;/name&gt;</span><br><span class="line">  &lt;url&gt;https://maven.aliyun.com/repository/spring&lt;/url&gt;</span><br><span class="line">&lt;/mirror&gt;</span><br><span class="line"></span><br><span class="line">&lt;mirror&gt;</span><br><span class="line">  &lt;id&gt;aliyun-spring-plugin&lt;/id&gt;</span><br><span class="line">  &lt;mirrorOf&gt;spring-plugin&lt;/mirrorOf&gt;</span><br><span class="line">  &lt;name&gt;阿里云的spring-plugin镜像&lt;/name&gt;</span><br><span class="line">  &lt;url&gt;https://maven.aliyun.com/repository/spring-plugin&lt;/url&gt;</span><br><span class="line">&lt;/mirror&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;mirror&gt;</span><br><span class="line">  &lt;id&gt;aliyun-google&lt;/id&gt;</span><br><span class="line">  &lt;mirrorOf&gt;google&lt;/mirrorOf&gt;</span><br><span class="line">  &lt;name&gt;阿里云的谷歌镜像&lt;/name&gt;</span><br><span class="line">  &lt;url&gt;https://maven.aliyun.com/repository/google&lt;/url&gt;</span><br><span class="line">&lt;/mirror&gt;</span><br><span class="line"></span><br><span class="line">&lt;mirror&gt;</span><br><span class="line">  &lt;id&gt;aliyun-gradle-plugin&lt;/id&gt;</span><br><span class="line">  &lt;mirrorOf&gt;gradle-plugin&lt;/mirrorOf&gt;</span><br><span class="line">  &lt;name&gt;阿里云的gradle-plugin镜像&lt;/name&gt;</span><br><span class="line">  &lt;url&gt;https://maven.aliyun.com/repository/gradle-plugin&lt;/url&gt;</span><br><span class="line">&lt;/mirror&gt;</span><br><span class="line"></span><br><span class="line">&lt;mirror&gt;</span><br><span class="line">  &lt;id&gt;aliyun-grails-core&lt;/id&gt;</span><br><span class="line">  &lt;mirrorOf&gt;grails-core&lt;/mirrorOf&gt;</span><br><span class="line">  &lt;name&gt;阿里云的grails-core镜像&lt;/name&gt;</span><br><span class="line">  &lt;url&gt;https://maven.aliyun.com/repository/grails-core&lt;/url&gt;</span><br><span class="line">&lt;/mirror&gt;</span><br></pre></td></tr></table></figure>
+<p>设置私有仓库【建议把阿里云镜像当做私有仓库设置】</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;profile&gt;</span><br><span class="line">  &lt;id&gt;aliyun-central&lt;/id&gt;</span><br><span class="line">  &lt;activation&gt;</span><br><span class="line">    &lt;activeByDefault&gt;true&lt;/activeByDefault&gt;</span><br><span class="line">    &lt;jdk&gt;1.8&lt;/jdk&gt;</span><br><span class="line">  &lt;/activation&gt;</span><br><span class="line">  &lt;properties&gt;</span><br><span class="line">    &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;</span><br><span class="line">    &lt;maven.compiler.encoding&gt;UTF-8&lt;/maven.compiler.encoding&gt;</span><br><span class="line">    &lt;java.version&gt;1.8&lt;/java.version&gt;</span><br><span class="line">    &lt;maven.compiler.source&gt;1.8&lt;/maven.compiler.source&gt;</span><br><span class="line">    &lt;maven.compiler.target&gt;1.8&lt;/maven.compiler.target&gt;</span><br><span class="line">    &lt;maven.compiler.version&gt;1.8&lt;/maven.compiler.version&gt;</span><br><span class="line">  &lt;/properties&gt;</span><br><span class="line">  &lt;repositories&gt;</span><br><span class="line">    &lt;repository&gt;</span><br><span class="line">      &lt;id&gt;aliyun&lt;/id&gt;</span><br><span class="line">      &lt;name&gt;Public Repositories&lt;/name&gt;</span><br><span class="line">      &lt;url&gt;https://maven.aliyun.com/repository/public&lt;/url&gt;</span><br><span class="line">      &lt;releases&gt;</span><br><span class="line">        &lt;enabled&gt;true&lt;/enabled&gt;</span><br><span class="line">        &lt;!-- always, daily (default), interval:X (where X is an integer in minutes) or never --&gt;</span><br><span class="line">        &lt;!-- &lt;updatePolicy&gt;always&lt;/updatePolicy&gt; --&gt;</span><br><span class="line">        &lt;!-- ignore, fail, or warn on missing or incorrect checksums --&gt;</span><br><span class="line">        &lt;checksumPolicy&gt;fail&lt;/checksumPolicy&gt;</span><br><span class="line">      &lt;/releases&gt;</span><br><span class="line">      &lt;snapshots&gt;</span><br><span class="line">        &lt;enabled&gt;true&lt;/enabled&gt;</span><br><span class="line">        &lt;!-- &lt;updatePolicy&gt;always&lt;/updatePolicy&gt; --&gt;</span><br><span class="line">        &lt;checksumPolicy&gt;fail&lt;/checksumPolicy&gt;</span><br><span class="line">      &lt;/snapshots&gt;</span><br><span class="line">    &lt;/repository&gt;</span><br><span class="line">    &lt;repository&gt;</span><br><span class="line">      &lt;id&gt;central&lt;/id&gt;</span><br><span class="line">      &lt;name&gt;central&lt;/name&gt;</span><br><span class="line">      &lt;url&gt;https://repo.maven.apache.org/maven2&lt;/url&gt;</span><br><span class="line">      &lt;releases&gt;</span><br><span class="line">        &lt;enabled&gt;true&lt;/enabled&gt;</span><br><span class="line">        &lt;!-- &lt;updatePolicy&gt;always&lt;/updatePolicy&gt; --&gt;</span><br><span class="line">        &lt;checksumPolicy&gt;fail&lt;/checksumPolicy&gt;</span><br><span class="line">      &lt;/releases&gt;</span><br><span class="line">      &lt;snapshots&gt;</span><br><span class="line">        &lt;enabled&gt;true&lt;/enabled&gt;</span><br><span class="line">        &lt;!-- &lt;updatePolicy&gt;always&lt;/updatePolicy&gt; --&gt;</span><br><span class="line">        &lt;checksumPolicy&gt;fail&lt;/checksumPolicy&gt;</span><br><span class="line">      &lt;/snapshots&gt;</span><br><span class="line">    &lt;/repository&gt;</span><br><span class="line">  &lt;/repositories&gt;</span><br><span class="line">  &lt;pluginRepositories&gt;</span><br><span class="line">    &lt;pluginRepository&gt;</span><br><span class="line">      &lt;id&gt;aliyun&lt;/id&gt;</span><br><span class="line">      &lt;name&gt;Public Repositories&lt;/name&gt;</span><br><span class="line">      &lt;url&gt;https://maven.aliyun.com/repository/public&lt;/url&gt;</span><br><span class="line">      &lt;releases&gt;</span><br><span class="line">        &lt;enabled&gt;true&lt;/enabled&gt;</span><br><span class="line">        &lt;!-- &lt;updatePolicy&gt;always&lt;/updatePolicy&gt; --&gt;</span><br><span class="line">        &lt;checksumPolicy&gt;fail&lt;/checksumPolicy&gt;</span><br><span class="line">      &lt;/releases&gt;</span><br><span class="line">      &lt;snapshots&gt;</span><br><span class="line">        &lt;enabled&gt;true&lt;/enabled&gt;</span><br><span class="line">        &lt;!-- &lt;updatePolicy&gt;always&lt;/updatePolicy&gt; --&gt;</span><br><span class="line">        &lt;checksumPolicy&gt;fail&lt;/checksumPolicy&gt;</span><br><span class="line">      &lt;/snapshots&gt;</span><br><span class="line">    &lt;/pluginRepository&gt;</span><br><span class="line">    &lt;pluginRepository&gt;</span><br><span class="line">      &lt;id&gt;central&lt;/id&gt;</span><br><span class="line">      &lt;name&gt;central&lt;/name&gt;</span><br><span class="line">      &lt;url&gt;https://repo.maven.apache.org/maven2&lt;/url&gt;</span><br><span class="line">      &lt;releases&gt;</span><br><span class="line">        &lt;enabled&gt;true&lt;/enabled&gt;</span><br><span class="line">        &lt;!-- &lt;updatePolicy&gt;always&lt;/updatePolicy&gt; --&gt;</span><br><span class="line">        &lt;checksumPolicy&gt;fail&lt;/checksumPolicy&gt;</span><br><span class="line">      &lt;/releases&gt;</span><br><span class="line">      &lt;snapshots&gt;</span><br><span class="line">        &lt;enabled&gt;true&lt;/enabled&gt;</span><br><span class="line">        &lt;!-- &lt;updatePolicy&gt;never&lt;/updatePolicy&gt; --&gt;</span><br><span class="line">        &lt;checksumPolicy&gt;fail&lt;/checksumPolicy&gt;</span><br><span class="line">      &lt;/snapshots&gt;</span><br><span class="line">    &lt;/pluginRepository&gt;</span><br><span class="line">  &lt;/pluginRepositories&gt;</span><br><span class="line">&lt;/profile&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>同时，激活该设置</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;activeProfiles&gt;</span><br><span class="line">  &lt;activeProfile&gt;aliyun-central&lt;/activeProfile&gt;</span><br><span class="line">&lt;/activeProfiles&gt;</span><br></pre></td></tr></table></figure>
+<p>参考</p>
+<ol>
+<li><a href="https://maven.apache.org/settings.html">Maven Settings Reference</a></li>
+<li><a href="https://maven.apache.org/settings.html#Mirrors">Maven Settings Reference Mirrors</a></li>
+<li><a href="https://maven.apache.org/guides/mini/guide-mirror-settings.html">Using Mirrors for Repositories</a></li>
+<li><a href="https://swenfang.github.io/2018/06/03/Maven-Priority/">Maven仓库理解和优先级</a></li>
+<li><a href="https://maven.aliyun.com/mvn/guide">阿里云云效 Maven</a></li>
+</ol>
+<p>archetype配置(<code>maven-archetype-plugin 3.x</code>已经不支持此配置,<code>maven-archetype-plugin 2.x</code>可以)</p>
+<p><code>archetype</code>插件有一个<code>archetypeCatalog</code>参数，这个参数指定从哪里获取<code>archetype-catalog.xml</code>文件，可选的取值有：</p>
+<ul>
+<li><code>internal</code> 只使用内置的目录文件（只包含<code>org.apache.maven.archetypes</code>底下的模板工程）</li>
+<li><code>local</code> 使用本地的目录文件（<code>~/.m2/archetype-catalog.xml</code>）</li>
+<li><code>remote</code> 使用<code>maven</code>网站上的目录文件</li>
+<li><code>file://path/to/archetype-catalog.xml</code> 指定本地的一个目录文件，如果文件叫<code>archetype-catalog.xml</code>指定目录就可以了</li>
+<li><code>http://url/to/archetype-catalog.xml</code> 指定远程的一个目录文件，如果文件叫<code>archetype-catalog.xml</code>指定目录就可以了<br>默认的值是<code>remote,local</code>，也就是先显示官方网站上的，再显示本地的。</li>
+</ul>
+<p>所以我们可以有两种做法：</p>
+<ul>
+<li>如果你觉得<code>org.apache.maven.archetypes</code>里的模板工程够用了，直接指定<code>-DarchetypeCatalog=internal</code>即可</li>
+<li>如果你想要完整的模板工程，可以先下载<a href="https://repo.maven.apache.org/maven2/archetype-catalog.xml">archetype-catalog.xml</a><code>https://repo.maven.apache.org/maven2/archetype-catalog.xml</code>，然后把它放到<code>~/.m2</code>下，然后指定<code>-DarchetypeCatalog=local</code>即可</li>
+</ul>
+<p><code>IDEA</code> 的<code>Maven</code>配置<br>【File】→【Settings】→【Build，Execution，Deployment】→【Build Tools】→【Maven】</p>
+<ul>
+<li>【Maven home directory】设为<code>%MAVEN_HOME%</code>，即<code>Marven</code>的目录</li>
+<li>【User Settings file】设为<code>%MAVEN_HOME%\conf\settings.xml</code>,即配置文件</li>
+<li>【Local repository】设为<code>E:\PackagesRepository\Java</code>,即本地存放<code>maven</code>仓库的目录，默认会随着【User Settings file】的更改而更改</li>
+<li>下一级【Runner】里【<code>VM Options</code>】设为<code>-DarchetypeCatalog=internal</code></li>
+</ul>
+<p><em><strong>注意：</strong></em><br>这种配置方式，都是针对项目的具体配置，若新建项目，可能还需要配置。</p>
+<p>全局配置，都是从启动页面的【Configure】→【Settings】开始。具体路径如下：<br>【Configure】→【Settings】→【Build，Execution，Deployment】→【Build Tools】→【Maven】</p>
+<p>另外，可以在<code>maven</code>全局设置里，可以设置项目默认的JDK</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;profile&gt;</span><br><span class="line">  &lt;id&gt;jdk8&lt;/id&gt;</span><br><span class="line">  &lt;activation&gt;</span><br><span class="line">    &lt;activeByDefault&gt;true&lt;/activeByDefault&gt;</span><br><span class="line">    &lt;jdk&gt;1.8&lt;/jdk&gt;</span><br><span class="line">  &lt;/activation&gt;</span><br><span class="line">  &lt;properties&gt;</span><br><span class="line">    &lt;maven.compiler.source&gt;1.8&lt;/maven.compiler.source&gt;</span><br><span class="line">    &lt;maven.compiler.target&gt;1.8&lt;/maven.compiler.target&gt;</span><br><span class="line">    &lt;maven.compiler.compilerVersion&gt;1.8&lt;/maven.compiler.compilerVersion&gt;</span><br><span class="line">  &lt;/properties&gt;</span><br><span class="line">&lt;/profile&gt; </span><br></pre></td></tr></table></figure>
+
+<h3 id="2-配置Gradle"><a href="#2-配置Gradle" class="headerlink" title="2. 配置Gradle"></a>2. 配置Gradle</h3><p><a href="https://gradle.org/releases/">下载Gradle</a><br>解压到<code>D:\ProgramFiles\Java\gradle-version</code><br>配置环境变量<br><code>GRADLE_HOME</code>，值为<code>D:\ProgramFiles\Java\gradle-version</code><br><code>GRADLE_USER_HOME</code>,值为<code>D:\PackagesRepository\Java\Gradle</code>  &#x2F;&#x2F; 不能与maven公用本地仓库，只能通过mavenLocal()使用maven的本地仓库<br>添加<code>PATH</code><br><code>%GRADLE_HOME%\bin</code><br>命令行测试</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">gradle -v</span><br></pre></td></tr></table></figure>
+<p>另外，为了加快gradle构建，在家目录下的.gradle&#x2F;gradle.properties文件（如没有，可需要新建文件），加上如下的代码即可</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">org.gradle.daemon=true</span><br><span class="line">org.gradle.jvmargs=-Xmx16384m -XX:MaxPermSize=2048m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8</span><br><span class="line">org.gradle.parallel=true</span><br></pre></td></tr></table></figure>
+<p>参考</p>
+<ol>
+<li><a href="https://droidyue.com/blog/2017/04/16/speedup-gradle-building/">一些关于加速Gradle构建的个人经验</a></li>
+<li><a href="https://blog.csdn.net/IOT_AI/article/details/106617626">IDEA如何正确配置Gradle? GRADLE_USER_HOME 和 Gradle user home的区别</a></li>
+</ol>
+<p>使用<code>gradle</code>构建的项目，在项目的根目录下都会有一个<code>build.gradle</code>文件，存储着构建的配置，其配置语法使用<code>groovy DSL</code></p>
+<p><code>gradle</code>的构建依赖通常包含两部分:</p>
+<ul>
+<li><p>构建前依赖: 指的是如果使用了<code>gradle</code>默认不包含的插件或依赖进行构建，那么<code>gradle</code>本身应该从哪里获取这些依赖工具</p>
+</li>
+<li><p>构建中依赖: 这里和<code>maven</code>一致，就是项目依赖的包</p>
+</li>
+<li><p>maven { url: ‘&#x2F;path&#x2F;to&#x2F;custom&#x2F;url’ }: 自定义的maven仓库路径</p>
+</li>
+</ul>
+<p>配置的时候大体需要注意以下两点:</p>
+<ul>
+<li><code>gradle</code>允许存在多个<code>maven</code>仓库，可以从不同的仓库中拿到依赖</li>
+<li>如果存在多个<code>maven</code>仓库，那么将按照书写顺序依次尝试查找依赖</li>
+</ul>
+<p>明白以上两点，大体就知道怎么配置了，应该按照速度从快到慢的顺序填写，所以通常<code>mavenLocal()</code>放第一位，<code>mavenCentral()</code>&#x2F;<code>jcenter()</code>通常放最后作为冗余配置，在本地镜像不可用时作为备用仓库。</p>
+<p><code>Gradle</code>仓库建议配置如下,并放在目录 <code>GRADLE_USER_HOME</code>下,即<code>D:\PackagesRepository\Java\Gradle</code> </p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> repoConfig = &#123;</span><br><span class="line"></span><br><span class="line">    mavenLocal()</span><br><span class="line">        </span><br><span class="line">    <span class="comment">// def ALIYUN_CENTRAL_URL = &#x27;https://maven.aliyun.com/repository/central&#x27;</span></span><br><span class="line">    <span class="comment">// def ALIYUN_JCENTER_URL = &#x27;https://maven.aliyun.com/repository/public&#x27;</span></span><br><span class="line">    <span class="keyword">def</span> ALIYUN_PUBLIC_URL = <span class="string">&#x27;https://maven.aliyun.com/repository/public/&#x27;</span>  <span class="comment">// 此仓库为 central 和 jcentral 的聚合</span></span><br><span class="line">    <span class="keyword">def</span> ALIYUN_GOOGLE_URL = <span class="string">&#x27;https://maven.aliyun.com/repository/google/&#x27;</span></span><br><span class="line">    <span class="keyword">def</span> ALIYUN_GRADLE_PLUGIN_URL = <span class="string">&#x27;https://maven.aliyun.com/repository/gradle-plugin/&#x27;</span></span><br><span class="line">    <span class="keyword">def</span> ALIYUN_SPRING_URL = <span class="string">&#x27;https://maven.aliyun.com/repository/spring/&#x27;</span></span><br><span class="line">    <span class="keyword">def</span> ALIYUN_SPRING_PLUGIN_URL = <span class="string">&#x27;https://maven.aliyun.com/repository/spring-plugin/&#x27;</span></span><br><span class="line">    <span class="keyword">def</span> ALIYUN_GRAILS_CORE_URL = <span class="string">&#x27;https://maven.aliyun.com/repository/grails-core/&#x27;</span></span><br><span class="line">    <span class="keyword">def</span> ALIYUN_APACHE_SNAPSHOTS_URL = <span class="string">&#x27;https://maven.aliyun.com/repository/apache-snapshots/&#x27;</span></span><br><span class="line">    <span class="keyword">def</span> TENCENT_CLOUD_URL = <span class="string">&#x27;https://mirrors.cloud.tencent.com/gradle&#x27;</span></span><br><span class="line"></span><br><span class="line">    all &#123; ArtifactRepository repo -&gt;</span><br><span class="line">        <span class="keyword">if</span>(repo <span class="keyword">instanceof</span> MavenArtifactRepository)&#123;</span><br><span class="line">            <span class="keyword">def</span> url = repo.url.toString()</span><br><span class="line">            println(<span class="string">&#x27;orginal:&#x27;</span>+url)</span><br><span class="line">            <span class="keyword">if</span> (url.startsWith(<span class="string">&#x27;https://repo1.maven.org/maven2/&#x27;</span>)) &#123;</span><br><span class="line">                println(<span class="string">&#x27;replaed:&#x27;</span>+ <span class="string">&#x27;ALIYUN_PUBLIC_URL&#x27;</span>)</span><br><span class="line">                project.logger.lifecycle <span class="string">&quot;Repository $&#123;repo.url&#125; replaced by $ALIYUN_PUBLIC_URL.&quot;</span></span><br><span class="line">                remove repo</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (url.startsWith(<span class="string">&#x27;https://jcenter.bintray.com/&#x27;</span>)) &#123;</span><br><span class="line">                project.logger.lifecycle <span class="string">&quot;Repository $&#123;repo.url&#125; replaced by $ALIYUN_PUBLIC_URL.&quot;</span></span><br><span class="line">                println(<span class="string">&#x27;replaed:&#x27;</span>+ <span class="string">&#x27;ALIYUN_PUBLIC_URL&#x27;</span>)</span><br><span class="line">                remove repo</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (url.startsWith(<span class="string">&#x27;https://maven.google.com/&#x27;</span>)) &#123;</span><br><span class="line">                println(<span class="string">&#x27;replaed:&#x27;</span>+ <span class="string">&#x27;ALIYUN_GOOGLE_URL&#x27;</span>)</span><br><span class="line">                project.logger.lifecycle <span class="string">&quot;Repository $&#123;repo.url&#125; replaced by $ALIYUN_GOOGLE_URL.&quot;</span></span><br><span class="line">                remove repo</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (url.startsWith(<span class="string">&#x27;https://plugins.gradle.org/m2/&#x27;</span>)) &#123;</span><br><span class="line">                println(<span class="string">&#x27;replaed:&#x27;</span>+ <span class="string">&#x27;ALIYUN_GRADLE_PLUGIN_URL&#x27;</span>)</span><br><span class="line">                project.logger.lifecycle <span class="string">&quot;Repository $&#123;repo.url&#125; replaced by $ALIYUN_GRADLE_PLUGIN_URL.&quot;</span></span><br><span class="line">                remove repo</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (url.startsWith(<span class="string">&#x27;http://repo.spring.io/libs-milestone/&#x27;</span>)) &#123;</span><br><span class="line">                project.logger.lifecycle <span class="string">&quot;Repository $&#123;repo.url&#125; replaced by $ALIYUN_SPRING_URL.&quot;</span></span><br><span class="line">                println(<span class="string">&#x27;replaed:&#x27;</span>+ <span class="string">&#x27;ALIYUN_SPRING_URL&#x27;</span>)</span><br><span class="line">                remove repo</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (url.startsWith(<span class="string">&#x27;http://repo.spring.io/plugins-release/&#x27;</span>)) &#123;</span><br><span class="line">                project.logger.lifecycle <span class="string">&quot;Repository $&#123;repo.url&#125; replaced by $ALIYUN_SPRING_PLUGIN_URL.&quot;</span></span><br><span class="line">                println(<span class="string">&#x27;replaed:&#x27;</span>+ <span class="string">&#x27;ALIYUN_SPRING_PLUGIN_URL&#x27;</span>)</span><br><span class="line">                remove repo</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (url.startsWith(<span class="string">&#x27;https://repo.grails.org/grails/core/&#x27;</span>)) &#123;</span><br><span class="line">                project.logger.lifecycle <span class="string">&quot;Repository $&#123;repo.url&#125; replaced by $ALIYUN_GRAILS_CORE_URL.&quot;</span></span><br><span class="line">                println(<span class="string">&#x27;replaed:&#x27;</span>+ <span class="string">&#x27;ALIYUN_GRAILS_CORE_URL&#x27;</span>)</span><br><span class="line">                remove repo</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (url.startsWith(<span class="string">&#x27;https://repository.apache.org/snapshots/&#x27;</span>)) &#123;</span><br><span class="line">                project.logger.lifecycle <span class="string">&quot;Repository $&#123;repo.url&#125; replaced by $ALIYUN_APACHE_SNAPSHOTS_URL.&quot;</span></span><br><span class="line">                println(<span class="string">&#x27;replaed:&#x27;</span>+ <span class="string">&#x27;ALIYUN_APACHE_SNAPSHOTS_URL&#x27;</span>)</span><br><span class="line">                remove repo</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    maven &#123; url ALIYUN_PUBLIC_URL &#125;</span><br><span class="line">    maven &#123; url ALIYUN_GOOGLE_URL &#125;</span><br><span class="line">    maven &#123; url ALIYUN_GRADLE_PLUGIN_URL &#125;</span><br><span class="line">    maven &#123; url ALIYUN_SPRING_URL &#125;</span><br><span class="line">    maven &#123; url ALIYUN_SPRING_PLUGIN_URL &#125;</span><br><span class="line">    maven &#123; url ALIYUN_GRAILS_CORE_URL &#125;</span><br><span class="line">    maven &#123; url ALIYUN_APACHE_SNAPSHOTS_URL &#125;  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">allprojects &#123;</span><br><span class="line">    buildscript &#123;</span><br><span class="line">        repositories repoConfig</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    repositories repoConfig</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>存储库只是文件的集合，按分组，名称和版本来组织构造。 </p>
+<p>默认情况下，Gradle不定义任何存储库。 这里使用repositories 指定存储库。 </p>
+<ul>
+<li><code>mavenLocal()</code>：指定使用maven本地仓库，而本地仓库在配置maven时setting文件指定的仓库位置。如<code>&lt;localRepository&gt;D:/PackagesRepository/Java&lt;/localRepository&gt;</code>，同时将setting文件拷贝到<code>USER_HOME\.m2</code>目录下，一般该目录下是没有<code>setting</code>文件的，<br> <code>gradle</code>查找<code>jar</code>包顺序如下：<code>gradle</code>默认会按以下顺序去查找本地的仓库：【<code>USER_HOME/.m2/settings.xml</code>】→【 <code>M2_HOME/conf/settings.xml</code>】→【<code>USER_HOME/.m2/repository</code>】</li>
+<li><code>maven &#123; url &quot;http://maven.aliyun.com/nexus/content/groups/public/&quot;&#125;</code>:指定阿里云镜像加速地址 </li>
+<li><code>mavenCentral()</code>:这是Maven的中央仓库，无需配置，直接声明就可以使用 </li>
+<li><code>jcenter()</code>:JCenter中央仓库，实际也是是用的maven搭建的，但相比Maven仓库更友好，通过CDN分发，并且支持https访问</li>
+</ul>
+<p>后面的<code>maven &#123; url 地址&#125;</code>，指定<code>maven</code>仓库，一般用私有仓库地址或其它的第三方库 </p>
+<p><code>gradle</code>按配置顺序寻找<code>jar</code>文件。如果本地存在就不会再去下载。不存在的再去<code>maven</code>仓库下载，这里注意下载下来的<code>jar</code>文件不在<code>maven</code>仓库里，而是在<code>gradle</code>的主工作目录下，如上面的<code>E:\Git\Gradle</code>目录 </p>
+<p>构建中依赖<br>定义构建时依赖的仓库就在<code>repositories &#123;&#125;</code>这个闭包中，规则和配置和<code>buildscript.repositories &#123;&#125;</code>完全一致，这里就不再赘述了，直接贴样例:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">repositories &#123;</span><br><span class="line">    mavenLocal()</span><br><span class="line">    maven &#123; url &quot;https://maven.aliyun.com/repository/public&quot; &#125;</span><br><span class="line">    jcenter()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">dependencies &#123;</span><br><span class="line">    compile &quot;org.apache.hbase:hbase-client:1.2.2&quot;</span><br><span class="line">    compile &quot;org.mongodb:mongodb-driver:3.3.0&quot;</span><br><span class="line">    compile &quot;org.yaml:snakeyaml:1.17&quot;</span><br><span class="line">    compile &#x27;org.apache.logging.log4j:log4j-core:2.6.2&#x27;</span><br><span class="line">    compile &#x27;org.apache.logging.log4j:log4j-api:2.6.2&#x27;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>下面的<code>dependencies &#123;&#125;</code>就是定义的到底依赖哪些<code>jar</code>包，如果本地的<code>gradle</code>缓存中没找到，就会从<code>repositories &#123;&#125;</code>仓库中寻找</p>
+<p>修改<code>init-script</code>方式修改默认仓库<br>以上的方案适合自己的项目，方便直接修改<code>build.gradle</code>的情况，某些情况下无法直接修改<code>build.gradle</code>，比如参与开源项目，并不方便修改别人写好的配置，再比如在CI流水线中，并不方便对源代码进行任何形式的修改等等场景。</p>
+<p>对于这一类的需求，<code>gradle</code>提供了<code>init-script</code>的形式修改仓库。也就是说，这种形式非常类似于<code>Linux</code>的初始化脚本<code>init.d</code>，会加载一遍之后才完成系统启动。每个<code>gradle</code>命令执行之前会先执行一遍<code>init-script</code>，然后才真正执行构建的<code>task</code>。</p>
+<p>因此，我们只要把仓库的配置写入<code>init-script</code>配置即可，由于<code>build.gradle</code>配置通常都会定义多个<code>maven</code>仓库，因此<code>init-script</code>脚本可以不用考虑仓库冗余的问题。</p>
+<p>关于<code>init-script</code>详情可以去看<a href="https://docs.gradle.org/current/userguide/init_scripts.html">官方文档</a>介绍，我这里简单总结一下。</p>
+<p><code>init</code>脚本的查找路径:</p>
+<ul>
+<li>使用-I&#x2F;–init-script直接在命令行指定初始化脚本</li>
+<li>~&#x2F;.gradle&#x2F;init.gradle</li>
+<li>~&#x2F;.gradle&#x2F;init.d&#x2F;*.gradle</li>
+<li>${GRADLE_HOME}&#x2F;init.d&#x2F;*.gradle<br>如果有多个<code>init-script</code>可以执行，那么将按照以上的顺序依次执行，对于<code>*.gradle</code>这样的文件将按照文件名排序顺序执行。</li>
+</ul>
+<p>撇开别的高级玩法和高级定制不谈，只说说定义镜像仓库怎么搞。我的做法是直接新建<code>~/.gradle/init.d/repo.gradle</code>:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">allprojects &#123;</span><br><span class="line">    buildscript &#123;</span><br><span class="line">        repositories &#123;</span><br><span class="line">            maven &#123; url &quot;https://maven.aliyun.com/repository/public&quot; &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    repositories &#123;</span><br><span class="line">        maven &#123; url &quot;https://maven.aliyun.com/repository/public&quot; &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这样就等于设置了默认的仓库配置，那么每次执行<code>gradle</code>的时候都会从我希望的镜像站中去寻找依赖并下载了</p>
+<p>但需要注意的是由于<code>plugins &#123;&#125; DSL</code>目前不使用<code>buildscript &#123;&#125;</code>配置，也无法通过<code>init script</code>定制的方式传入<code>settings.gradle</code>中，所以这种方式是不起作用的。不过好在这个<code>DSL</code>官方还在完善中，也许未来会支持也说不定。<br>参考<a href="https://my.oschina.net/abcfy2/blog/783743">gradle使用maven镜像仓库的方法</a><br>参考<a href="http://www.souvc.com/?p=2573">《Gradle实战》如何配置利用Maven本地仓库</a></p>
+<h5 id="构建命令"><a href="#构建命令" class="headerlink" title="构建命令"></a>构建命令</h5><p>清理命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">gradle clean</span><br></pre></td></tr></table></figure>
+
+<p>构建打包命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">gradle clean build</span><br></pre></td></tr></table></figure>
+<p>编译时跳过测试，使用<code>-x</code>,<code>-x</code>参数用来排除不需要执行的任务</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">gradle clean build -x test</span><br></pre></td></tr></table></figure>
+
+<p>创建缓存依赖</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">gradle clean build --refresh-dependencies</span><br></pre></td></tr></table></figure>
+<p>或者删除.gradle&#x2F;caches目录，构建的时候它会下载所有依赖并加入到缓存中</p>
+<p>阿里云镜像</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">buildscript &#123;</span><br><span class="line">    repositories &#123;</span><br><span class="line">        maven &#123; url &#x27;http://maven.aliyun.com/nexus/content/groups/public/&#x27; &#125;</span><br><span class="line">        maven &#123; url &#x27;http://maven.aliyun.com/nexus/content/repositories/jcenter&#x27; &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>构建脚本</p>
+<p><code>build.gradle</code>是<code>Gradle</code>默认的构建脚本文件，执行<code>Gradle</code>命令的时候，会默认加载当前目录下的<code>build.gradle</code>脚本文件<br>构建脚本如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">buildScript &#123;</span><br><span class="line">    repositories &#123;</span><br><span class="line">         mavenCentral()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">repositories &#123;</span><br><span class="line">     mavenCentral()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>buildScript</code>里的<code>repositories</code>是这个脚本需要的依赖库，与项目无关，在执行脚本时，会从这个库里下载对应的<code>jar</code>和插件。</li>
+<li><code>repositories</code>是项目里需要依赖的<code>jar</code>的库。</li>
+</ul>
+<p>查看项目已定义的所有task以及含义<br>命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">gradle tasks</span><br></pre></td></tr></table></figure>
+<p>比如结果如下</p>
+<ul>
+<li>assemble: 编译</li>
+<li>build：编译并执行测试</li>
+<li>clean：删除build目录</li>
+<li>jar： 生成jar包</li>
+<li>test：执行单元测试</li>
+</ul>
+<p><code>maven</code>项目转换为<code>gradle</code>项目<br>在项目的根目录执行</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">gradle init --type pom</span><br></pre></td></tr></table></figure>
+<p>上面的命令会根据<code>pom</code>文件自动生成<code>gradle</code>项目所需的文件和配置，然后以<code>gradle</code>项目重新导入即可</p>
+<p><code>settings.gradle</code>配置</p>
+<p><code>settings.gradle</code>是模块<code>Module</code>配置文件。大多数<code>setting.gradle</code>的作用是为了配置子工程，根目录下的<code>settings.gradle</code>脚本文件是针对<code>module</code>的全局配置。</p>
+<p><code>settings.gradle</code>用于创建多<code>Project</code>的<code>Gradle</code>项目。<code>Project</code>在<code>IDEA</code>里对应<code>Module</code>模块。 例如配置<code>module</code>名<code>rootProject.name = &#39;DyoonPLM&#39;</code></p>
+<h5 id="IDEA配置"><a href="#IDEA配置" class="headerlink" title="IDEA配置"></a>IDEA配置</h5><p>设置<code>Gradle</code>下载的<code>jar</code>包仓库主目录<code>E:\Git\Gradle</code><br>【File】→【Settings】→【Build，Execution，Deployment】→【Build Tools】→【Gradle】→【Service directory path】</p>
+<h3 id="3-配置Groovy"><a href="#3-配置Groovy" class="headerlink" title="3. 配置Groovy"></a>3. 配置Groovy</h3><p><a href="http://groovy-lang.org/download.html">下载Groovy</a><br>解压到<code>D:\ProgramFiles\Java\groovy-2.5.7</code><br>配置环境变量<br><code>GROOVY_HOME</code>，值为<code>D:\ProgramFiles\Java\groovy-2.5.7</code><br>添加<code>PATH</code>环境变量<br><code>%GROOVY_HOME%\bin</code><br>命令行测试</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">groovy -v</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-Android-SDK配置"><a href="#4-Android-SDK配置" class="headerlink" title="4. Android SDK配置"></a>4. Android SDK配置</h3><p>下载<a href="https://developer.android.com/studio">Android SDK</a>,找到<code>Command line tools only</code>里的<code>Windows</code>版本</p>
+<p>解压到<code>D:\ProgramFiles\Java\sdk-tools-windows-4333796</code></p>
+<p>双击<code>SDK Manager.exe</code>，启动<code>SDK Manager</code><br><code>Tools</code>文件夹里面几个必须要安装的(只需要下载最新的版本就行了):</p>
+<ul>
+<li><code>Android SDK Tools</code>（这个我们在之前的一步已经下载好了的，一般不会让你再安装了，不过有可能会让你更新)</li>
+<li><code>Android SDK Platform-tools</code></li>
+<li><code>Android SDKBuild-tools</code></li>
+</ul>
+<p>API选择</p>
+<p>我们可以看到这里提供了很多很多从Android 2.1到Android 8.x的很多版本的API。建议：新手的话，选择一个最新的版本就好了，因为Android是向下兼容的。其他的以后你要用到了在下载就行了。<br>这里需要说明的是，如果以后不打算用模拟器调试，而是一直用真机来调试的话，那么就可以不用装<code>system images</code>。</p>
+<h3 id="5-Tomcat服务"><a href="#5-Tomcat服务" class="headerlink" title="5. Tomcat服务"></a>5. Tomcat服务</h3><p><a href="https://www-us.apache.org/dist/tomcat/tomcat-9/v9.0.17/bin/apache-tomcat-9.0.17-windows-x64.zip">下载<code>Tomcat</code></a><br>解压到<code>D:\ProgramFiles\Java\apache-tomcat-9.0.17</code><br>配置环境变量:<br><code>CATALINA_BASE</code>,值为<code>D:\ProgramFiles\Java\apache-tomcat-9.0.17</code><br><code>CATALINA_HOME</code>,值为<code>D:\ProgramFiles\Java\apache-tomcat-9.0.17</code><br>添加<code>PATH</code> 变量<br><code>%CATALINA_HOME%\lib</code>和<code>%CATALINA_HOME%\bin</code><br>可安装为服务：<br><code>service.bat install</code><br>卸载为<code>service.bat remove</code><br>启动：<br>A、双击<code>tomcat9w.exe</code>操作<br>B、Window服务配置里<br>C、运行脚本<code>startup.bat</code>，关闭脚本<code>shutdown.bat</code></p>
+<h5 id="IDEA的Tomcat配置"><a href="#IDEA的Tomcat配置" class="headerlink" title="IDEA的Tomcat配置"></a><code>IDEA</code>的<code>Tomcat</code>配置</h5><p>【Run】→【Edit Configurations】→【Templates】→【Tomcat Server】&#x2F;【TomEE Server】→【+】<br>另对具体项目还需设置【Depoyment】，否则，运行不正常<br>或者<br>【Configure】→【Settings】→【Build，Execution，Deployment】→【Application Servers】→【+】→【Tomcat Server】</p>
+<ul>
+<li><code>CATALINA_HOME</code>与<code>CATALINA_BASE</code>的区别?</li>
+</ul>
+<ol>
+<li><code>CATALINA_HOME</code>即<code>Tomcat</code>的安装目录，<code>CATALINA_BASE</code>是<code>Tomcat</code>的工作目录。如果同时运行多个<code>Tomcat</code>实例，通常会配置多个工作目录。每个<code>Tomcat</code>实例独占一个工作目录，但是共享一个安装目录。</li>
+<li><code>Tomcat</code>每个运行实例需要使用自己的<code>conf</code>、<code>logs</code>、<code>temp</code>、<code>webapps</code>、<code>work</code>和<code>shared</code>目录，因此<code>CATALINA_BASE</code>就指向这些目录。 而其他目录主要包括了<code>Tomcat</code>的二进制文件和脚本，<code>CATALINA_HOME</code>就指向这些目录。<code>IntelliJ Idea</code>在每次重新启动<code>Tomcat</code>的时候都会重新建立或者说更新<code>Tomcat</code>工作目录的内容。</li>
+</ol>
+<ul>
+<li><p><code>IntelliJ Idea</code>中的<code>Tomcat</code>项目为何在<code>.IntelliJIdea2019.1\system\tomcat</code>中？<br> <code>intelliJ Idea</code>在每次启动<code>Tomcat</code>服务器的时候都会修改<code>CATALINA_BASE</code> </p>
+</li>
+<li><p><code>Tomcat</code>服务器是如何找到<code>localhost:8080</code>页面与<code>localhost:8080/demotwo</code>页面的？</p>
+</li>
+</ul>
+<ol>
+<li><code>IntelliJ Idea</code>根据<code>CATALINA_HOME</code>的启动<code>Tomcat</code>服务器</li>
+<li><code>IntelliJ Idea</code>在<code>CATALINA_BASE</code>指定的目录下生成项目独有的<code>conf</code>、<code>logs</code>、<code>work</code>等文件夹。</li>
+<li>在<code>CATALINA_BASE</code>中的<code>conf</code>文件夹下，文件<code>server.xml</code>的<code>Host</code>标签指定了<code>Tomcat</code>的根目录（通常为<code>CATALINA_HOME\webapps\ROOT</code>），即在浏览器中显示的<code>localhost:8080</code>定位的就是此处。<code>name</code>属性和<code>appBase</code>属性起到了一个映射的作用 </li>
+<li><code>conf</code>的子目录<code>Catalina\localhost\</code>下的<code>xml</code>文件（以虚拟路径命名）<code>Context</code>标签中的<code>path</code>属性和<code>docBase</code>属性也起到了同样的映射作用。即<code>name + path</code> （<code>localhost:8080/demotwo</code>）对应的是项目的发布路径。 </li>
+<li>如果在发布项目的时候将虚拟路径设置成“<code>\</code>”，<code>IntelliJ Idea</code>则不会生成<code>Catalina</code>子目录，而会在<code>server.xml</code>中将<code>name</code>属性映射到项目的发布路径</li>
+</ol>
+]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>IntelliJ IDEA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Jackson封装</title>
+    <url>/2024/07/31/Jackson%E5%B0%81%E8%A3%85/</url>
+    <content><![CDATA[<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.rl.algorithmassistance.common;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.fasterxml.jackson.annotation.JsonInclude;</span><br><span class="line"><span class="keyword">import</span> com.fasterxml.jackson.core.JsonProcessingException;</span><br><span class="line"><span class="keyword">import</span> com.fasterxml.jackson.core.type.TypeReference;</span><br><span class="line"><span class="keyword">import</span> com.fasterxml.jackson.databind.DeserializationFeature;</span><br><span class="line"><span class="keyword">import</span> com.fasterxml.jackson.databind.ObjectMapper;</span><br><span class="line"><span class="keyword">import</span> com.fasterxml.jackson.databind.SerializationFeature;</span><br><span class="line"><span class="keyword">import</span> com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;</span><br><span class="line"><span class="keyword">import</span> lombok.extern.slf4j.Slf4j;</span><br><span class="line"><span class="keyword">import</span> org.springframework.util.StringUtils;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.text.SimpleDateFormat;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Slf4j</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">JsonUtils</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="type">ObjectMapper</span> <span class="variable">om</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ObjectMapper</span>();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 对象的所有字段全部列入，还是其他的选项，可以忽略null等</span></span><br><span class="line">        om.setSerializationInclusion(JsonInclude.Include.ALWAYS);</span><br><span class="line">        <span class="comment">// 设置Date类型的序列化及反序列化格式</span></span><br><span class="line">        om.setDateFormat(<span class="keyword">new</span> <span class="title class_">SimpleDateFormat</span>(<span class="string">&quot;yyyy-MM-dd HH:mm:ss&quot;</span>));</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 忽略空Bean转json的错误</span></span><br><span class="line">        om.configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, <span class="literal">false</span>);</span><br><span class="line">        <span class="comment">// 忽略未知属性，防止json字符串中存在，java对象中不存在对应属性的情况出现错误</span></span><br><span class="line">        om.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, <span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 注册一个时间序列化及反序列化的处理模块，用于解决jdk8中localDateTime等的序列化问题</span></span><br><span class="line">        om.registerModule(<span class="keyword">new</span> <span class="title class_">JavaTimeModule</span>());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 对象 =&gt; json字符串</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> obj 源对象</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; String <span class="title function_">toJson</span><span class="params">(T obj)</span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="type">String</span> <span class="variable">json</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">if</span> (obj != <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                json = om.writeValueAsString(obj);</span><br><span class="line">            &#125; <span class="keyword">catch</span> (JsonProcessingException e) &#123;</span><br><span class="line">                log.warn(e.getMessage(), e);</span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">IllegalArgumentException</span>(e.getMessage());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> json;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * json字符串 =&gt; 对象</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> json  源json串</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> clazz 对象类</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> &lt;T&gt;   泛型</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; T <span class="title function_">parse</span><span class="params">(String json, Class&lt;T&gt; clazz)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> parse(json, clazz, <span class="literal">null</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * json字符串 =&gt; 对象</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> json 源json串</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> type 对象类型</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> &lt;T&gt;  泛型</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; T <span class="title function_">parse</span><span class="params">(String json, TypeReference type)</span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> parse(json, <span class="literal">null</span>, type);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * json =&gt; 对象处理方法</span></span><br><span class="line"><span class="comment">     * &lt;br&gt;</span></span><br><span class="line"><span class="comment">     * 参数clazz和type必须一个为null，另一个不为null</span></span><br><span class="line"><span class="comment">     * &lt;br&gt;</span></span><br><span class="line"><span class="comment">     * 此方法不对外暴露，访问权限为private</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> json  源json串</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> clazz 对象类</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> type  对象类型</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> &lt;T&gt;   泛型</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> &lt;T&gt; T <span class="title function_">parse</span><span class="params">(String json, Class&lt;T&gt; clazz, TypeReference type)</span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="type">T</span> <span class="variable">obj</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">if</span> (StringUtils.hasText(json)) &#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (clazz != <span class="literal">null</span>) &#123;</span><br><span class="line">                    obj = om.readValue(json, clazz);</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    obj = (T) om.readValue(json, type);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                log.warn(e.getMessage(), e);</span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">IllegalArgumentException</span>(e.getMessage());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> obj;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>Jackson</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JavaScript之一基本类型和结构语句</title>
     <url>/2024/07/31/JavaScript%E4%B9%8B%E4%B8%80%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B%E5%92%8C%E7%BB%93%E6%9E%84%E8%AF%AD%E5%8F%A5/</url>
     <content><![CDATA[<br />
@@ -1402,15 +1413,31 @@ table th:first-of-type {
       </tags>
   </entry>
   <entry>
-    <title>Jackson封装</title>
-    <url>/2024/07/31/Jackson%E5%B0%81%E8%A3%85/</url>
-    <content><![CDATA[<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.rl.algorithmassistance.common;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.fasterxml.jackson.annotation.JsonInclude;</span><br><span class="line"><span class="keyword">import</span> com.fasterxml.jackson.core.JsonProcessingException;</span><br><span class="line"><span class="keyword">import</span> com.fasterxml.jackson.core.type.TypeReference;</span><br><span class="line"><span class="keyword">import</span> com.fasterxml.jackson.databind.DeserializationFeature;</span><br><span class="line"><span class="keyword">import</span> com.fasterxml.jackson.databind.ObjectMapper;</span><br><span class="line"><span class="keyword">import</span> com.fasterxml.jackson.databind.SerializationFeature;</span><br><span class="line"><span class="keyword">import</span> com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;</span><br><span class="line"><span class="keyword">import</span> lombok.extern.slf4j.Slf4j;</span><br><span class="line"><span class="keyword">import</span> org.springframework.util.StringUtils;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.text.SimpleDateFormat;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Slf4j</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">JsonUtils</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="type">ObjectMapper</span> <span class="variable">om</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ObjectMapper</span>();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 对象的所有字段全部列入，还是其他的选项，可以忽略null等</span></span><br><span class="line">        om.setSerializationInclusion(JsonInclude.Include.ALWAYS);</span><br><span class="line">        <span class="comment">// 设置Date类型的序列化及反序列化格式</span></span><br><span class="line">        om.setDateFormat(<span class="keyword">new</span> <span class="title class_">SimpleDateFormat</span>(<span class="string">&quot;yyyy-MM-dd HH:mm:ss&quot;</span>));</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 忽略空Bean转json的错误</span></span><br><span class="line">        om.configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, <span class="literal">false</span>);</span><br><span class="line">        <span class="comment">// 忽略未知属性，防止json字符串中存在，java对象中不存在对应属性的情况出现错误</span></span><br><span class="line">        om.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, <span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 注册一个时间序列化及反序列化的处理模块，用于解决jdk8中localDateTime等的序列化问题</span></span><br><span class="line">        om.registerModule(<span class="keyword">new</span> <span class="title class_">JavaTimeModule</span>());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 对象 =&gt; json字符串</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> obj 源对象</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; String <span class="title function_">toJson</span><span class="params">(T obj)</span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="type">String</span> <span class="variable">json</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">if</span> (obj != <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                json = om.writeValueAsString(obj);</span><br><span class="line">            &#125; <span class="keyword">catch</span> (JsonProcessingException e) &#123;</span><br><span class="line">                log.warn(e.getMessage(), e);</span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">IllegalArgumentException</span>(e.getMessage());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> json;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * json字符串 =&gt; 对象</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> json  源json串</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> clazz 对象类</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> &lt;T&gt;   泛型</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; T <span class="title function_">parse</span><span class="params">(String json, Class&lt;T&gt; clazz)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> parse(json, clazz, <span class="literal">null</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * json字符串 =&gt; 对象</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> json 源json串</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> type 对象类型</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> &lt;T&gt;  泛型</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; T <span class="title function_">parse</span><span class="params">(String json, TypeReference type)</span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> parse(json, <span class="literal">null</span>, type);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * json =&gt; 对象处理方法</span></span><br><span class="line"><span class="comment">     * &lt;br&gt;</span></span><br><span class="line"><span class="comment">     * 参数clazz和type必须一个为null，另一个不为null</span></span><br><span class="line"><span class="comment">     * &lt;br&gt;</span></span><br><span class="line"><span class="comment">     * 此方法不对外暴露，访问权限为private</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> json  源json串</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> clazz 对象类</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> type  对象类型</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> &lt;T&gt;   泛型</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> &lt;T&gt; T <span class="title function_">parse</span><span class="params">(String json, Class&lt;T&gt; clazz, TypeReference type)</span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="type">T</span> <span class="variable">obj</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">if</span> (StringUtils.hasText(json)) &#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (clazz != <span class="literal">null</span>) &#123;</span><br><span class="line">                    obj = om.readValue(json, clazz);</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    obj = (T) om.readValue(json, type);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                log.warn(e.getMessage(), e);</span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">IllegalArgumentException</span>(e.getMessage());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> obj;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    <title>JavaScript之七错误处理</title>
+    <url>/2024/07/31/JavaScript%E4%B9%8B%E4%B8%83%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/</url>
+    <content><![CDATA[<br />
+  
+<h2 id="说明，该学习内容来自廖雪峰老师—-JavaScript教程，欢迎访问原创者网站，本处仅仅作为防止自己遗忘的记录"><a href="#说明，该学习内容来自廖雪峰老师—-JavaScript教程，欢迎访问原创者网站，本处仅仅作为防止自己遗忘的记录" class="headerlink" title="说明，该学习内容来自廖雪峰老师—-JavaScript教程，欢迎访问原创者网站，本处仅仅作为防止自己遗忘的记录!"></a>说明，该学习内容来自<a href="https://www.liaoxuefeng.com/wiki/1022910821149312">廖雪峰老师—-JavaScript教程</a>，欢迎访问原创者网站，本处仅仅作为防止自己遗忘的记录!</h2><br />
+<br />
+<br />
+
+<h4 id="try-…-catch-…-finally"><a href="#try-…-catch-…-finally" class="headerlink" title="try … catch … finally"></a>try … catch … finally</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">var r1, r2, s = null;</span><br><span class="line">try &#123;</span><br><span class="line">    r1 = s.length; // 此处应产生错误</span><br><span class="line">    r2 = 100; // 该语句不会执行</span><br><span class="line">&#125; catch (e) &#123;</span><br><span class="line">    console.log(&#x27;出错了：&#x27; + e);</span><br><span class="line">&#125; finally &#123;</span><br><span class="line">    console.log(&#x27;finally&#x27;);</span><br><span class="line">&#125;</span><br><span class="line">console.log(&#x27;r1 = &#x27; + r1); // r1应为undefined</span><br><span class="line">console.log(&#x27;r2 = &#x27; + r2); // r2应为undefined</span><br></pre></td></tr></table></figure>
+
+<h4 id="错误类型"><a href="#错误类型" class="headerlink" title="错误类型"></a>错误类型</h4><p>JavaScript有一个标准的<code>Error</code>对象表示错误，还有从<code>Error</code>派生的<code>TypeError</code>、<code>ReferenceError</code>等错误对象。我们在处理错误时，可以通过<code>catch(e)</code>捕获的变量<code>e</code>访问错误对象：</p>
+<h4 id="抛出错误"><a href="#抛出错误" class="headerlink" title="抛出错误"></a>抛出错误</h4><p>程序也可以主动抛出一个错误，让执行流程直接跳转到catch块。抛出错误使用throw语句。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">throw new Error(&#x27;输入错误&#x27;);</span><br></pre></td></tr></table></figure>
+<p>JavaScript允许抛出任意对象，包括数字、字符串。但是，最好还是抛出一个Error对象。<br>最后，当我们用catch捕获错误时，一定要编写错误处理语句<br>因为catch到错误却什么都不执行，就不知道程序执行过程中到底有没有发生错误。<br>处理错误时，请不要简单粗暴地用alert()把错误显示给用户。教程的代码使用alert()是为了便于演示。</p>
+<h4 id="错误传播"><a href="#错误传播" class="headerlink" title="错误传播"></a>错误传播</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">function getLength(s) &#123;</span><br><span class="line">    return s.length;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function printLength() &#123;</span><br><span class="line">    console.log(getLength(&#x27;abc&#x27;)); // 3</span><br><span class="line">    console.log(getLength(null)); // Error!</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">printLength();</span><br></pre></td></tr></table></figure>
+<p>如果在一个函数内部发生了错误，它自身没有捕获，错误就会被抛到外层调用函数，如果外层函数也没有捕获，该错误会一直沿着函数调用链向上抛出，直到被JavaScript引擎捕获，代码终止执行。<br>所以，我们不必在每一个函数内部捕获错误，只需要在合适的地方来个统一捕获，一网打尽</p>
+<h4 id="异步错误处理"><a href="#异步错误处理" class="headerlink" title="异步错误处理"></a>异步错误处理</h4><p>编写JavaScript代码时，我们要时刻牢记，JavaScript引擎是一个事件驱动的执行引擎，代码总是以单线程执行，而回调函数的执行需要等到下一个满足条件的事件出现后，才会被执行。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">function printTime() &#123;</span><br><span class="line">    console.log(&#x27;It is time!&#x27;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">setTimeout(printTime, 1000);</span><br><span class="line">console.log(&#x27;done&#x27;);</span><br></pre></td></tr></table></figure>
+<p>如果<code>printTime()</code>函数内部发生了错误，我们试图用<code>try</code>包裹<code>setTimeout()</code>是无效的<br>涉及到异步代码，无法在调用时捕获，原因就是在捕获的当时，回调函数并未执行。<br>类似的，当我们处理一个事件时，在绑定事件的代码处，无法捕获事件处理函数的错误。</p>
+]]></content>
       <categories>
-        <category>后端</category>
+        <category>前端</category>
       </categories>
       <tags>
-        <tag>Java</tag>
-        <tag>Jackson</tag>
+        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>
@@ -1514,34 +1541,6 @@ table th:first-of-type {
 
 <p>反序列化</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">JSON.parse(&#x27;&#123;&quot;name&quot;:&quot;小明&quot;,&quot;age&quot;:14&#125;&#x27;)</span><br><span class="line">JSON.parse(&#x27;true&#x27;); </span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JavaScript之七错误处理</title>
-    <url>/2024/07/31/JavaScript%E4%B9%8B%E4%B8%83%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/</url>
-    <content><![CDATA[<br />
-  
-<h2 id="说明，该学习内容来自廖雪峰老师—-JavaScript教程，欢迎访问原创者网站，本处仅仅作为防止自己遗忘的记录"><a href="#说明，该学习内容来自廖雪峰老师—-JavaScript教程，欢迎访问原创者网站，本处仅仅作为防止自己遗忘的记录" class="headerlink" title="说明，该学习内容来自廖雪峰老师—-JavaScript教程，欢迎访问原创者网站，本处仅仅作为防止自己遗忘的记录!"></a>说明，该学习内容来自<a href="https://www.liaoxuefeng.com/wiki/1022910821149312">廖雪峰老师—-JavaScript教程</a>，欢迎访问原创者网站，本处仅仅作为防止自己遗忘的记录!</h2><br />
-<br />
-<br />
-
-<h4 id="try-…-catch-…-finally"><a href="#try-…-catch-…-finally" class="headerlink" title="try … catch … finally"></a>try … catch … finally</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">var r1, r2, s = null;</span><br><span class="line">try &#123;</span><br><span class="line">    r1 = s.length; // 此处应产生错误</span><br><span class="line">    r2 = 100; // 该语句不会执行</span><br><span class="line">&#125; catch (e) &#123;</span><br><span class="line">    console.log(&#x27;出错了：&#x27; + e);</span><br><span class="line">&#125; finally &#123;</span><br><span class="line">    console.log(&#x27;finally&#x27;);</span><br><span class="line">&#125;</span><br><span class="line">console.log(&#x27;r1 = &#x27; + r1); // r1应为undefined</span><br><span class="line">console.log(&#x27;r2 = &#x27; + r2); // r2应为undefined</span><br></pre></td></tr></table></figure>
-
-<h4 id="错误类型"><a href="#错误类型" class="headerlink" title="错误类型"></a>错误类型</h4><p>JavaScript有一个标准的<code>Error</code>对象表示错误，还有从<code>Error</code>派生的<code>TypeError</code>、<code>ReferenceError</code>等错误对象。我们在处理错误时，可以通过<code>catch(e)</code>捕获的变量<code>e</code>访问错误对象：</p>
-<h4 id="抛出错误"><a href="#抛出错误" class="headerlink" title="抛出错误"></a>抛出错误</h4><p>程序也可以主动抛出一个错误，让执行流程直接跳转到catch块。抛出错误使用throw语句。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">throw new Error(&#x27;输入错误&#x27;);</span><br></pre></td></tr></table></figure>
-<p>JavaScript允许抛出任意对象，包括数字、字符串。但是，最好还是抛出一个Error对象。<br>最后，当我们用catch捕获错误时，一定要编写错误处理语句<br>因为catch到错误却什么都不执行，就不知道程序执行过程中到底有没有发生错误。<br>处理错误时，请不要简单粗暴地用alert()把错误显示给用户。教程的代码使用alert()是为了便于演示。</p>
-<h4 id="错误传播"><a href="#错误传播" class="headerlink" title="错误传播"></a>错误传播</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">function getLength(s) &#123;</span><br><span class="line">    return s.length;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function printLength() &#123;</span><br><span class="line">    console.log(getLength(&#x27;abc&#x27;)); // 3</span><br><span class="line">    console.log(getLength(null)); // Error!</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">printLength();</span><br></pre></td></tr></table></figure>
-<p>如果在一个函数内部发生了错误，它自身没有捕获，错误就会被抛到外层调用函数，如果外层函数也没有捕获，该错误会一直沿着函数调用链向上抛出，直到被JavaScript引擎捕获，代码终止执行。<br>所以，我们不必在每一个函数内部捕获错误，只需要在合适的地方来个统一捕获，一网打尽</p>
-<h4 id="异步错误处理"><a href="#异步错误处理" class="headerlink" title="异步错误处理"></a>异步错误处理</h4><p>编写JavaScript代码时，我们要时刻牢记，JavaScript引擎是一个事件驱动的执行引擎，代码总是以单线程执行，而回调函数的执行需要等到下一个满足条件的事件出现后，才会被执行。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">function printTime() &#123;</span><br><span class="line">    console.log(&#x27;It is time!&#x27;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">setTimeout(printTime, 1000);</span><br><span class="line">console.log(&#x27;done&#x27;);</span><br></pre></td></tr></table></figure>
-<p>如果<code>printTime()</code>函数内部发生了错误，我们试图用<code>try</code>包裹<code>setTimeout()</code>是无效的<br>涉及到异步代码，无法在调用时捕获，原因就是在捕获的当时，回调函数并未执行。<br>类似的，当我们处理一个事件时，在绑定事件的代码处，无法捕获事件处理函数的错误。</p>
-]]></content>
       <categories>
         <category>前端</category>
       </categories>
@@ -2459,26 +2458,6 @@ table th:first-of-type {
       </tags>
   </entry>
   <entry>
-    <title>MySQL之GroupBy</title>
-    <url>/2024/07/31/MySQL%E4%B9%8BGroupBy/</url>
-    <content><![CDATA[<p>SQL 标准中不允许 <code>SELECT</code> 列表，<code>HAVING</code> 条件语句，或 <code>ORDER BY</code> 语句中出现 <code>GROUP BY</code> 中未列表的可聚合列。而 MySQL 中有一个状态 <code>ONLY_FULL_GROUP_BY</code> 来标识是否遵从这一标准，默认为开启状态。</p>
-<p>查看变更前的<code>sql_mode</code></p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> @<span class="variable">@sql_mode</span>;</span><br></pre></td></tr></table></figure>
-
-<p>会话停用<code>ONLY_FULL_GROUP_BY</code></p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SET</span> SESSION sql_mode<span class="operator">=</span>(<span class="keyword">SELECT</span> REPLACE(@<span class="variable">@sql_mode</span>,<span class="string">&#x27;ONLY_FULL_GROUP_BY,&#x27;</span>,<span class="string">&#x27;&#x27;</span>));</span><br></pre></td></tr></table></figure>
-
-<p>全局配置，编辑<code>/etc/my.cnf</code>文件</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line">sql_mode<span class="operator">=</span>STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>MySQL</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MyBatis打印SQL日志</title>
     <url>/2024/07/31/MyBatis%E6%89%93%E5%8D%B0SQL%E6%97%A5%E5%BF%97/</url>
     <content><![CDATA[<ol>
@@ -2500,6 +2479,26 @@ table th:first-of-type {
       </tags>
   </entry>
   <entry>
+    <title>MySQL之GroupBy</title>
+    <url>/2024/07/31/MySQL%E4%B9%8BGroupBy/</url>
+    <content><![CDATA[<p>SQL 标准中不允许 <code>SELECT</code> 列表，<code>HAVING</code> 条件语句，或 <code>ORDER BY</code> 语句中出现 <code>GROUP BY</code> 中未列表的可聚合列。而 MySQL 中有一个状态 <code>ONLY_FULL_GROUP_BY</code> 来标识是否遵从这一标准，默认为开启状态。</p>
+<p>查看变更前的<code>sql_mode</code></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> @<span class="variable">@sql_mode</span>;</span><br></pre></td></tr></table></figure>
+
+<p>会话停用<code>ONLY_FULL_GROUP_BY</code></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SET</span> SESSION sql_mode<span class="operator">=</span>(<span class="keyword">SELECT</span> REPLACE(@<span class="variable">@sql_mode</span>,<span class="string">&#x27;ONLY_FULL_GROUP_BY,&#x27;</span>,<span class="string">&#x27;&#x27;</span>));</span><br></pre></td></tr></table></figure>
+
+<p>全局配置，编辑<code>/etc/my.cnf</code>文件</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line">sql_mode<span class="operator">=</span>STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MySQL快速生成数据字典</title>
     <url>/2024/07/31/MySQL%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90%E6%95%B0%E6%8D%AE%E5%AD%97%E5%85%B8/</url>
     <content><![CDATA[<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line"><span class="comment">--     t.TABLE_SCHEMA AS 库名,</span></span><br><span class="line"><span class="comment">--     t.TABLE_NAME AS 表名,</span></span><br><span class="line">    t.COLUMN_NAME <span class="keyword">AS</span> <span class="string">&#x27;字段名&#x27;</span>,</span><br><span class="line">    t.COLUMN_TYPE <span class="keyword">AS</span> <span class="string">&#x27;数据类型&#x27;</span>,</span><br><span class="line">    <span class="keyword">CASE</span> t.COLUMN_KEY </span><br><span class="line">		<span class="keyword">WHEN</span> <span class="string">&#x27;PRI&#x27;</span> <span class="keyword">THEN</span> <span class="string">&#x27;是&#x27;</span></span><br><span class="line">        <span class="keyword">ELSE</span> <span class="string">&#x27;否&#x27;</span> <span class="keyword">END</span> <span class="keyword">AS</span> <span class="string">&#x27;是否主键&#x27;</span>,</span><br><span class="line">    <span class="keyword">CASE</span> IFNULL(t.COLUMN_DEFAULT,<span class="string">&#x27;Null&#x27;</span>) </span><br><span class="line">        <span class="keyword">WHEN</span> <span class="string">&#x27;&#x27;</span> <span class="keyword">THEN</span> <span class="string">&#x27;空字符串&#x27;</span> </span><br><span class="line">        <span class="keyword">WHEN</span> <span class="string">&#x27;Null&#x27;</span> <span class="keyword">THEN</span> <span class="string">&#x27;NULL&#x27;</span> </span><br><span class="line">        <span class="keyword">ELSE</span> t.COLUMN_DEFAULT <span class="keyword">END</span>  <span class="keyword">AS</span> <span class="string">&#x27;默认值&#x27;</span>,</span><br><span class="line">    <span class="keyword">CASE</span> t.IS_NULLABLE <span class="keyword">WHEN</span> <span class="string">&#x27;YES&#x27;</span> <span class="keyword">THEN</span> <span class="string">&#x27;是&#x27;</span> <span class="keyword">ELSE</span> <span class="string">&#x27;否&#x27;</span> <span class="keyword">END</span> <span class="keyword">AS</span> <span class="string">&#x27;是否允许为空&#x27;</span>,</span><br><span class="line">    t.COLUMN_COMMENT <span class="keyword">AS</span> <span class="string">&#x27;字段说明&#x27;</span></span><br><span class="line"><span class="keyword">FROM</span> information_schema.COLUMNS t </span><br><span class="line"><span class="keyword">WHERE</span> t.TABLE_SCHEMA<span class="operator">=</span><span class="string">&#x27;substation-platform&#x27;</span> <span class="keyword">AND</span> t.TABLE_NAME<span class="operator">=</span><span class="string">&#x27;biz_audio_device&#x27;</span>;</span><br></pre></td></tr></table></figure>
@@ -2510,56 +2509,6 @@ table th:first-of-type {
       </categories>
       <tags>
         <tag>MySQL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MySQL日志查询</title>
-    <url>/2024/07/31/MySQL%E6%97%A5%E5%BF%97%E6%9F%A5%E8%AF%A2/</url>
-    <content><![CDATA[<p>– 查看mysql 执行语句记录</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT * FROM mysql.general_log ORDER BY event_time desc LIMIT 20;</span><br><span class="line"></span><br><span class="line">SELECT *, CONVERT(argument USING utf8) FROM mysql.general_log where command_type = &#x27;Query&#x27; and user_host like &#x27;%[192.168.1.110]&#x27; ORDER BY event_time desc</span><br></pre></td></tr></table></figure>
-<p>– 清空Mysql 执行语句记录</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">TRUNCATE TABLE mysql.general_log;</span><br></pre></td></tr></table></figure>
-
-<p>– 查看mysql 慢日志记录</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT * FROM mysql.slow_log;</span><br></pre></td></tr></table></figure>
-<p>– 清空 MySql慢查询日志记录</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">TRUNCATE TABLE mysql.slow_log;</span><br></pre></td></tr></table></figure>
-
-<p>– 查看环境变量</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SHOW variables LIKE &#x27;%genera%&#x27;；</span><br></pre></td></tr></table></figure>
-
-<p>– 设置环境变量</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">set GLOBAL general_log=1;</span><br></pre></td></tr></table></figure>
-
-<p>– 查询是否锁表</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SHOW OPEN TABLES WHERE in_use&gt;0 ;</span><br><span class="line"></span><br><span class="line">SHOW OPEN TABLES </span><br></pre></td></tr></table></figure>
-
-<p>– 查看当前数据库中执行的情况</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SHOW PROCESSLIST;</span><br><span class="line"></span><br><span class="line">SELECT * FROM information_schema.`PROCESSLIST` WHERE info	is NOT  NULL and time&gt;100;</span><br></pre></td></tr></table></figure>
-<p>– 打开日志</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SET GLOBAL general_log=1;</span><br></pre></td></tr></table></figure>
-
-<p>– 设置日志存放在表里</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SET GLOBAL log_output=&#x27;TABLE&#x27;;</span><br></pre></td></tr></table></figure>
-<p>– 设置日志存放在表里</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SET GLOBAL log_output=&#x27;FILE&#x27;;</span><br><span class="line"></span><br><span class="line">-- </span><br><span class="line">SHOW VARIABLES LIKE &#x27;%log_output%&#x27;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>MySQL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MySQL时间全0错误</title>
-    <url>/2024/07/31/MySQL%E6%97%B6%E9%97%B4%E5%85%A80%E9%94%99%E8%AF%AF/</url>
-    <content><![CDATA[<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> @<span class="variable">@sql_mode</span>;</span><br><span class="line"><span class="comment">-- STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION</span></span><br><span class="line"><span class="comment">-- 去掉 &quot;NO_ZERO_IN_DATE&quot;和&quot;NO_ZERO_DATE&quot;</span></span><br><span class="line"><span class="keyword">set</span> @<span class="variable">@sql_mode</span> <span class="operator">=</span> <span class="string">&#x27;STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION&#x27;</span>;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -2635,6 +2584,56 @@ table th:first-of-type {
       </tags>
   </entry>
   <entry>
+    <title>MySQL日志查询</title>
+    <url>/2024/07/31/MySQL%E6%97%A5%E5%BF%97%E6%9F%A5%E8%AF%A2/</url>
+    <content><![CDATA[<p>– 查看mysql 执行语句记录</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT * FROM mysql.general_log ORDER BY event_time desc LIMIT 20;</span><br><span class="line"></span><br><span class="line">SELECT *, CONVERT(argument USING utf8) FROM mysql.general_log where command_type = &#x27;Query&#x27; and user_host like &#x27;%[192.168.1.110]&#x27; ORDER BY event_time desc</span><br></pre></td></tr></table></figure>
+<p>– 清空Mysql 执行语句记录</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">TRUNCATE TABLE mysql.general_log;</span><br></pre></td></tr></table></figure>
+
+<p>– 查看mysql 慢日志记录</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT * FROM mysql.slow_log;</span><br></pre></td></tr></table></figure>
+<p>– 清空 MySql慢查询日志记录</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">TRUNCATE TABLE mysql.slow_log;</span><br></pre></td></tr></table></figure>
+
+<p>– 查看环境变量</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SHOW variables LIKE &#x27;%genera%&#x27;；</span><br></pre></td></tr></table></figure>
+
+<p>– 设置环境变量</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">set GLOBAL general_log=1;</span><br></pre></td></tr></table></figure>
+
+<p>– 查询是否锁表</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SHOW OPEN TABLES WHERE in_use&gt;0 ;</span><br><span class="line"></span><br><span class="line">SHOW OPEN TABLES </span><br></pre></td></tr></table></figure>
+
+<p>– 查看当前数据库中执行的情况</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SHOW PROCESSLIST;</span><br><span class="line"></span><br><span class="line">SELECT * FROM information_schema.`PROCESSLIST` WHERE info	is NOT  NULL and time&gt;100;</span><br></pre></td></tr></table></figure>
+<p>– 打开日志</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SET GLOBAL general_log=1;</span><br></pre></td></tr></table></figure>
+
+<p>– 设置日志存放在表里</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SET GLOBAL log_output=&#x27;TABLE&#x27;;</span><br></pre></td></tr></table></figure>
+<p>– 设置日志存放在表里</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SET GLOBAL log_output=&#x27;FILE&#x27;;</span><br><span class="line"></span><br><span class="line">-- </span><br><span class="line">SHOW VARIABLES LIKE &#x27;%log_output%&#x27;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MySQL时间全0错误</title>
+    <url>/2024/07/31/MySQL%E6%97%B6%E9%97%B4%E5%85%A80%E9%94%99%E8%AF%AF/</url>
+    <content><![CDATA[<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> @<span class="variable">@sql_mode</span>;</span><br><span class="line"><span class="comment">-- STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION</span></span><br><span class="line"><span class="comment">-- 去掉 &quot;NO_ZERO_IN_DATE&quot;和&quot;NO_ZERO_DATE&quot;</span></span><br><span class="line"><span class="keyword">set</span> @<span class="variable">@sql_mode</span> <span class="operator">=</span> <span class="string">&#x27;STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION&#x27;</span>;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MySQL构造连续日期</title>
     <url>/2024/07/31/MySQL%E6%9E%84%E9%80%A0%E8%BF%9E%E7%BB%AD%E6%97%A5%E6%9C%9F/</url>
     <content><![CDATA[<p>方式一：借助自带表<code>mysql.help_topic</code></p>
@@ -2659,20 +2658,6 @@ table th:first-of-type {
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	DATE_FORMAT(DATE_SUB( NOW(), <span class="type">INTERVAL</span> xc <span class="keyword">MONTH</span> ), <span class="string">&#x27;%Y-%m&#x27;</span> ) <span class="keyword">AS</span> <span class="type">date</span> </span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	(</span><br><span class="line">	<span class="keyword">SELECT</span></span><br><span class="line">		<span class="variable">@xi</span> :<span class="operator">=</span> <span class="variable">@xi</span> <span class="operator">+</span> <span class="number">1</span> <span class="keyword">AS</span> xc </span><br><span class="line">	<span class="keyword">FROM</span></span><br><span class="line">		( <span class="keyword">SELECT</span> <span class="number">1</span> <span class="keyword">UNION</span> <span class="keyword">SELECT</span> <span class="number">2</span> <span class="keyword">UNION</span> <span class="keyword">SELECT</span> <span class="number">3</span> <span class="keyword">UNION</span> <span class="keyword">SELECT</span> <span class="number">4</span> <span class="keyword">UNION</span> <span class="keyword">SELECT</span> <span class="number">5</span> ) xc1,</span><br><span class="line">		( <span class="keyword">SELECT</span> <span class="number">1</span> <span class="keyword">UNION</span> <span class="keyword">SELECT</span> <span class="number">2</span> <span class="keyword">UNION</span> <span class="keyword">SELECT</span> <span class="number">3</span> <span class="keyword">UNION</span> <span class="keyword">SELECT</span> <span class="number">4</span> <span class="keyword">UNION</span> <span class="keyword">SELECT</span> <span class="number">5</span> ) xc2,</span><br><span class="line">		( <span class="keyword">SELECT</span> <span class="variable">@xi</span> :<span class="operator">=</span> <span class="number">0</span> ) xc0 </span><br><span class="line">	) xcxc</span><br></pre></td></tr></table></figure>
 
 <p>使用<code>DATE_SUB</code>函数，切换<code>MONTH</code>为<code>DAY</code>或<code>WEEK</code>可计算对应的连续周期</p>
-]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>MySQL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MySql字符串拆分实现split功能</title>
-    <url>/2024/07/31/MySql%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%86%E5%88%86%E5%AE%9E%E7%8E%B0split%E5%8A%9F%E8%83%BD/</url>
-    <content><![CDATA[<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line"><span class="comment">-- 因为表连接，所以有几个逗号就会出现几行相同的行，只是help_topic_id不一样；</span></span><br><span class="line"><span class="comment">-- 当help_topic_id=0 时，获取第1个逗号左边的值；为1时获取第2个逗号与第1个逗号之间的值，为2时获取第3个逗号与第2个逗号之间的值，以此类推</span></span><br><span class="line">SUBSTRING_INDEX(SUBSTRING_INDEX(<span class="string">&#x27;7654,7698,7782,7788&#x27;</span>,<span class="string">&#x27;,&#x27;</span>,help_topic_id<span class="operator">+</span><span class="number">1</span>),<span class="string">&#x27;,&#x27;</span>,<span class="number">-1</span>) <span class="keyword">AS</span> num  </span><br><span class="line"><span class="keyword">FROM</span> mysql.help_topic </span><br><span class="line"><span class="comment">-- 判断有几个逗号，就生成几个相同的但help_topic_id的行</span></span><br><span class="line"><span class="keyword">WHERE</span> help_topic_id <span class="operator">&lt;</span> LENGTH(<span class="string">&#x27;7654,7698,7782,7788&#x27;</span>)<span class="operator">-</span>LENGTH(  REPLACE(<span class="string">&#x27;7654,7698,7782,7788&#x27;</span>,<span class="string">&#x27;,&#x27;</span>,<span class="string">&#x27;&#x27;</span>)  )<span class="operator">+</span><span class="number">1</span> </span><br></pre></td></tr></table></figure>
-
-<p><a href="https://www.cnblogs.com/gered/p/10797012.html">mysql字符串拆分实现split功能</a></p>
 ]]></content>
       <categories>
         <category>后端</category>
@@ -2716,6 +2701,20 @@ table th:first-of-type {
       </categories>
       <tags>
         <tag>Node.js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MySql字符串拆分实现split功能</title>
+    <url>/2024/07/31/MySql%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%86%E5%88%86%E5%AE%9E%E7%8E%B0split%E5%8A%9F%E8%83%BD/</url>
+    <content><![CDATA[<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line"><span class="comment">-- 因为表连接，所以有几个逗号就会出现几行相同的行，只是help_topic_id不一样；</span></span><br><span class="line"><span class="comment">-- 当help_topic_id=0 时，获取第1个逗号左边的值；为1时获取第2个逗号与第1个逗号之间的值，为2时获取第3个逗号与第2个逗号之间的值，以此类推</span></span><br><span class="line">SUBSTRING_INDEX(SUBSTRING_INDEX(<span class="string">&#x27;7654,7698,7782,7788&#x27;</span>,<span class="string">&#x27;,&#x27;</span>,help_topic_id<span class="operator">+</span><span class="number">1</span>),<span class="string">&#x27;,&#x27;</span>,<span class="number">-1</span>) <span class="keyword">AS</span> num  </span><br><span class="line"><span class="keyword">FROM</span> mysql.help_topic </span><br><span class="line"><span class="comment">-- 判断有几个逗号，就生成几个相同的但help_topic_id的行</span></span><br><span class="line"><span class="keyword">WHERE</span> help_topic_id <span class="operator">&lt;</span> LENGTH(<span class="string">&#x27;7654,7698,7782,7788&#x27;</span>)<span class="operator">-</span>LENGTH(  REPLACE(<span class="string">&#x27;7654,7698,7782,7788&#x27;</span>,<span class="string">&#x27;,&#x27;</span>,<span class="string">&#x27;&#x27;</span>)  )<span class="operator">+</span><span class="number">1</span> </span><br></pre></td></tr></table></figure>
+
+<p><a href="https://www.cnblogs.com/gered/p/10797012.html">mysql字符串拆分实现split功能</a></p>
+]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
       </tags>
   </entry>
   <entry>
@@ -3070,14 +3069,9 @@ table th:first-of-type {
       </tags>
   </entry>
   <entry>
-    <title>SpringBootTest激活配置设置</title>
-    <url>/2024/07/31/SpringBootTest%E6%BF%80%E6%B4%BB%E9%85%8D%E7%BD%AE%E8%AE%BE%E7%BD%AE/</url>
-    <content><![CDATA[<p>一般使用如下方法：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@ActiveProfiles(&quot;dev&quot;)</span></span><br><span class="line"><span class="meta">@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">UnitTest</span>&#123;</span><br><span class="line">  <span class="meta">@Test</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test</span><span class="params">()</span>&#123;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>但这个方法无法读取”spring.profiles.active”的值<br>可通过如下方法设置</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@SpringBootTest(properties = &quot;spring.profiles.active:dev-txs&quot;, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">UnitTest</span>&#123;</span><br><span class="line">  <span class="meta">@Test</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test</span><span class="params">()</span>&#123;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
+    <title>Socket错误</title>
+    <url>/2024/07/31/Socket%E9%94%99%E8%AF%AF/</url>
+    <content><![CDATA[]]></content>
       <categories>
         <category>后端</category>
       </categories>
@@ -3086,9 +3080,14 @@ table th:first-of-type {
       </tags>
   </entry>
   <entry>
-    <title>Socket错误</title>
-    <url>/2024/07/31/Socket%E9%94%99%E8%AF%AF/</url>
-    <content><![CDATA[]]></content>
+    <title>SpringBootTest激活配置设置</title>
+    <url>/2024/07/31/SpringBootTest%E6%BF%80%E6%B4%BB%E9%85%8D%E7%BD%AE%E8%AE%BE%E7%BD%AE/</url>
+    <content><![CDATA[<p>一般使用如下方法：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@ActiveProfiles(&quot;dev&quot;)</span></span><br><span class="line"><span class="meta">@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">UnitTest</span>&#123;</span><br><span class="line">  <span class="meta">@Test</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test</span><span class="params">()</span>&#123;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>但这个方法无法读取”spring.profiles.active”的值<br>可通过如下方法设置</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@SpringBootTest(properties = &quot;spring.profiles.active:dev-txs&quot;, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">UnitTest</span>&#123;</span><br><span class="line">  <span class="meta">@Test</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test</span><span class="params">()</span>&#123;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
       <categories>
         <category>后端</category>
       </categories>
@@ -3861,6 +3860,29 @@ table th:first-of-type {
       </tags>
   </entry>
   <entry>
+    <title>Windows调整系统MTU值</title>
+    <url>/2024/07/31/Windows%E8%B0%83%E6%95%B4%E7%B3%BB%E7%BB%9FMTU%E5%80%BC/</url>
+    <content><![CDATA[<p>首先需要以【管理员】模式运行<code>cmd.exe</code>或<code>PowerShell</code></p>
+<p>以如下命令查看目前网卡MTU设置</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">netsh interface ipv4 show interfaces</span><br></pre></td></tr></table></figure>
+
+<p>以如下命令确认最佳MTU的数据包大小</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">ping <span class="literal">-l</span> <span class="number">1464</span> <span class="operator">-f</span> www.microsoft.com</span><br></pre></td></tr></table></figure>
+
+<p>在测试成功的数据包值上加上用于数据包包头28字节，即1464+28&#x3D;1492，这就是最佳MTU值<br>然后，以如下命令进行设置</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">netsh interface ipv4 <span class="built_in">set</span> subinterface <span class="string">&quot;以太网&quot;</span> mtu=<span class="number">1492</span> store=persistent</span><br></pre></td></tr></table></figure>
+
+<p>Wifi6 无线局域网传输速度受限解除</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">netsh int tcp <span class="built_in">set</span> global autotuninglevel=restricted</span><br><span class="line">netsh interface tcp <span class="built_in">set</span> heuristics disabled</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>系统</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Windows重装系统后</title>
     <url>/2024/07/31/Windows%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E5%90%8E/</url>
     <content><![CDATA[<p>hosts文件添加</p>
@@ -3976,29 +3998,6 @@ table th:first-of-type {
       </tags>
   </entry>
   <entry>
-    <title>Windows调整系统MTU值</title>
-    <url>/2024/07/31/Windows%E8%B0%83%E6%95%B4%E7%B3%BB%E7%BB%9FMTU%E5%80%BC/</url>
-    <content><![CDATA[<p>首先需要以【管理员】模式运行<code>cmd.exe</code>或<code>PowerShell</code></p>
-<p>以如下命令查看目前网卡MTU设置</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">netsh interface ipv4 show interfaces</span><br></pre></td></tr></table></figure>
-
-<p>以如下命令确认最佳MTU的数据包大小</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">ping <span class="literal">-l</span> <span class="number">1464</span> <span class="operator">-f</span> www.microsoft.com</span><br></pre></td></tr></table></figure>
-
-<p>在测试成功的数据包值上加上用于数据包包头28字节，即1464+28&#x3D;1492，这就是最佳MTU值<br>然后，以如下命令进行设置</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">netsh interface ipv4 <span class="built_in">set</span> subinterface <span class="string">&quot;以太网&quot;</span> mtu=<span class="number">1492</span> store=persistent</span><br></pre></td></tr></table></figure>
-
-<p>Wifi6 无线局域网传输速度受限解除</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">netsh int tcp <span class="built_in">set</span> global autotuninglevel=restricted</span><br><span class="line">netsh interface tcp <span class="built_in">set</span> heuristics disabled</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>系统</category>
-      </categories>
-      <tags>
-        <tag>Windows</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>return语句不影响using释放对象</title>
     <url>/2024/07/31/return%E8%AF%AD%E5%8F%A5%E4%B8%8D%E5%BD%B1%E5%93%8Dusing%E9%87%8A%E6%94%BE%E5%AF%B9%E8%B1%A1/</url>
     <content><![CDATA[<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="built_in">string</span>[] args</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">using</span> (A a = <span class="keyword">new</span> A())</span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;主程序开始执行。&quot;</span>);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">            <span class="comment">//VS提示&quot;检测到无法访问的代码&quot;</span></span><br><span class="line">            Console.WriteLine(<span class="string">&quot;using内&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//VS提示&quot;检测到无法访问的代码&quot;,以下语句都不会执行 ???</span></span><br><span class="line">        Console.WriteLine(<span class="string">&quot;using外&quot;</span>);</span><br><span class="line">        Console.ReadLine();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title">A</span> : <span class="title">IDisposable</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Dispose</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;执行了Dispose方法。&quot;</span>);</span><br><span class="line">        Console.ReadKey();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -4025,6 +4024,31 @@ table th:first-of-type {
       </categories>
       <tags>
         <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>保持fork之后的项目和上游同步</title>
+    <url>/2024/07/31/%E4%BF%9D%E6%8C%81fork%E4%B9%8B%E5%90%8E%E7%9A%84%E9%A1%B9%E7%9B%AE%E5%92%8C%E4%B8%8A%E6%B8%B8%E5%90%8C%E6%AD%A5/</url>
+    <content><![CDATA[<ol>
+<li><p>在github上fork原项目</p>
+</li>
+<li><p>从自己仓库clone到本地</p>
+</li>
+<li><p>查看当前仓库远程地址</p>
+ <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">PS</span> C:\Users\FRANK\Desktop\Alipay.AopSdk.Core&gt; git remote <span class="literal">-v</span></span><br><span class="line">origin  https://github.com/frankbsd/Alipay.AopSdk.Core.git (fetch)</span><br><span class="line">origin  https://github.com/frankbsd/Alipay.AopSdk.Core.git (push)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>添加别名<code>upstream</code>的上游地址，指向之前fork的原仓库地址</p>
+ <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">PS</span> C:\Users\FRANK\Desktop\Alipay.AopSdk.Core&gt; git remote add upstream https://github.com/dotnetcore/    Alipay.AopSdk.Core.git</span><br><span class="line"><span class="built_in">PS</span> C:\Users\FRANK\Desktop\Alipay.AopSdk.Core&gt; git remote <span class="literal">-v</span></span><br><span class="line">origin  https://github.com/frankbsd/Alipay.AopSdk.Core.git (fetch)</span><br><span class="line">origin  https://github.com/frankbsd/Alipay.AopSdk.Core.git (push)</span><br><span class="line">upstream        https://github.com/dotnetcore/Alipay.AopSdk.Core.git (fetch)</span><br><span class="line">upstream        https://github.com/dotnetcore/Alipay.AopSdk.Core.git (push)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使自己远程仓库与原仓库保持同步</p>
+ <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">PS</span> C:\Users\FRANK\Desktop\Alipay.AopSdk.Core&gt; git fetch upstream</span><br><span class="line">From https://github.com/dotnetcore/Alipay.AopSdk.Core</span><br><span class="line"> * [<span class="type">new</span> <span class="type">branch</span>]      dev        -&gt; upstream/dev</span><br><span class="line"> * [<span class="type">new</span> <span class="type">branch</span>]      master     -&gt; upstream/master</span><br><span class="line"><span class="built_in">PS</span> C:\Users\FRANK\Desktop\Alipay.AopSdk.Core&gt; git checkout master</span><br><span class="line">Already on <span class="string">&#x27;master&#x27;</span></span><br><span class="line">Your branch is up to date with <span class="string">&#x27;origin/master&#x27;</span>.</span><br><span class="line"><span class="built_in">PS</span> C:\Users\FRANK\Desktop\Alipay.AopSdk.Core&gt; git merge upstream/master</span><br><span class="line">Already up to date.</span><br><span class="line"><span class="built_in">PS</span> C:\Users\FRANK\Desktop\Alipay.AopSdk.Core&gt; git push origin master</span><br><span class="line">fatal: NotSupportedException encountered.</span><br><span class="line">   ServicePointManager 不支持具有 socks5 方案的代理。</span><br><span class="line">fatal: NotSupportedException encountered.</span><br><span class="line">   ServicePointManager 不支持具有 socks5 方案的代理。</span><br><span class="line">Username <span class="keyword">for</span> <span class="string">&#x27;https://github.com&#x27;</span>: frankbsd</span><br><span class="line">Password <span class="keyword">for</span> <span class="string">&#x27;https://frankbsd@github.com&#x27;</span>:</span><br><span class="line">Everything up<span class="literal">-to-date</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
       </tags>
   </entry>
   <entry>
@@ -4066,31 +4090,6 @@ table th:first-of-type {
       </categories>
       <tags>
         <tag>Windows</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>保持fork之后的项目和上游同步</title>
-    <url>/2024/07/31/%E4%BF%9D%E6%8C%81fork%E4%B9%8B%E5%90%8E%E7%9A%84%E9%A1%B9%E7%9B%AE%E5%92%8C%E4%B8%8A%E6%B8%B8%E5%90%8C%E6%AD%A5/</url>
-    <content><![CDATA[<ol>
-<li><p>在github上fork原项目</p>
-</li>
-<li><p>从自己仓库clone到本地</p>
-</li>
-<li><p>查看当前仓库远程地址</p>
- <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">PS</span> C:\Users\FRANK\Desktop\Alipay.AopSdk.Core&gt; git remote <span class="literal">-v</span></span><br><span class="line">origin  https://github.com/frankbsd/Alipay.AopSdk.Core.git (fetch)</span><br><span class="line">origin  https://github.com/frankbsd/Alipay.AopSdk.Core.git (push)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>添加别名<code>upstream</code>的上游地址，指向之前fork的原仓库地址</p>
- <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">PS</span> C:\Users\FRANK\Desktop\Alipay.AopSdk.Core&gt; git remote add upstream https://github.com/dotnetcore/    Alipay.AopSdk.Core.git</span><br><span class="line"><span class="built_in">PS</span> C:\Users\FRANK\Desktop\Alipay.AopSdk.Core&gt; git remote <span class="literal">-v</span></span><br><span class="line">origin  https://github.com/frankbsd/Alipay.AopSdk.Core.git (fetch)</span><br><span class="line">origin  https://github.com/frankbsd/Alipay.AopSdk.Core.git (push)</span><br><span class="line">upstream        https://github.com/dotnetcore/Alipay.AopSdk.Core.git (fetch)</span><br><span class="line">upstream        https://github.com/dotnetcore/Alipay.AopSdk.Core.git (push)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>使自己远程仓库与原仓库保持同步</p>
- <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">PS</span> C:\Users\FRANK\Desktop\Alipay.AopSdk.Core&gt; git fetch upstream</span><br><span class="line">From https://github.com/dotnetcore/Alipay.AopSdk.Core</span><br><span class="line"> * [<span class="type">new</span> <span class="type">branch</span>]      dev        -&gt; upstream/dev</span><br><span class="line"> * [<span class="type">new</span> <span class="type">branch</span>]      master     -&gt; upstream/master</span><br><span class="line"><span class="built_in">PS</span> C:\Users\FRANK\Desktop\Alipay.AopSdk.Core&gt; git checkout master</span><br><span class="line">Already on <span class="string">&#x27;master&#x27;</span></span><br><span class="line">Your branch is up to date with <span class="string">&#x27;origin/master&#x27;</span>.</span><br><span class="line"><span class="built_in">PS</span> C:\Users\FRANK\Desktop\Alipay.AopSdk.Core&gt; git merge upstream/master</span><br><span class="line">Already up to date.</span><br><span class="line"><span class="built_in">PS</span> C:\Users\FRANK\Desktop\Alipay.AopSdk.Core&gt; git push origin master</span><br><span class="line">fatal: NotSupportedException encountered.</span><br><span class="line">   ServicePointManager 不支持具有 socks5 方案的代理。</span><br><span class="line">fatal: NotSupportedException encountered.</span><br><span class="line">   ServicePointManager 不支持具有 socks5 方案的代理。</span><br><span class="line">Username <span class="keyword">for</span> <span class="string">&#x27;https://github.com&#x27;</span>: frankbsd</span><br><span class="line">Password <span class="keyword">for</span> <span class="string">&#x27;https://frankbsd@github.com&#x27;</span>:</span><br><span class="line">Everything up<span class="literal">-to-date</span></span><br></pre></td></tr></table></figure></li>
-</ol>
-]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>Git</tag>
       </tags>
   </entry>
   <entry>
@@ -4952,7 +4951,6 @@ table th:first-of-type {
       <tags>
         <tag>Java</tag>
         <tag>Spring</tag>
-        <tag>Sql</tag>
       </tags>
   </entry>
   <entry>
