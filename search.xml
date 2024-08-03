@@ -15,6 +15,25 @@
       </tags>
   </entry>
   <entry>
+    <title>MySql在Docker里时间晚8小时</title>
+    <url>/2024/08/03/MySql%E5%9C%A8Docker%E9%87%8C%E6%97%B6%E9%97%B4%E6%99%9A8%E5%B0%8F%E6%97%B6/</url>
+    <content><![CDATA[<p><code>/etc/localtime</code>是用来描述本机时间<br><code>/etc/timezone</code>是用来描述本机所属的时区</p>
+<p>在Linux中，有一些程序会自己计算时间，不会直接采用带有时区的本机时间格式，会根据UTC时间和本机所属的时区等计算出当前的时间。</p>
+<p>比如JDK应用，时区为“Etc&#x2F;UTC”，本机时间改为北京时间，通过Java代码中<code>new</code> 出来的时间还是 <code>UTC</code> 时间，所以必须得修正本机的时区。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it containerID /bin/bash</span><br></pre></td></tr></table></figure>
+
+<p>以下命令在容器中运行</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ln</span> -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</span><br><span class="line"><span class="built_in">touch</span> clock</span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">&#x27;ZONE=&quot;Asia/Shanghai&quot; \nUTC=fasle\nARC=false&#x27;</span> &gt; clock</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>Docker</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Java官方文档使用</title>
     <url>/2024/08/01/Java%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<p>进入<a href="https://docs.oracle.com/en/java/javase/21/index.html">Oracal Help Center</a>选择对应 JDK 版本，然后分类选择。<br>如查询 <code>java</code> 命令选项，进入<a href="https://docs.oracle.com/en/java/javase/21/docs/specs/man/index.html">JDK Tool Specifications</a>，<br>再进入<a href="https://docs.oracle.com/en/java/javase/21/docs/specs/man/java.html">java</a>信息页面。</p>
@@ -28,33 +47,6 @@
       </categories>
       <tags>
         <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>nginx 403 排查及相关知识链接</title>
-    <url>/2024/08/01/nginx-403-%E6%8E%92%E6%9F%A5%E5%8F%8A%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86%E9%93%BE%E6%8E%A5/</url>
-    <content><![CDATA[<ol>
-<li>权限链路检查<ul>
-<li>默认用户<code>www-data</code>是否有修改，设置的用户是否有对应目录的相应权限。 </li>
-<li>相关用户（或程序）是否也有对应目录的权限</li>
-</ul>
-</li>
-<li>是否有 <code>index</code>文件</li>
-<li><code>SELinux</code>状态检查</li>
-</ol>
-<p>参考:</p>
-<ul>
-<li><a href="https://github.com/dunwu/nginx-tutorial">Nginx 极简教程</a></li>
-<li><a href="https://www.cnblogs.com/zakun/p/nginx-vhost.html">nginx 单域名多站点配置</a></li>
-<li><a href="https://nginx.org/">nginx官网</a></li>
-<li><a href="https://www.cnblogs.com/cheyaoyao/p/17836522.html">使用 Hexo 搭建个人博客并部署到云服务器</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>nginx</tag>
       </tags>
   </entry>
   <entry>
@@ -97,7 +89,7 @@
 <li>设置环境变量后，如果使用 <code>IntelliJ IDEA</code> 内建的PowerShell，需要重启 <code>IntelliJ IDEA</code></li>
 <li>设置环境变量<code>$PSDefaultParameterValues</code> 和 <code>$OutputEncoding</code>为<code>UTF-8</code>，无效;</li>
 <li>运行<code>chcp 65001</code>, 只能改变 <code>JVM</code> 环境的 <code>stdout</code>设置，<code>native.encoding</code> 仍然为 <code>GBK</code>,无效。</li>
-<li><code>gradle.properties</code>中设置<code>org.gradle.jvmargs=-Dfile.encoding=GBK</code>， 影响<code>IntelliJ IDEA</code>和 <code>PowerShell</code>。</li>
+<li><code>~/.gradle/gradle.properties</code>中设置<code>org.gradle.jvmargs=-Dfile.encoding=GBK</code>， 影响<code>IntelliJ IDEA</code>和 <code>PowerShell</code>。如果在 RootProject 下设置 <code>gradle.properties</code> 设置，<code>IntelliJ IDEA</code>正常，但 PowerShell不正常</li>
 <li><code>GRADLE_OPTS</code> 只影响 <code>PowerShell</code></li>
 <li><a href="https://docs.gradle.org/current/userguide/common_caching_problems.html"><code>Gradle</code>不跟踪系统编码和环境变量的变化。</a></li>
 </ol>
@@ -163,6 +155,33 @@
       </categories>
       <tags>
         <tag>Java Gradle PowerShell</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>nginx 403 排查及相关知识链接</title>
+    <url>/2024/08/01/nginx-403-%E6%8E%92%E6%9F%A5%E5%8F%8A%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86%E9%93%BE%E6%8E%A5/</url>
+    <content><![CDATA[<ol>
+<li>权限链路检查<ul>
+<li>默认用户<code>www-data</code>是否有修改，设置的用户是否有对应目录的相应权限。 </li>
+<li>相关用户（或程序）是否也有对应目录的权限</li>
+</ul>
+</li>
+<li>是否有 <code>index</code>文件</li>
+<li><code>SELinux</code>状态检查</li>
+</ol>
+<p>参考:</p>
+<ul>
+<li><a href="https://github.com/dunwu/nginx-tutorial">Nginx 极简教程</a></li>
+<li><a href="https://www.cnblogs.com/zakun/p/nginx-vhost.html">nginx 单域名多站点配置</a></li>
+<li><a href="https://nginx.org/">nginx官网</a></li>
+<li><a href="https://www.cnblogs.com/cheyaoyao/p/17836522.html">使用 Hexo 搭建个人博客并部署到云服务器</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>nginx</tag>
       </tags>
   </entry>
 </search>
