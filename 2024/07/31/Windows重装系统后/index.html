@@ -234,7 +234,7 @@
     </span>
     <span>
       <span class="iconfont icon-calendar-check"></span>
-      更新于:&nbsp;2024-08-04
+      更新于:&nbsp;2024-08-07
     </span>
     <span>
       <span class="iconfont icon-folder"></span>
@@ -391,17 +391,15 @@
 
 <h3 id="Powershell设置环境变量"><a href="#Powershell设置环境变量" class="headerlink" title="Powershell设置环境变量"></a>Powershell设置环境变量</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#查看所有环境变量  </span><br><span class="line">ls env:</span><br><span class="line"></span><br><span class="line">#搜索环境变量   </span><br><span class="line">ls env:NODE*</span><br><span class="line"></span><br><span class="line">#查看单个环境变量 </span><br><span class="line">$env:NODE_ENV</span><br><span class="line"></span><br><span class="line">#添加/更新环境变量 </span><br><span class="line">$env:NODE_ENV=development</span><br><span class="line"></span><br><span class="line">#删除环境变量        </span><br><span class="line">del evn:NODE_ENV</span><br></pre></td></tr></table></figure>
 
-<h1 id="Maven-设置"><a href="#Maven-设置" class="headerlink" title="Maven 设置"></a>Maven 设置</h1><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mklink /D &quot;<span class="variable">%USERPROFILE%</span>\.m2&quot; &quot;D:\ProgramFiles\Java\Maven&quot;</span><br></pre></td></tr></table></figure>
+<h1 id="Maven-设置"><a href="#Maven-设置" class="headerlink" title="Maven 设置"></a>Maven 设置</h1><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mklink /D &quot;<span class="variable">%USERPROFILE%</span>\.m2&quot; &quot;D:\repos\maven&quot;</span><br></pre></td></tr></table></figure>
 
-<h1 id="Gradle设置"><a href="#Gradle设置" class="headerlink" title="Gradle设置"></a>Gradle设置</h1><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mklink /D &quot;<span class="variable">%USERPROFILE%</span>\.gradle&quot; &quot;D:\ProgramFiles\Java\Gradle&quot;</span><br></pre></td></tr></table></figure>
+<h1 id="Gradle设置"><a href="#Gradle设置" class="headerlink" title="Gradle设置"></a>Gradle设置</h1><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mklink /D &quot;<span class="variable">%USERPROFILE%</span>\.gradle&quot; &quot;D:\repos\gradle&quot;</span><br></pre></td></tr></table></figure>
 
 <h1 id="IdeaIU设置"><a href="#IdeaIU设置" class="headerlink" title="IdeaIU设置"></a>IdeaIU设置</h1><blockquote>
 <p>Windows:</p>
 <p>Configuration (idea.config.path): %APPDATA%\JetBrains\IntelliJIdea2022.2<br>Plugins (idea.plugins.path): %APPDATA%\JetBrains\IntelliJIdea2022.2\plugins<br>System (idea.system.path): %LOCALAPPDATA%\JetBrains\IntelliJIdea2022.2<br>Logs (idea.log.path): %LOCALAPPDATA%\JetBrains\IntelliJIdea2022.2\log</p>
 </blockquote>
-<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mklink /D &quot;<span class="variable">%APPDATA%</span>\JetBrains\&quot; &quot;D:\ProgramFiles\Java\IdeaIUConfig\AppData\&quot;</span><br><span class="line">mklink /D  &quot;<span class="variable">%LOCALAPPDATA%</span>\JetBrains\&quot;  &quot;D:\ProgramFiles\Java\IdeaIUConfig\LocalData\&quot;</span><br></pre></td></tr></table></figure>
-
-<h1 id="Jabba设置"><a href="#Jabba设置" class="headerlink" title="Jabba设置"></a>Jabba设置</h1><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mklink /D &quot;<span class="variable">%USERPROFILE%</span>\.jabba&quot; &quot;D:\ProgramFiles\Java\Jabba&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mklink /D &quot;<span class="variable">%APPDATA%</span>\JetBrains\&quot; &quot;D:\Java\IdeaIUConfig\AppData\&quot;</span><br><span class="line">mklink /D  &quot;<span class="variable">%LOCALAPPDATA%</span>\JetBrains\&quot;  &quot;D:\Java\IdeaIUConfig\LocalData\&quot;</span><br></pre></td></tr></table></figure>
 
   </div>
   <!--文末结束语-->
@@ -436,7 +434,7 @@
     <ul class="mdui-menu" id="toc">
       <li class="mdui-menu-item">
         <a href="/2024/07/31/Windows%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E5%90%8E/" id="toc-header" class="mdui-ripple">文章目录</a>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%AC%E5%9C%B0PS%E5%8F%AF%E6%89%A7%E8%A1%8C"><span class="toc-number">1.</span> <span class="toc-text">本地PS可执行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Powershell%E8%AE%BE%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-number">2.</span> <span class="toc-text">Powershell设置环境变量</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Maven-%E8%AE%BE%E7%BD%AE"><span class="toc-number"></span> <span class="toc-text">Maven 设置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Gradle%E8%AE%BE%E7%BD%AE"><span class="toc-number"></span> <span class="toc-text">Gradle设置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#IdeaIU%E8%AE%BE%E7%BD%AE"><span class="toc-number"></span> <span class="toc-text">IdeaIU设置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Jabba%E8%AE%BE%E7%BD%AE"><span class="toc-number"></span> <span class="toc-text">Jabba设置</span></a>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%AC%E5%9C%B0PS%E5%8F%AF%E6%89%A7%E8%A1%8C"><span class="toc-number">1.</span> <span class="toc-text">本地PS可执行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Powershell%E8%AE%BE%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-number">2.</span> <span class="toc-text">Powershell设置环境变量</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Maven-%E8%AE%BE%E7%BD%AE"><span class="toc-number"></span> <span class="toc-text">Maven 设置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Gradle%E8%AE%BE%E7%BD%AE"><span class="toc-number"></span> <span class="toc-text">Gradle设置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#IdeaIU%E8%AE%BE%E7%BD%AE"><span class="toc-number"></span> <span class="toc-text">IdeaIU设置</span></a>
       </li>
     </ul>
   </div>
