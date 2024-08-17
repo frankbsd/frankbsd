@@ -316,6 +316,19 @@
       </tags>
   </entry>
   <entry>
+    <title>IntelliJ IDEA 编辑 pom.xml 卡顿</title>
+    <url>/2024/08/03/IntelliJ-IDEA-%E7%BC%96%E8%BE%91-pom-xml-%E5%8D%A1%E9%A1%BF/</url>
+    <content><![CDATA[<p>删除<code>%localappdata%\JetBrains\IntelliJIdea&#123;version&#125;\Maven\Indices</code>目录下的内容</p>
+]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>IntelliJ IDEA</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Java官方文档使用</title>
     <url>/2024/08/01/Java%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<p>进入<a href="https://docs.oracle.com/en/java/javase/21/index.html">Oracal Help Center</a>选择对应 JDK 版本，然后分类选择。<br>如查询 <code>java</code> 命令选项，进入<a href="https://docs.oracle.com/en/java/javase/21/docs/specs/man/index.html">JDK Tool Specifications</a>，<br>再进入<a href="https://docs.oracle.com/en/java/javase/21/docs/specs/man/java.html">java</a>信息页面。</p>
@@ -329,19 +342,6 @@
       </categories>
       <tags>
         <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>IntelliJ IDEA 编辑 pom.xml 卡顿</title>
-    <url>/2024/08/03/IntelliJ-IDEA-%E7%BC%96%E8%BE%91-pom-xml-%E5%8D%A1%E9%A1%BF/</url>
-    <content><![CDATA[<p>删除<code>%localappdata%\JetBrains\IntelliJIdea&#123;version&#125;\Maven\Indices</code>目录下的内容</p>
-]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>IntelliJ IDEA</tag>
       </tags>
   </entry>
   <entry>
@@ -379,27 +379,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Linux文本重定向权限问题</title>
-    <url>/2024/08/03/Linux%E6%96%87%E6%9C%AC%E9%87%8D%E5%AE%9A%E5%90%91%E6%9D%83%E9%99%90%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<h2 id="现象"><a href="#现象" class="headerlink" title="现象"></a>现象</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">frank@debian:/etc/nginx/sites-enabled$ <span class="built_in">cat</span> nexus.conf |grep -s proxy_set &gt;&gt; blog.conf</span><br><span class="line">-bash: blog.conf: Permission denied</span><br></pre></td></tr></table></figure>
-
-<p>默认情况下，<code>Linux</code> shell 是使用当前用户的权限去执行 <code>&gt;</code> 和 <code>&gt;&gt;</code> 命令。</p>
-<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><ul>
-<li><h3 id="一"><a href="#一" class="headerlink" title="一"></a>一</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> -i</span><br><span class="line"><span class="built_in">cd</span> /etc/nginx/sites-enabled/</span><br><span class="line"><span class="built_in">cat</span> nexus.conf |grep -s proxy_set &gt;&gt; blog.conf</span><br></pre></td></tr></table></figure>
-</li>
-<li><h3 id="二"><a href="#二" class="headerlink" title="二"></a>二</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> bash -c <span class="string">&#x27;cat nexus.conf |grep -s proxy_set &gt;&gt; blog.conf&#x27;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><h3 id="三"><a href="#三" class="headerlink" title="三"></a>三</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cat</span> nexus.conf |grep proxy_set|<span class="built_in">sudo</span> <span class="built_in">tee</span> -a blog.conf</span><br></pre></td></tr></table></figure></li>
-</ul>
-]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MySql在Docker里时间晚8小时</title>
     <url>/2024/08/03/MySql%E5%9C%A8Docker%E9%87%8C%E6%97%B6%E9%97%B4%E6%99%9A8%E5%B0%8F%E6%97%B6/</url>
     <content><![CDATA[<p><code>/etc/localtime</code>是用来描述本机时间<br><code>/etc/timezone</code>是用来描述本机所属的时区</p>
@@ -418,6 +397,27 @@
       <tags>
         <tag>Java</tag>
         <tag>Docker</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux文本重定向权限问题</title>
+    <url>/2024/08/03/Linux%E6%96%87%E6%9C%AC%E9%87%8D%E5%AE%9A%E5%90%91%E6%9D%83%E9%99%90%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<h2 id="现象"><a href="#现象" class="headerlink" title="现象"></a>现象</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">frank@debian:/etc/nginx/sites-enabled$ <span class="built_in">cat</span> nexus.conf |grep -s proxy_set &gt;&gt; blog.conf</span><br><span class="line">-bash: blog.conf: Permission denied</span><br></pre></td></tr></table></figure>
+
+<p>默认情况下，<code>Linux</code> shell 是使用当前用户的权限去执行 <code>&gt;</code> 和 <code>&gt;&gt;</code> 命令。</p>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><ul>
+<li><h3 id="一"><a href="#一" class="headerlink" title="一"></a>一</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> -i</span><br><span class="line"><span class="built_in">cd</span> /etc/nginx/sites-enabled/</span><br><span class="line"><span class="built_in">cat</span> nexus.conf |grep -s proxy_set &gt;&gt; blog.conf</span><br></pre></td></tr></table></figure>
+</li>
+<li><h3 id="二"><a href="#二" class="headerlink" title="二"></a>二</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> bash -c <span class="string">&#x27;cat nexus.conf |grep -s proxy_set &gt;&gt; blog.conf&#x27;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><h3 id="三"><a href="#三" class="headerlink" title="三"></a>三</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cat</span> nexus.conf |grep proxy_set|<span class="built_in">sudo</span> <span class="built_in">tee</span> -a blog.conf</span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -782,6 +782,54 @@
       </tags>
   </entry>
   <entry>
+    <title>C#单文件可执行程序发布</title>
+    <url>/2024/07/30/C-%E5%8D%95%E6%96%87%E4%BB%B6%E5%8F%AF%E6%89%A7%E8%A1%8C%E7%A8%8B%E5%BA%8F%E5%8F%91%E5%B8%83/</url>
+    <content><![CDATA[<ul>
+<li><p>1 Create a new HelloWorld app: <code>HelloWorld$ dotnet new console</code></p>
+</li>
+<li><p>2 Framework Dependent Publish</p>
+<ul>
+<li>Normal publish: <code>dotnet publish</code><ul>
+<li>Published files: <code>HelloWorld.exe, HelloWorld.dll, HelloWorld.deps.json, HelloWorld.runtimeconfig.json, HelloWorld.pdb</code></li>
+</ul>
+</li>
+<li>Single-file publish: <code>dotnet publish -r win-x64 --self-contained=false /p:PublishSingleFile=true</code><ul>
+<li>Published files: <code>HelloWorld.exe, HelloWorld.pdb</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>3 Self-Contained Publish</p>
+<ul>
+<li>Normal publish: <code>dotnet publish -r win-x64</code><ul>
+<li>Published files: <code>HelloWorld.exe, HelloWorld.pdb, and 224 more files</code></li>
+</ul>
+</li>
+<li>Single-file publish Linux: <code>dotnet publish -r linux-x64 /p:PublishSingleFile=true</code><ul>
+<li>Published files: <code>HelloWorld, HelloWorld.pdb</code></li>
+</ul>
+</li>
+<li>Single-file publish Windows: <code>dotnet publish -r win-x64 /p:PublishSingleFile=true</code><ul>
+<li>Published files: <code>HelloWorld.exe, HelloWorld.pdb, coreclr.dll, clrjit.dll, clrcompression.dll, mscordaccore.dll</code></li>
+</ul>
+</li>
+<li>Single-file publish Windows with Extraction: <code>dotnet publish -r win-x64 /p:PublishSingleFile=true /p:IncludeNativeLibrariesForSelfExtract=true</code><ul>
+<li>Published files: <code>HelloWorld.exe, HelloWorld.pdb</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><a href="https://github.com/dotnet/designs/blob/main/accepted/2020/single-file/design.md">Single-file Publish</a></p>
+]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>A类和B类互相引用的解释</title>
     <url>/2024/07/31/A%E7%B1%BB%E5%92%8CB%E7%B1%BB%E4%BA%92%E7%9B%B8%E5%BC%95%E7%94%A8%E7%9A%84%E8%A7%A3%E9%87%8A/</url>
     <content><![CDATA[<h4 id="Question"><a href="#Question" class="headerlink" title="Question:"></a>Question:</h4><p>2 C# classes contain each other as a member<br>I have two c# classes A,B.</p>
@@ -845,54 +893,6 @@
 <p>输出：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">b=2  a=1</span><br></pre></td></tr></table></figure>
 <p>参考:<br><a href="https://stackoverflow.com/questions/22477984/2-c-sharp-classes-contain-each-other-as-a-member">2 C# classes contain each other as a member</a><br><a href="https://blog.csdn.net/xijiaoda_liuhao/article/details/6823408">类中定义自身类对象</a></p>
-]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>C#</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>C#单文件可执行程序发布</title>
-    <url>/2024/07/30/C-%E5%8D%95%E6%96%87%E4%BB%B6%E5%8F%AF%E6%89%A7%E8%A1%8C%E7%A8%8B%E5%BA%8F%E5%8F%91%E5%B8%83/</url>
-    <content><![CDATA[<ul>
-<li><p>1 Create a new HelloWorld app: <code>HelloWorld$ dotnet new console</code></p>
-</li>
-<li><p>2 Framework Dependent Publish</p>
-<ul>
-<li>Normal publish: <code>dotnet publish</code><ul>
-<li>Published files: <code>HelloWorld.exe, HelloWorld.dll, HelloWorld.deps.json, HelloWorld.runtimeconfig.json, HelloWorld.pdb</code></li>
-</ul>
-</li>
-<li>Single-file publish: <code>dotnet publish -r win-x64 --self-contained=false /p:PublishSingleFile=true</code><ul>
-<li>Published files: <code>HelloWorld.exe, HelloWorld.pdb</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>3 Self-Contained Publish</p>
-<ul>
-<li>Normal publish: <code>dotnet publish -r win-x64</code><ul>
-<li>Published files: <code>HelloWorld.exe, HelloWorld.pdb, and 224 more files</code></li>
-</ul>
-</li>
-<li>Single-file publish Linux: <code>dotnet publish -r linux-x64 /p:PublishSingleFile=true</code><ul>
-<li>Published files: <code>HelloWorld, HelloWorld.pdb</code></li>
-</ul>
-</li>
-<li>Single-file publish Windows: <code>dotnet publish -r win-x64 /p:PublishSingleFile=true</code><ul>
-<li>Published files: <code>HelloWorld.exe, HelloWorld.pdb, coreclr.dll, clrjit.dll, clrcompression.dll, mscordaccore.dll</code></li>
-</ul>
-</li>
-<li>Single-file publish Windows with Extraction: <code>dotnet publish -r win-x64 /p:PublishSingleFile=true /p:IncludeNativeLibrariesForSelfExtract=true</code><ul>
-<li>Published files: <code>HelloWorld.exe, HelloWorld.pdb</code></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p><a href="https://github.com/dotnet/designs/blob/main/accepted/2020/single-file/design.md">Single-file Publish</a></p>
 ]]></content>
       <categories>
         <category>后端</category>
@@ -1827,17 +1827,6 @@ table th:first-of-type {
       </tags>
   </entry>
   <entry>
-    <title>Jackson封装</title>
-    <url>/2024/07/31/Jackson%E5%B0%81%E8%A3%85/</url>
-    <content><![CDATA[<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.rl.algorithmassistance.common;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.fasterxml.jackson.annotation.JsonInclude;</span><br><span class="line"><span class="keyword">import</span> com.fasterxml.jackson.core.JsonProcessingException;</span><br><span class="line"><span class="keyword">import</span> com.fasterxml.jackson.core.type.TypeReference;</span><br><span class="line"><span class="keyword">import</span> com.fasterxml.jackson.databind.DeserializationFeature;</span><br><span class="line"><span class="keyword">import</span> com.fasterxml.jackson.databind.ObjectMapper;</span><br><span class="line"><span class="keyword">import</span> com.fasterxml.jackson.databind.SerializationFeature;</span><br><span class="line"><span class="keyword">import</span> com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;</span><br><span class="line"><span class="keyword">import</span> lombok.extern.slf4j.Slf4j;</span><br><span class="line"><span class="keyword">import</span> org.springframework.util.StringUtils;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.text.SimpleDateFormat;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Slf4j</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">JsonUtils</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="type">ObjectMapper</span> <span class="variable">om</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ObjectMapper</span>();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 对象的所有字段全部列入，还是其他的选项，可以忽略null等</span></span><br><span class="line">        om.setSerializationInclusion(JsonInclude.Include.ALWAYS);</span><br><span class="line">        <span class="comment">// 设置Date类型的序列化及反序列化格式</span></span><br><span class="line">        om.setDateFormat(<span class="keyword">new</span> <span class="title class_">SimpleDateFormat</span>(<span class="string">&quot;yyyy-MM-dd HH:mm:ss&quot;</span>));</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 忽略空Bean转json的错误</span></span><br><span class="line">        om.configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, <span class="literal">false</span>);</span><br><span class="line">        <span class="comment">// 忽略未知属性，防止json字符串中存在，java对象中不存在对应属性的情况出现错误</span></span><br><span class="line">        om.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, <span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 注册一个时间序列化及反序列化的处理模块，用于解决jdk8中localDateTime等的序列化问题</span></span><br><span class="line">        om.registerModule(<span class="keyword">new</span> <span class="title class_">JavaTimeModule</span>());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 对象 =&gt; json字符串</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> obj 源对象</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; String <span class="title function_">toJson</span><span class="params">(T obj)</span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="type">String</span> <span class="variable">json</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">if</span> (obj != <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                json = om.writeValueAsString(obj);</span><br><span class="line">            &#125; <span class="keyword">catch</span> (JsonProcessingException e) &#123;</span><br><span class="line">                log.warn(e.getMessage(), e);</span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">IllegalArgumentException</span>(e.getMessage());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> json;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * json字符串 =&gt; 对象</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> json  源json串</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> clazz 对象类</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> &lt;T&gt;   泛型</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; T <span class="title function_">parse</span><span class="params">(String json, Class&lt;T&gt; clazz)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> parse(json, clazz, <span class="literal">null</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * json字符串 =&gt; 对象</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> json 源json串</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> type 对象类型</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> &lt;T&gt;  泛型</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; T <span class="title function_">parse</span><span class="params">(String json, TypeReference type)</span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> parse(json, <span class="literal">null</span>, type);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * json =&gt; 对象处理方法</span></span><br><span class="line"><span class="comment">     * &lt;br&gt;</span></span><br><span class="line"><span class="comment">     * 参数clazz和type必须一个为null，另一个不为null</span></span><br><span class="line"><span class="comment">     * &lt;br&gt;</span></span><br><span class="line"><span class="comment">     * 此方法不对外暴露，访问权限为private</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> json  源json串</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> clazz 对象类</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> type  对象类型</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> &lt;T&gt;   泛型</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> &lt;T&gt; T <span class="title function_">parse</span><span class="params">(String json, Class&lt;T&gt; clazz, TypeReference type)</span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="type">T</span> <span class="variable">obj</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">if</span> (StringUtils.hasText(json)) &#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (clazz != <span class="literal">null</span>) &#123;</span><br><span class="line">                    obj = om.readValue(json, clazz);</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    obj = (T) om.readValue(json, type);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                log.warn(e.getMessage(), e);</span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">IllegalArgumentException</span>(e.getMessage());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> obj;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>JWT分析</title>
     <url>/2024/07/31/JWT%E5%88%86%E6%9E%90/</url>
     <content><![CDATA[<p><a href="https://learnku.com/articles/17883">原文</a></p>
@@ -2122,6 +2111,17 @@ table th:first-of-type {
       </categories>
       <tags>
         <tag>JWT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Jackson封装</title>
+    <url>/2024/07/31/Jackson%E5%B0%81%E8%A3%85/</url>
+    <content><![CDATA[<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.rl.algorithmassistance.common;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.fasterxml.jackson.annotation.JsonInclude;</span><br><span class="line"><span class="keyword">import</span> com.fasterxml.jackson.core.JsonProcessingException;</span><br><span class="line"><span class="keyword">import</span> com.fasterxml.jackson.core.type.TypeReference;</span><br><span class="line"><span class="keyword">import</span> com.fasterxml.jackson.databind.DeserializationFeature;</span><br><span class="line"><span class="keyword">import</span> com.fasterxml.jackson.databind.ObjectMapper;</span><br><span class="line"><span class="keyword">import</span> com.fasterxml.jackson.databind.SerializationFeature;</span><br><span class="line"><span class="keyword">import</span> com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;</span><br><span class="line"><span class="keyword">import</span> lombok.extern.slf4j.Slf4j;</span><br><span class="line"><span class="keyword">import</span> org.springframework.util.StringUtils;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.text.SimpleDateFormat;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Slf4j</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">JsonUtils</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="type">ObjectMapper</span> <span class="variable">om</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ObjectMapper</span>();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 对象的所有字段全部列入，还是其他的选项，可以忽略null等</span></span><br><span class="line">        om.setSerializationInclusion(JsonInclude.Include.ALWAYS);</span><br><span class="line">        <span class="comment">// 设置Date类型的序列化及反序列化格式</span></span><br><span class="line">        om.setDateFormat(<span class="keyword">new</span> <span class="title class_">SimpleDateFormat</span>(<span class="string">&quot;yyyy-MM-dd HH:mm:ss&quot;</span>));</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 忽略空Bean转json的错误</span></span><br><span class="line">        om.configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, <span class="literal">false</span>);</span><br><span class="line">        <span class="comment">// 忽略未知属性，防止json字符串中存在，java对象中不存在对应属性的情况出现错误</span></span><br><span class="line">        om.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, <span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 注册一个时间序列化及反序列化的处理模块，用于解决jdk8中localDateTime等的序列化问题</span></span><br><span class="line">        om.registerModule(<span class="keyword">new</span> <span class="title class_">JavaTimeModule</span>());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 对象 =&gt; json字符串</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> obj 源对象</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; String <span class="title function_">toJson</span><span class="params">(T obj)</span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="type">String</span> <span class="variable">json</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">if</span> (obj != <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                json = om.writeValueAsString(obj);</span><br><span class="line">            &#125; <span class="keyword">catch</span> (JsonProcessingException e) &#123;</span><br><span class="line">                log.warn(e.getMessage(), e);</span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">IllegalArgumentException</span>(e.getMessage());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> json;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * json字符串 =&gt; 对象</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> json  源json串</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> clazz 对象类</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> &lt;T&gt;   泛型</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; T <span class="title function_">parse</span><span class="params">(String json, Class&lt;T&gt; clazz)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> parse(json, clazz, <span class="literal">null</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * json字符串 =&gt; 对象</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> json 源json串</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> type 对象类型</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> &lt;T&gt;  泛型</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; T <span class="title function_">parse</span><span class="params">(String json, TypeReference type)</span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> parse(json, <span class="literal">null</span>, type);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * json =&gt; 对象处理方法</span></span><br><span class="line"><span class="comment">     * &lt;br&gt;</span></span><br><span class="line"><span class="comment">     * 参数clazz和type必须一个为null，另一个不为null</span></span><br><span class="line"><span class="comment">     * &lt;br&gt;</span></span><br><span class="line"><span class="comment">     * 此方法不对外暴露，访问权限为private</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> json  源json串</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> clazz 对象类</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> type  对象类型</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> &lt;T&gt;   泛型</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> &lt;T&gt; T <span class="title function_">parse</span><span class="params">(String json, Class&lt;T&gt; clazz, TypeReference type)</span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="type">T</span> <span class="variable">obj</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">if</span> (StringUtils.hasText(json)) &#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (clazz != <span class="literal">null</span>) &#123;</span><br><span class="line">                    obj = om.readValue(json, clazz);</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    obj = (T) om.readValue(json, type);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                log.warn(e.getMessage(), e);</span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">IllegalArgumentException</span>(e.getMessage());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> obj;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -3053,6 +3053,21 @@ table th:first-of-type {
       </tags>
   </entry>
   <entry>
+    <title>Linux删除个别外的所有文件</title>
+    <url>/2024/07/31/Linux%E5%88%A0%E9%99%A4%E4%B8%AA%E5%88%AB%E5%A4%96%E7%9A%84%E6%89%80%E6%9C%89%E6%96%87%E4%BB%B6/</url>
+    <content><![CDATA[<p>删除当前目录下，除“Logs”外的 所有文件和文件夹</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">find . -maxdepth 1 -not -name &#x27;Logs&#x27; -delete</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">rm !(important.txt)</span><br><span class="line">rm !(*.txt)</span><br><span class="line">rm !(h*)</span><br><span class="line">rm [0-9]*</span><br><span class="line">rm !([0-9]*)</span><br><span class="line">rm [a-c]*</span><br><span class="line">rm -f $(find . -maxdepth 1 -type f -name &quot;*&quot; ! -name &quot;important.txt&quot;)</span><br><span class="line">rm -rf $(find . -name &quot;*&quot; ! -name &quot;important.txt&quot;)</span><br><span class="line">find . -maxdepth 1 -type f ! -name &quot;important.txt&quot; -exec rm &#123;&#125; \;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>系统</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Java读取Properties</title>
     <url>/2024/07/31/Java%E8%AF%BB%E5%8F%96Properties/</url>
     <content><![CDATA[<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 上次最后打开的文件:</span></span><br><span class="line"><span class="attr">last_open_file</span>=<span class="string">/data/hello.txt</span></span><br><span class="line"><span class="comment"># 自动保存文件的时间间隔:</span></span><br><span class="line"><span class="attr">auto_save_interval</span>=<span class="string">60</span></span><br></pre></td></tr></table></figure>
@@ -3068,21 +3083,6 @@ table th:first-of-type {
       </categories>
       <tags>
         <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Linux删除个别外的所有文件</title>
-    <url>/2024/07/31/Linux%E5%88%A0%E9%99%A4%E4%B8%AA%E5%88%AB%E5%A4%96%E7%9A%84%E6%89%80%E6%9C%89%E6%96%87%E4%BB%B6/</url>
-    <content><![CDATA[<p>删除当前目录下，除“Logs”外的 所有文件和文件夹</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">find . -maxdepth 1 -not -name &#x27;Logs&#x27; -delete</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">rm !(important.txt)</span><br><span class="line">rm !(*.txt)</span><br><span class="line">rm !(h*)</span><br><span class="line">rm [0-9]*</span><br><span class="line">rm !([0-9]*)</span><br><span class="line">rm [a-c]*</span><br><span class="line">rm -f $(find . -maxdepth 1 -type f -name &quot;*&quot; ! -name &quot;important.txt&quot;)</span><br><span class="line">rm -rf $(find . -name &quot;*&quot; ! -name &quot;important.txt&quot;)</span><br><span class="line">find . -maxdepth 1 -type f ! -name &quot;important.txt&quot; -exec rm &#123;&#125; \;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>系统</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -4360,107 +4360,6 @@ table th:first-of-type {
       </tags>
   </entry>
   <entry>
-    <title>WSL使用</title>
-    <url>/2024/07/31/WSL%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<p>开机启动</p>
-<p>WSL2中创建执行脚本<code>sudo vim /etc/init.wsl</code></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#! /bin/sh</span><br><span class="line">/etc/init.d/ssh start</span><br></pre></td></tr></table></figure>
-<p>给予脚本执行权限 <code>sudo chmod +x /etc/init.wsl</code></p>
-<p>在Windows中创建脚本 <code>linux-start.vbs</code></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Set ws = WScript.CreateObject(&quot;WScript.Shell&quot;)</span><br><span class="line">ws.run &quot;wsl -d ubuntu -u root /etc/init.wsl&quot;</span><br></pre></td></tr></table></figure>
-
-<p>移动到Windows开机启动项<br><code>Win+R</code>—&gt;<code>shell:startup</code></p>
-]]></content>
-      <categories>
-        <category>系统</category>
-      </categories>
-      <tags>
-        <tag>Windows</tag>
-        <tag>WSL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Windows Socket错误</title>
-    <url>/2024/07/31/Windows-Socket%E9%94%99%E8%AF%AF/</url>
-    <content><![CDATA[<p><a href="http://help.socketlabs.com/docs/how-to-fix-error-only-one-usage-of-each-socket-address-protocolnetwork-addressport-is-normally-permitted">How To Fix Error “Only one usage of each socket address (protocol&#x2F;network address&#x2F;port) is normally permitted”</a></p>
-<p>错误信息</p>
-<blockquote>
-<p>Only one usage of each socket address (protocol&#x2F;network address&#x2F;port) is normally permitted</p>
-</blockquote>
-<p>此错误意味着机器上所有可用的端口都已耗尽。 </p>
-<p>默认情况下，操作系统只有大约 4000 个未被系统保留的可用端口。当任何网络连接关闭时，它会进入 TIME_WAIT 状态 240 秒，并且在此等待状态结束之前无法重新使用。</p>
-<p>例如，如果 4 分钟内每秒有 16 个连接（16<em>4</em>60&#x3D;3840），那么不久之后所有端口就会耗尽。如果 HAS 和 MTA 位于同一台机器上，则耗尽端口会更快发生。这是因为除了它们相互通信并占用两个端口之外，MTA 还使用大量端口来发送邮件。 </p>
-<p>该如何解决这个错误？<br>您可以通过修改以下值来解决此问题。</p>
-<p>增加动态端口范围。默认情况下最大值为 5000。您可以将其设置为 65534。HKLMSystemCurrentControlSetServicesTcpipParametersMaxUserPort 是<br>使用的关键。</p>
-<p>减少 TIME_WAIT 状态。默认设置为 4 分钟，但您可以将其设置为 30 秒。HKLMSystemCurrentControlSetServicesTcpipParametersTCPTimedWaitDelay 是使用的关键。</p>
-<p>完成这些更改后，必须重新启动系统。</p>
-]]></content>
-      <categories>
-        <category>系统</category>
-      </categories>
-      <tags>
-        <tag>Windows</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Windows删不掉的文件处理</title>
-    <url>/2024/07/31/Windows%E5%88%A0%E4%B8%8D%E6%8E%89%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86/</url>
-    <content><![CDATA[<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">PS</span> D:\ProgramFiles\UltraEdit.<span class="number">26.0</span>.<span class="number">0.72</span>.x32&gt; tasklist /m ue64ctmn.dll</span><br><span class="line"><span class="built_in">PS</span> D:\ProgramFiles\UltraEdit.<span class="number">26.0</span>.<span class="number">0.72</span>.x32&gt; taskkill /f  /pid <span class="number">6664</span></span><br><span class="line"><span class="built_in">PS</span> D:\ProgramFiles\UltraEdit.<span class="number">26.0</span>.<span class="number">0.72</span>.x32&gt; <span class="built_in">del</span> .\ue64ctmn.dll</span><br></pre></td></tr></table></figure>
-
-<p><img src="/2024/07/31/Windows%E5%88%A0%E4%B8%8D%E6%8E%89%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86/1.png" alt="1"></p>
-<p>这只是简单的处理方法，如果<code>ue64ctmn.dll</code>插入到多个进程中，就要一个一个地结束这些进程。还有，如果病毒程序随时监控各个进程，一旦发现某个进程被结束就立刻再次启动该进程或被插入的是系统必需进程，无法被结束，这怎么办呢？</p>
-<p>别担心，我们继续请出Windows自带的助手，就是利用NTFS分区格式的文件限制功能，可以设置某个文件是否可以被程序调用、访问。通过这个功能，我们一样可以阻止病毒DLL文件被调用，从而彻底地清除顽固的DLL文件。使用文件限制功能的必要条件是必须禁用简单文件共享。</p>
-<p>双击打开【我的电脑】，点击菜单命令【查看】→【选项】→【查看】，在高级设置的选项卡下去掉【简单文件共享】的选择。</p>
-<p>然后找到无法删除的DLL文件，右击它，在弹出的菜单中选择【属性】→【安全】，再单击【高级】按钮，在弹出的窗口中去掉【从父项继承那些可以应用的到子对象的权限项目，包括那些在此明确定义的项目】前面的钩。再在弹出的窗口中单击【删除】。最后单击【确定】。</p>
-<p>这样就没有任何用户和文件可以访问和调用这个DLL文件了。重新启动系统就可以删除该DLL文件了。</p>
-<p>该方法虽好但也有个条件，就是顽固DLL文件所在的磁盘分区必须是NTFS格式的。</p>
-]]></content>
-      <categories>
-        <category>系统</category>
-      </categories>
-      <tags>
-        <tag>Windows</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Windows文件名区分大小写</title>
-    <url>/2024/07/31/Windows%E6%96%87%E4%BB%B6%E5%90%8D%E5%8C%BA%E5%88%86%E5%A4%A7%E5%B0%8F%E5%86%99/</url>
-    <content><![CDATA[<p>转自<a href="https://www.howtogeek.com/354220/how-to-enable-case-sensitive-folders-on-windows-10/">How to Enable Case Sensitive File and Folder Names on Windows 10</a></p>
-<p>Windows 10 现在提供可选的区分大小写的文件系统，就像 Linux 和其他类 UNIX 操作系统一样。如果启用此功能，所有 Windows 进程都将正确处理区分大小写的文件和文件夹。换句话说，他们会将“file”和“File”视为两个单独的文件。</p>
-<p>工作原理<br>这是NTFS文件系统功能，您可以针对每个目录启用此功能。此功能不适用于您的整个文件系统，因此您只需针对用于开发目的的特定文件夹启用区分大小写即可。</p>
-<p>区分大小写功能是在Windows 10 的 2018 年 4 月更新中添加的。在此之前，可以在Windows 上的 Bash 环境（也称为适用于 Linux 的 Windows 子系统）中将 Windows 文件夹挂载为区分大小写。这在 Linux 环境中运行良好，但它会使普通的 Windows 应用程序感到困惑。这现在是一项文件系统级功能，这意味着所有 Windows 应用程序也将在该文件夹中看到区分大小写的文件系统。</p>
-<p>此功能可通过</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">fsutil.exe</span><br></pre></td></tr></table></figure>
-
-<p>命令，您必须从命令行运行该命令。您可以从命令提示符或 PowerShell 窗口执行此操作。使用默认设置，您在 Linux 环境中创建的文件夹也会自动配置为区分大小写。</p>
-<p>如何将目录设置为区分大小写<br>首先，右键单击“开始”按钮，然后选择“PowerShell（管理员）”命令。如果您更喜欢使用命令提示符，则可以在“开始”菜单中搜索“命令提示符”，右键单击它，然后选择“以管理员身份运行”命令。无论您选择哪种命令行环境，该命令的工作原理都相同。</p>
-<p>您可能实际上不需要管理员权限来运行此命令，这取决于您的权限。从技术上讲，您需要对要修改的目录具有“写入属性”权限。在大多数情况下，这意味着如果您想编辑用户文件夹之外的某个文件夹（例如 c:\project），则需要管理员权限，而如果您想修改用户文件夹内的某个文件夹（例如 c:\users\NAME\project），则不需要管理员权限。</p>
-<p>在继续之前，请确保当前没有正在运行的 Linux 软件引用您要修改的目录。当 Linux 软件正在访问文件夹时，您不应更改文件夹上的区分大小写标志。如果任何正在运行的 Linux 进程当前打开了该目录或目录中的任何内容，即使将其作为当前工作目录，Linux 应用程序也不会识别该更改，并且可能会出现问题。</p>
-<p>要使文件夹区分大小写，请键入以下命令，将“C:\folder”替换为文件夹的路径：</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">fsutil.exe file setCaseSensitiveInfo C:\folder enable</span><br></pre></td></tr></table></figure>
-
-<p>如果文件夹路径中有空格，请将整个路径括在引号中，如下所示：</p>
-<p>fsutil.exe file setCaseSensitiveInfo “C:\my folder” enable</p>
-<p>这不会影响子文件夹<br>区分大小写标志仅影响您应用它的特定文件夹。它不会被该文件夹的子文件夹自动继承。</p>
-<p>换句话说，如果您有一个名为 C:\folder 的文件夹，并且其中包含 C:\folder\test 和 C:\folder\stuff 子文件夹，那么仅将 C:\folder 文件夹设置为区分大小写并不能同时使其中的“test”和“stuff”子文件夹区分大小写。您需要fsutil单独运行相应的命令才能使所有三个文件夹都区分大小写。</p>
-<p>Linux 工具默认创建区分大小写的文件夹<br>您在 Windows Subsystem for Linux (Bash shell) 中运行的 Linux 工具现在可以创建设置了区分大小写的标志的文件夹。因此，无论您是使用命令mkdir在 Bash shell 中创建目录还是使用开发工具为您创建目录，创建的目录都会自动设置为区分大小写 - 即使您在已安装的 Windows 文件系统上创建它也是如此。</p>
-<p>从技术上讲，发生这种情况是因为 Linux 环境的 DrvFs 文件系统默认case&#x3D;dir使用该标志。该选项将 Linux 环境设置为尊重每个目录的 NTFS 标志，并在从 Linux 环境内创建的目录上自动设置区分大小写的标志。如果愿意，您可以在wsl.conf 文件中更改此选项。case&#x3D;dir</p>
-<p>只要您在 Linux 环境中创建文件夹，它们就会使用正确的区分大小写设置创建，并且您无需触碰 fsutil.exe 命令。</p>
-<p>如何检查目录是否区分大小写<br>要检查目录当前是否区分大小写，请运行以下命令，将“C:\folder”替换为文件夹的路径。</p>
-<p>fsutil.exe file queryCaseSensitiveInfo C:\folder</p>
-<p>如果目录启用了区分大小写，您将看到“目录 [路径] 上的区分大小写属性已启用。”如果目录使用标准 Windows 不区分大小写，您将看到“目录 [路径] 上的区分大小写属性已禁用。”</p>
-<p>如何使目录不区分大小写<br>要撤消更改并再次使目录不区分大小写（正如比尔盖茨所希望的那样），请运行以下命令，将“C:\folder”替换为文件夹的路径。</p>
-<p>fsutil.exe file setCaseSensitiveInfo C:\folder disable</p>
-<p>如果您尝试对包含名称冲突的文件的文件夹禁用区分大小写，您将看到“错误：目录不为空”消息。您需要先删除或重命名冲突的文件，然后才能继续。</p>
-]]></content>
-      <categories>
-        <category>系统</category>
-      </categories>
-      <tags>
-        <tag>Windows</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>VisualStudio常用快捷键</title>
     <url>/2024/07/31/VisualStudio%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
     <content><![CDATA[<h3 id="项目相关的快捷键"><a href="#项目相关的快捷键" class="headerlink" title="项目相关的快捷键"></a>项目相关的快捷键</h3><p><code>Ctrl + Shift + B</code> &#x3D;  生成项目(可能与Sougou拼音冲突)</p>
@@ -4543,6 +4442,69 @@ table th:first-of-type {
       </tags>
   </entry>
   <entry>
+    <title>WSL使用</title>
+    <url>/2024/07/31/WSL%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<p>开机启动</p>
+<p>WSL2中创建执行脚本<code>sudo vim /etc/init.wsl</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#! /bin/sh</span><br><span class="line">/etc/init.d/ssh start</span><br></pre></td></tr></table></figure>
+<p>给予脚本执行权限 <code>sudo chmod +x /etc/init.wsl</code></p>
+<p>在Windows中创建脚本 <code>linux-start.vbs</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Set ws = WScript.CreateObject(&quot;WScript.Shell&quot;)</span><br><span class="line">ws.run &quot;wsl -d ubuntu -u root /etc/init.wsl&quot;</span><br></pre></td></tr></table></figure>
+
+<p>移动到Windows开机启动项<br><code>Win+R</code>—&gt;<code>shell:startup</code></p>
+]]></content>
+      <categories>
+        <category>系统</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+        <tag>WSL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows Socket错误</title>
+    <url>/2024/07/31/Windows-Socket%E9%94%99%E8%AF%AF/</url>
+    <content><![CDATA[<p><a href="http://help.socketlabs.com/docs/how-to-fix-error-only-one-usage-of-each-socket-address-protocolnetwork-addressport-is-normally-permitted">How To Fix Error “Only one usage of each socket address (protocol&#x2F;network address&#x2F;port) is normally permitted”</a></p>
+<p>错误信息</p>
+<blockquote>
+<p>Only one usage of each socket address (protocol&#x2F;network address&#x2F;port) is normally permitted</p>
+</blockquote>
+<p>此错误意味着机器上所有可用的端口都已耗尽。 </p>
+<p>默认情况下，操作系统只有大约 4000 个未被系统保留的可用端口。当任何网络连接关闭时，它会进入 TIME_WAIT 状态 240 秒，并且在此等待状态结束之前无法重新使用。</p>
+<p>例如，如果 4 分钟内每秒有 16 个连接（16<em>4</em>60&#x3D;3840），那么不久之后所有端口就会耗尽。如果 HAS 和 MTA 位于同一台机器上，则耗尽端口会更快发生。这是因为除了它们相互通信并占用两个端口之外，MTA 还使用大量端口来发送邮件。 </p>
+<p>该如何解决这个错误？<br>您可以通过修改以下值来解决此问题。</p>
+<p>增加动态端口范围。默认情况下最大值为 5000。您可以将其设置为 65534。HKLMSystemCurrentControlSetServicesTcpipParametersMaxUserPort 是<br>使用的关键。</p>
+<p>减少 TIME_WAIT 状态。默认设置为 4 分钟，但您可以将其设置为 30 秒。HKLMSystemCurrentControlSetServicesTcpipParametersTCPTimedWaitDelay 是使用的关键。</p>
+<p>完成这些更改后，必须重新启动系统。</p>
+]]></content>
+      <categories>
+        <category>系统</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows删不掉的文件处理</title>
+    <url>/2024/07/31/Windows%E5%88%A0%E4%B8%8D%E6%8E%89%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86/</url>
+    <content><![CDATA[<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">PS</span> D:\ProgramFiles\UltraEdit.<span class="number">26.0</span>.<span class="number">0.72</span>.x32&gt; tasklist /m ue64ctmn.dll</span><br><span class="line"><span class="built_in">PS</span> D:\ProgramFiles\UltraEdit.<span class="number">26.0</span>.<span class="number">0.72</span>.x32&gt; taskkill /f  /pid <span class="number">6664</span></span><br><span class="line"><span class="built_in">PS</span> D:\ProgramFiles\UltraEdit.<span class="number">26.0</span>.<span class="number">0.72</span>.x32&gt; <span class="built_in">del</span> .\ue64ctmn.dll</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2024/07/31/Windows%E5%88%A0%E4%B8%8D%E6%8E%89%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86/1.png" alt="1"></p>
+<p>这只是简单的处理方法，如果<code>ue64ctmn.dll</code>插入到多个进程中，就要一个一个地结束这些进程。还有，如果病毒程序随时监控各个进程，一旦发现某个进程被结束就立刻再次启动该进程或被插入的是系统必需进程，无法被结束，这怎么办呢？</p>
+<p>别担心，我们继续请出Windows自带的助手，就是利用NTFS分区格式的文件限制功能，可以设置某个文件是否可以被程序调用、访问。通过这个功能，我们一样可以阻止病毒DLL文件被调用，从而彻底地清除顽固的DLL文件。使用文件限制功能的必要条件是必须禁用简单文件共享。</p>
+<p>双击打开【我的电脑】，点击菜单命令【查看】→【选项】→【查看】，在高级设置的选项卡下去掉【简单文件共享】的选择。</p>
+<p>然后找到无法删除的DLL文件，右击它，在弹出的菜单中选择【属性】→【安全】，再单击【高级】按钮，在弹出的窗口中去掉【从父项继承那些可以应用的到子对象的权限项目，包括那些在此明确定义的项目】前面的钩。再在弹出的窗口中单击【删除】。最后单击【确定】。</p>
+<p>这样就没有任何用户和文件可以访问和调用这个DLL文件了。重新启动系统就可以删除该DLL文件了。</p>
+<p>该方法虽好但也有个条件，就是顽固DLL文件所在的磁盘分区必须是NTFS格式的。</p>
+]]></content>
+      <categories>
+        <category>系统</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Windows删除右键</title>
     <url>/2024/07/31/Windows%E5%88%A0%E9%99%A4%E5%8F%B3%E9%94%AE/</url>
     <content><![CDATA[<p>保存为del_yun_shell.bat</p>
@@ -4554,6 +4516,44 @@ table th:first-of-type {
       <tags>
         <tag>Windows</tag>
         <tag>注册表</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows文件名区分大小写</title>
+    <url>/2024/07/31/Windows%E6%96%87%E4%BB%B6%E5%90%8D%E5%8C%BA%E5%88%86%E5%A4%A7%E5%B0%8F%E5%86%99/</url>
+    <content><![CDATA[<p>转自<a href="https://www.howtogeek.com/354220/how-to-enable-case-sensitive-folders-on-windows-10/">How to Enable Case Sensitive File and Folder Names on Windows 10</a></p>
+<p>Windows 10 现在提供可选的区分大小写的文件系统，就像 Linux 和其他类 UNIX 操作系统一样。如果启用此功能，所有 Windows 进程都将正确处理区分大小写的文件和文件夹。换句话说，他们会将“file”和“File”视为两个单独的文件。</p>
+<p>工作原理<br>这是NTFS文件系统功能，您可以针对每个目录启用此功能。此功能不适用于您的整个文件系统，因此您只需针对用于开发目的的特定文件夹启用区分大小写即可。</p>
+<p>区分大小写功能是在Windows 10 的 2018 年 4 月更新中添加的。在此之前，可以在Windows 上的 Bash 环境（也称为适用于 Linux 的 Windows 子系统）中将 Windows 文件夹挂载为区分大小写。这在 Linux 环境中运行良好，但它会使普通的 Windows 应用程序感到困惑。这现在是一项文件系统级功能，这意味着所有 Windows 应用程序也将在该文件夹中看到区分大小写的文件系统。</p>
+<p>此功能可通过</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">fsutil.exe</span><br></pre></td></tr></table></figure>
+
+<p>命令，您必须从命令行运行该命令。您可以从命令提示符或 PowerShell 窗口执行此操作。使用默认设置，您在 Linux 环境中创建的文件夹也会自动配置为区分大小写。</p>
+<p>如何将目录设置为区分大小写<br>首先，右键单击“开始”按钮，然后选择“PowerShell（管理员）”命令。如果您更喜欢使用命令提示符，则可以在“开始”菜单中搜索“命令提示符”，右键单击它，然后选择“以管理员身份运行”命令。无论您选择哪种命令行环境，该命令的工作原理都相同。</p>
+<p>您可能实际上不需要管理员权限来运行此命令，这取决于您的权限。从技术上讲，您需要对要修改的目录具有“写入属性”权限。在大多数情况下，这意味着如果您想编辑用户文件夹之外的某个文件夹（例如 c:\project），则需要管理员权限，而如果您想修改用户文件夹内的某个文件夹（例如 c:\users\NAME\project），则不需要管理员权限。</p>
+<p>在继续之前，请确保当前没有正在运行的 Linux 软件引用您要修改的目录。当 Linux 软件正在访问文件夹时，您不应更改文件夹上的区分大小写标志。如果任何正在运行的 Linux 进程当前打开了该目录或目录中的任何内容，即使将其作为当前工作目录，Linux 应用程序也不会识别该更改，并且可能会出现问题。</p>
+<p>要使文件夹区分大小写，请键入以下命令，将“C:\folder”替换为文件夹的路径：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">fsutil.exe file setCaseSensitiveInfo C:\folder enable</span><br></pre></td></tr></table></figure>
+
+<p>如果文件夹路径中有空格，请将整个路径括在引号中，如下所示：</p>
+<p>fsutil.exe file setCaseSensitiveInfo “C:\my folder” enable</p>
+<p>这不会影响子文件夹<br>区分大小写标志仅影响您应用它的特定文件夹。它不会被该文件夹的子文件夹自动继承。</p>
+<p>换句话说，如果您有一个名为 C:\folder 的文件夹，并且其中包含 C:\folder\test 和 C:\folder\stuff 子文件夹，那么仅将 C:\folder 文件夹设置为区分大小写并不能同时使其中的“test”和“stuff”子文件夹区分大小写。您需要fsutil单独运行相应的命令才能使所有三个文件夹都区分大小写。</p>
+<p>Linux 工具默认创建区分大小写的文件夹<br>您在 Windows Subsystem for Linux (Bash shell) 中运行的 Linux 工具现在可以创建设置了区分大小写的标志的文件夹。因此，无论您是使用命令mkdir在 Bash shell 中创建目录还是使用开发工具为您创建目录，创建的目录都会自动设置为区分大小写 - 即使您在已安装的 Windows 文件系统上创建它也是如此。</p>
+<p>从技术上讲，发生这种情况是因为 Linux 环境的 DrvFs 文件系统默认case&#x3D;dir使用该标志。该选项将 Linux 环境设置为尊重每个目录的 NTFS 标志，并在从 Linux 环境内创建的目录上自动设置区分大小写的标志。如果愿意，您可以在wsl.conf 文件中更改此选项。case&#x3D;dir</p>
+<p>只要您在 Linux 环境中创建文件夹，它们就会使用正确的区分大小写设置创建，并且您无需触碰 fsutil.exe 命令。</p>
+<p>如何检查目录是否区分大小写<br>要检查目录当前是否区分大小写，请运行以下命令，将“C:\folder”替换为文件夹的路径。</p>
+<p>fsutil.exe file queryCaseSensitiveInfo C:\folder</p>
+<p>如果目录启用了区分大小写，您将看到“目录 [路径] 上的区分大小写属性已启用。”如果目录使用标准 Windows 不区分大小写，您将看到“目录 [路径] 上的区分大小写属性已禁用。”</p>
+<p>如何使目录不区分大小写<br>要撤消更改并再次使目录不区分大小写（正如比尔盖茨所希望的那样），请运行以下命令，将“C:\folder”替换为文件夹的路径。</p>
+<p>fsutil.exe file setCaseSensitiveInfo C:\folder disable</p>
+<p>如果您尝试对包含名称冲突的文件的文件夹禁用区分大小写，您将看到“错误：目录不为空”消息。您需要先删除或重命名冲突的文件，然后才能继续。</p>
+]]></content>
+      <categories>
+        <category>系统</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
@@ -4773,18 +4773,6 @@ table th:first-of-type {
       </tags>
   </entry>
   <entry>
-    <title>rm参数列表过长</title>
-    <url>/2024/07/31/rm%E5%8F%82%E6%95%B0%E5%88%97%E8%A1%A8%E8%BF%87%E9%95%BF/</url>
-    <content><![CDATA[<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">frank@1_60:# <span class="built_in">rm</span>  -rf *</span><br><span class="line">-bash: /bin/rm: 参数列表过长</span><br><span class="line">frank@1_60:# find . -name <span class="string">&quot;*&quot;</span>  |xargs <span class="built_in">rm</span>  -rf  <span class="string">&quot;*&quot;</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>系统</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>保持fork之后的项目和上游同步</title>
     <url>/2024/07/31/%E4%BF%9D%E6%8C%81fork%E4%B9%8B%E5%90%8E%E7%9A%84%E9%A1%B9%E7%9B%AE%E5%92%8C%E4%B8%8A%E6%B8%B8%E5%90%8C%E6%AD%A5/</url>
     <content><![CDATA[<ol>
@@ -4807,6 +4795,18 @@ table th:first-of-type {
       </categories>
       <tags>
         <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>rm参数列表过长</title>
+    <url>/2024/07/31/rm%E5%8F%82%E6%95%B0%E5%88%97%E8%A1%A8%E8%BF%87%E9%95%BF/</url>
+    <content><![CDATA[<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">frank@1_60:# <span class="built_in">rm</span>  -rf *</span><br><span class="line">-bash: /bin/rm: 参数列表过长</span><br><span class="line">frank@1_60:# find . -name <span class="string">&quot;*&quot;</span>  |xargs <span class="built_in">rm</span>  -rf  <span class="string">&quot;*&quot;</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>系统</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -4851,6 +4851,18 @@ table th:first-of-type {
       </tags>
   </entry>
   <entry>
+    <title>安装 Windows 11 22H2 时断网</title>
+    <url>/2024/07/31/%E5%AE%89%E8%A3%85-Windows-11-22H2-%E6%97%B6%E6%96%AD%E7%BD%91/</url>
+    <content><![CDATA[<p>在安装过程中联网那个地方 <code>Shift + F10</code>，输入 <code>oobe\BypassNRO.cmd</code> ，然后会重启就可以跳过了。</p>
+]]></content>
+      <categories>
+        <category>Windows</category>
+      </categories>
+      <tags>
+        <tag>PowerShell</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>同步方法调用异步方法的方式</title>
     <url>/2024/07/31/%E5%90%8C%E6%AD%A5%E6%96%B9%E6%B3%95%E8%B0%83%E7%94%A8%E5%BC%82%E6%AD%A5%E6%96%B9%E6%B3%95%E7%9A%84%E6%96%B9%E5%BC%8F/</url>
     <content><![CDATA[<h2 id="问"><a href="#问" class="headerlink" title="问"></a>问</h2><p>我正在更新一个库，该库具有在 .NET 3.5 中构建的 API 界面。因此，所有方法都是同步的。我无法更改 API（即，将返回值转换为 Task），因为这需要更改所有调用者。所以我只剩下如何以同步方式最好地调用异步方法。异步方法是在 ASP.NET 4、ASP.NET Core 和 .NET&#x2F;.NET Core 控制台应用程序的上下文中。  </p>
@@ -4877,18 +4889,6 @@ table th:first-of-type {
       </categories>
       <tags>
         <tag>C#</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>安装 Windows 11 22H2 时断网</title>
-    <url>/2024/07/31/%E5%AE%89%E8%A3%85-Windows-11-22H2-%E6%97%B6%E6%96%AD%E7%BD%91/</url>
-    <content><![CDATA[<p>在安装过程中联网那个地方 <code>Shift + F10</code>，输入 <code>oobe\BypassNRO.cmd</code> ，然后会重启就可以跳过了。</p>
-]]></content>
-      <categories>
-        <category>Windows</category>
-      </categories>
-      <tags>
-        <tag>PowerShell</tag>
       </tags>
   </entry>
   <entry>
