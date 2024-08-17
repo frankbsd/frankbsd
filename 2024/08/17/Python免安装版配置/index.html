@@ -319,10 +319,12 @@
  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">use-proxy</span>.ps1</span><br><span class="line">python get.pip.py</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>添加环境变量</p>
- <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">D:\ProgramFiles\Python</span><br><span class="line">D:\ProgramFiles\Python\Scripts</span><br></pre></td></tr></table></figure>
+ <figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">D:\ProgramFiles\Python</span><br><span class="line">D:\ProgramFiles\Python\Scripts</span><br></pre></td></tr></table></figure>
+
+<p> 说明: 已有多版本管理工具 <code>virtualenvwrapper</code> ,类似Maven Wrapper.<br> 但目前Windows版本只有支持 CMD的<code>virtualenvwrapper-win</code>,PowerShell版本 <code>VirtualEnvWrapper</code> 需要使用 <code>venv</code>模块,要安装Python Install安装版,</p>
 </li>
 <li><p>虚拟环境</p>
- <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">python3 -m venv hello-world-env    // 新建虚拟环境</span><br><span class="line">soucre hello-world-env/<span class="built_in">bin</span>/active  // 使用新建虚拟环境</span><br><span class="line">pip install xxx                    // 安装缺少的 xxx 包</span><br><span class="line">pip freeze &gt; requirements.txt      // 导出项目安装的所有包</span><br><span class="line">pip install -r requirements.txt    // 新环境安装项目需要的包</span><br></pre></td></tr></table></figure></li>
+ <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">python3 <span class="literal">-m</span> venv env                // 新建虚拟环境(安装版才自带)</span><br><span class="line">pip3 install virtualenv            // 安装 virtualenv</span><br><span class="line">virtual env                        // 创建虚拟环境 env</span><br><span class="line">.\env\Scripts\activate.ps1          // 使用新建虚拟环境</span><br><span class="line">pip install xxx                    // 安装缺少的 xxx 包</span><br><span class="line">pip freeze &gt; requirements.txt      // 导出项目安装的所有包</span><br><span class="line">pip install <span class="literal">-r</span> requirements.txt    // 新环境安装项目需要的包</span><br></pre></td></tr></table></figure></li>
 </ol>
 
   </div>
