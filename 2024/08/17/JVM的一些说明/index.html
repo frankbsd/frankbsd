@@ -234,7 +234,7 @@
     </span>
     <span>
       <span class="iconfont icon-calendar-check"></span>
-      Edited on:&nbsp;2024-08-17
+      Edited on:&nbsp;2024-08-31
     </span>
     <span>
       <span class="iconfont icon-folder"></span>
@@ -300,6 +300,7 @@
   <div class="mdui-card-content mdui-typo mdui-p-x-4">
     <ol>
 <li>在内存大于32G时，JVM会使用64位指针。所以当内存不是特别大的时候(比如36G-48G)，通过<code>-xmx=31G</code>限制最大堆内存，强迫JVM开启压缩指针。</li>
+<li>开启GC日志,使用<code>-XX:+PrintGCDetails -XX:+PrintGCDateStamps -Xloggc:/export/log/risk_pillar/gc.log</code><br><img src="/gc.jpg" alt="gc"></li>
 </ol>
 
   </div>
@@ -312,6 +313,11 @@
   <div class="mdui-divider"></div>
   
   <nav>
+    
+      <a rel="prev" class="post-nav-item mdui-float-left" href="/2024/08/31/Java%E4%B9%8BPrintAssembly/">
+        <i class="iconfont icon-angle-left"></i>
+        <span>Java之PrintAssembly</span>
+      </a>
     
     
       <a rel="next" class="post-nav-item mdui-float-right" href="/2024/08/17/Hexo%E4%BD%BF%E7%94%A8/">

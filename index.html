@@ -282,6 +282,111 @@
       
       
         <div class="post-header"> 
+  <a class="post-header-title" href="/2024/09/01/IntelliJ-IDEA%E4%B9%8BExternal-tools/">IntelliJ IDEA之External tools</a>
+  <div class="post-header-meta">
+    <span>
+      <span class="iconfont icon-calendar"></span>
+      Posted on:&nbsp;2024-09-01
+    </span>
+    <span>
+      <span class="iconfont icon-calendar-check"></span>
+      Edited on:&nbsp;2024-09-01
+    </span>
+    <span>
+      <span class="iconfont icon-folder"></span>
+      In:&nbsp;<a class="category-link" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a>
+    </span>
+    
+  </div>
+</div>   
+    
+
+
+
+      
+      
+  <div class="post-tags">
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/Java/ >Java</a>
+      </i>
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/IDEA/ >IDEA</a>
+      </i>
+    
+  </div>
+
+      
+      <div id="achieve-abstract" class="mdui-card-content mdui-p-x-4">
+        <div class="post-abstract mdui-typo ">
+          
+            <h2 id="javap"><a href="#javap" class="headerlink" title="javap"></a>javap</h2><p><code>Ctrl + Alt + S</code> ——&gt; <code>External Tools</code> ——&gt; <code>Add</code> ,在添加页面的 <code>Tool Setting</code>部分分别设置</p>
+<ol>
+<li><code>Program</code> 填 <code>$JDKPath$\bin\javap</code></li>
+<li><code>Argu...
+          
+        </div>
+        
+        <div style="text-align:center;">
+          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2024/09/01/IntelliJ-IDEA%E4%B9%8BExternal-tools/">Read More</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="mdui-card mdui-m-b-5 mdui-hoverable">    
+      
+      
+        <div class="post-header"> 
+  <a class="post-header-title" href="/2024/08/31/Java%E4%B9%8BPrintAssembly/">Java之PrintAssembly</a>
+  <div class="post-header-meta">
+    <span>
+      <span class="iconfont icon-calendar"></span>
+      Posted on:&nbsp;2024-08-31
+    </span>
+    <span>
+      <span class="iconfont icon-calendar-check"></span>
+      Edited on:&nbsp;2024-09-01
+    </span>
+    <span>
+      <span class="iconfont icon-folder"></span>
+      In:&nbsp;<a class="category-link" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a>
+    </span>
+    
+  </div>
+</div>   
+    
+
+
+
+      
+      
+  <div class="post-tags">
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/Java/ >Java</a>
+      </i>
+    
+  </div>
+
+      
+      <div id="achieve-abstract" class="mdui-card-content mdui-p-x-4">
+        <div class="post-abstract mdui-typo ">
+          
+            <h2 id="PrintAssembly是什么"><a href="#PrintAssembly是什么" class="headerlink" title="PrintAssembly是什么?"></a><code>PrintAssembly</code>是什么?</h2><p><code>PrintAssembly</code> 是JDK 7 以来才有的，用于查看 Java 编译后生成的汇编代码的选项。但要查看汇编代码，需要反汇编插件。插件目前有2种实现: 一种是依赖于Gnu <code>disassembler</code>的，一种是Kenai的项目<a href="http://...
+          
+        </div>
+        
+        <div style="text-align:center;">
+          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2024/08/31/Java%E4%B9%8BPrintAssembly/">Read More</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="mdui-card mdui-m-b-5 mdui-hoverable">    
+      
+      
+        <div class="post-header"> 
   <a class="post-header-title" href="/2024/08/17/JVM%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AF%B4%E6%98%8E/">JVM的一些说明</a>
   <div class="post-header-meta">
     <span>
@@ -290,7 +395,7 @@
     </span>
     <span>
       <span class="iconfont icon-calendar-check"></span>
-      Edited on:&nbsp;2024-08-17
+      Edited on:&nbsp;2024-08-31
     </span>
     <span>
       <span class="iconfont icon-folder"></span>
@@ -319,6 +424,7 @@
           
             <ol>
 <li>在内存大于32G时，JVM会使用64位指针。所以当内存不是特别大的时候(比如36G-48G)，通过<code>-xmx=31G</code>限制最大堆内存，强迫JVM开启压缩指针。</li>
+<li>开启GC日志,使用<code>-XX:+PrintGCDetails -XX:+PrintGCDateStamps -Xloggc:/export/log/risk_pillar/gc.log</code><br><img src="/gc.jpg" alt="gc"></li>
 </ol>
           
         </div>
@@ -394,7 +500,7 @@
     </span>
     <span>
       <span class="iconfont icon-calendar-check"></span>
-      Edited on:&nbsp;2024-08-17
+      Edited on:&nbsp;2024-09-01
     </span>
     <span>
       <span class="iconfont icon-folder"></span>
@@ -421,8 +527,9 @@
       <div id="achieve-abstract" class="mdui-card-content mdui-p-x-4">
         <div class="post-abstract mdui-typo ">
           
-            <p><code>设置</code>–&gt;<code>搜索引擎</code>–&gt;<code>管理搜索引擎和网站数据</code>–&gt;网站搜索旁的<code>添加</code>–&gt;<code>保存</code>–&gt;<code>设置默认选项</code>,如下图<br><img src="/2024/08/17/Chrome%E8%87%AA%E5%AE%9A%E4%B9%89%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/1.png" alt="修改搜索引擎界面"></p>
-<p>将修改好的网址格式保存<br>比如,google原来的格...
+            <p><code>设置</code>–&gt;<code>搜索引擎</code>–&gt;<code>管理搜索引擎和网站数据</code>–&gt;网站搜索旁的<code>添加</code>–&gt;<code>保存</code>–&gt;<code>设置默认选项</code></p>
+<p>比如,google原来的格式为</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;google:baseURL&#125;search?<span class="attr">q</span>=%s&amp;&#123;google:RLZ&#125;&#123;google:originalQueryForSuggestion&#125;&#123;google:assistedQueryStats&#125;&#123;google:searchFieldtrialParameter&#125;&#123;google:language&#125;&#123;google:prefetchSource&#125;&#123;google:searchClient&#125;&#123;google:sourceId&#125;&#123;google:contextualSearchVersion&#125;ie=&#123;inputEncoding&#125;</span><br></pre></td></tr></table></figure>
           
         </div>
         
@@ -688,113 +795,6 @@
         
         <div style="text-align:center;">
           <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2024/08/08/POM%E4%B8%AD%E4%BD%BF%E7%94%A8%E6%9C%AC%E5%9C%B0JAR/">Read More</a>
-        </div>
-      </div>
-    </article>
-
-    <article class="mdui-card mdui-m-b-5 mdui-hoverable">    
-      
-      
-        <div class="post-header"> 
-  <a class="post-header-title" href="/2024/08/04/Linux%E4%B8%AD%E6%96%87%E4%BB%B6%E5%91%BD%E5%90%8D%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/">Linux中文件命名的最佳实践</a>
-  <div class="post-header-meta">
-    <span>
-      <span class="iconfont icon-calendar"></span>
-      Posted on:&nbsp;2024-08-04
-    </span>
-    <span>
-      <span class="iconfont icon-calendar-check"></span>
-      Edited on:&nbsp;2024-08-04
-    </span>
-    <span>
-      <span class="iconfont icon-folder"></span>
-      In:&nbsp;<a class="category-link" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a>
-    </span>
-    
-  </div>
-</div>   
-    
-
-
-
-      
-      
-  <div class="post-tags">
-    
-      <i class="iconfont icon-tag">
-        <a rel="tag" href = /tags/Java/ >Java</a>
-      </i>
-    
-  </div>
-
-      
-      <div id="achieve-abstract" class="mdui-card-content mdui-p-x-4">
-        <div class="post-abstract mdui-typo ">
-          
-            <p>转自<a target="_blank" rel="noopener" href="https://www.inmotionhosting.com/support/server/linux/best-practice-for-naming-files-in-linux/">Best practice for naming files in Linux</a></p>
-<p>如果您正在开发您的网站，但无法找出为什么您的页面、图像、JavaScript 和其他网络数据导致404 未找到错误，则您可能遇到了大小写敏感问题。</p>
-<p>Linux 服务器区分大小写。Windows 服务器不区分大小写，因此如果您将文件从 Windows 开发平台移...
-          
-        </div>
-        
-        <div style="text-align:center;">
-          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2024/08/04/Linux%E4%B8%AD%E6%96%87%E4%BB%B6%E5%91%BD%E5%90%8D%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/">Read More</a>
-        </div>
-      </div>
-    </article>
-
-    <article class="mdui-card mdui-m-b-5 mdui-hoverable">    
-      
-      
-        <div class="post-header"> 
-  <a class="post-header-title" href="/2024/08/03/%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E6%97%B6%E9%97%B4/">修改文件时间</a>
-  <div class="post-header-meta">
-    <span>
-      <span class="iconfont icon-calendar"></span>
-      Posted on:&nbsp;2024-08-03
-    </span>
-    <span>
-      <span class="iconfont icon-calendar-check"></span>
-      Edited on:&nbsp;2024-08-04
-    </span>
-    <span>
-      <span class="iconfont icon-folder"></span>
-      In:&nbsp;<a class="category-link" href="/categories/%E7%B3%BB%E7%BB%9F/">系统</a>
-    </span>
-    
-  </div>
-</div>   
-    
-
-
-
-      
-      
-  <div class="post-tags">
-    
-      <i class="iconfont icon-tag">
-        <a rel="tag" href = /tags/Linux/ >Linux</a>
-      </i>
-    
-      <i class="iconfont icon-tag">
-        <a rel="tag" href = /tags/Windows/ >Windows</a>
-      </i>
-    
-  </div>
-
-      
-      <div id="achieve-abstract" class="mdui-card-content mdui-p-x-4">
-        <div class="post-abstract mdui-typo ">
-          
-            <h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><ul>
-<li>PowerShell</li>
-</ul>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> t <span class="string">&#x27;01/01/2021 01:01:01&#x27;</span></span><br><span class="line"><span class="comment"># 时间格式：MM/DD/YYYY hh:mm:ss</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$t</span></span><br><span class="line"><span class="built_in">ls</span> <span class="string">&#x27;sysin.txt&#x27;</span> | <span class="built_in">foreach-object</span> &#123; <span class="variable">$_</span>.LastWriteTime = <span class="variable">$t</span>; <span class="variable">$_</span>.CreationTime = <span class="variable">$t</span>; <span class="variable">$_</span>.LastAccessTime = <span class="variable">$t</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 也可以单独设置不同的时间</span></span><br><span class="line"><span class="built_in">ls</span> <span class="string">&#x27;sysin.txt&#x27;</span> | <span class="built_in">foreach-object</span> &#123; <span class="variable">$_</span>.LastWriteTime = <span class="string">&#x27;01/01/2021 01:01:01&#x27;</span>; <span class="variable">$_</span>.CreationTime = <span class="string">&#x27;02/02/2021 01:01:01&#x27;</span>; <span class="variable">$_</span>.LastAccessTime = <span class="string">&#x27;03/03/2021 01:01:01&#x27;</span> &#125;</span><br></pre></td></tr></table></figure>
-          
-        </div>
-        
-        <div style="text-align:center;">
-          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2024/08/03/%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E6%97%B6%E9%97%B4/">Read More</a>
         </div>
       </div>
     </article>

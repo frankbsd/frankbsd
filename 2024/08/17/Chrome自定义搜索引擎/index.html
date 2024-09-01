@@ -234,7 +234,7 @@
     </span>
     <span>
       <span class="iconfont icon-calendar-check"></span>
-      Edited on:&nbsp;2024-08-17
+      Edited on:&nbsp;2024-09-01
     </span>
     <span>
       <span class="iconfont icon-folder"></span>
@@ -298,12 +298,14 @@
 
   
   <div class="mdui-card-content mdui-typo mdui-p-x-4">
-    <p><code>设置</code>–&gt;<code>搜索引擎</code>–&gt;<code>管理搜索引擎和网站数据</code>–&gt;网站搜索旁的<code>添加</code>–&gt;<code>保存</code>–&gt;<code>设置默认选项</code>,如下图<br><img src="/2024/08/17/Chrome%E8%87%AA%E5%AE%9A%E4%B9%89%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/1.png" alt="修改搜索引擎界面"></p>
-<p>将修改好的网址格式保存<br>比如,google原来的格式为</p>
+    <p><code>设置</code>–&gt;<code>搜索引擎</code>–&gt;<code>管理搜索引擎和网站数据</code>–&gt;网站搜索旁的<code>添加</code>–&gt;<code>保存</code>–&gt;<code>设置默认选项</code></p>
+<p>比如,google原来的格式为</p>
 <figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;google:baseURL&#125;search?<span class="attr">q</span>=%s&amp;&#123;google:RLZ&#125;&#123;google:originalQueryForSuggestion&#125;&#123;google:assistedQueryStats&#125;&#123;google:searchFieldtrialParameter&#125;&#123;google:language&#125;&#123;google:prefetchSource&#125;&#123;google:searchClient&#125;&#123;google:sourceId&#125;&#123;google:contextualSearchVersion&#125;ie=&#123;inputEncoding&#125;</span><br></pre></td></tr></table></figure>
 
-<p>现在要过滤csdn的内容,格式为</p>
-<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;google:baseURL&#125;search?<span class="attr">q</span>=%s+-site%<span class="number">3</span>Acsdn.net&amp;&#123;google:RLZ&#125;&#123;google:originalQueryForSuggestion&#125;&#123;google:assistedQueryStats&#125;&#123;google:searchFieldtrialParameter&#125;&#123;google:language&#125;&#123;google:prefetchSource&#125;&#123;google:searchClient&#125;&#123;google:sourceId&#125;&#123;google:contextualSearchVersion&#125;ie=&#123;inputEncoding&#125;</span><br></pre></td></tr></table></figure>
+<p>现在要过滤”csdn.net”的内容,格式为</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;google:baseURL&#125;search?<span class="attr">q</span>=%s+-csdn.net&amp;&#123;google:RLZ&#125;&#123;google:originalQueryForSuggestion&#125;&#123;google:assistedQueryStats&#125;&#123;google:searchFieldtrialParameter&#125;&#123;google:language&#125;&#123;google:prefetchSource&#125;&#123;google:searchClient&#125;&#123;google:sourceId&#125;&#123;google:contextualSearchVersion&#125;ie=&#123;inputEncoding&#125;</span><br></pre></td></tr></table></figure>
+
+<p>将修改好的网址格式保存</p>
 
   </div>
   <!--文末结束语-->
